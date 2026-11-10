@@ -1,0 +1,817 @@
+<!doctype html>
+<html lang="zh-CN" data-type="software" data-radius="soft" data-ground="sky" data-buttons="pill" data-motion>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zettlab：为企业团队每位成员配 7×24 小时在岗的 AI 数字分身</title>
+<meta name="description" content="每位成员配一台 Agent Computer，数字分身接手跟单、询盘、建档和单证，团队把时间留给重要的事，4–8 周上线。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zettlab：为企业团队每位成员配 7×24 小时在岗的 AI 数字分身">
+<meta property="og:description" content="人与 Agent 一起工作的新团队：重复工作交给数字分身，成员专注重要的事。">
+<meta property="og:image" content="share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta name="theme-color" content="#eef0f3">
+<!-- <link rel="canonical" href="https://[Zettlab 的正式域名]/"> 域名确定后再打开 -->
+<meta name="site-kind" content="software">
+<meta name="page-type" content="software">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/system.css">
+<link rel="stylesheet" href="assets/ui/cards.css">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<link rel="stylesheet" href="assets/backgrounds/backgrounds.css">
+<link rel="stylesheet" href="assets/layout/layout.css">
+<link rel="stylesheet" href="assets/icons/icon.css">
+<style>
+:root {
+  --p-bg: #eef0f3; --p-surface: #e2e5ea; --p-ink: #0b0c0e; --p-muted: #5e5f62;
+  --p-accent: #5b3fd3; --p-accent-ink: #eef0f3; --p-action: #5b3fd3; --p-action-ink: #eef0f3;
+  --p-inv-bg: #0b0c0e; --p-inv-surface: #17181a; --p-inv-ink: #eef0f3; --p-inv-muted: #8e8f92;
+  --p-inv-accent: #eef0f3; --p-inv-accent-ink: #0b0c0e; --p-inv-action: #eef0f3; --p-inv-action-ink: #0b0c0e;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-text: "Outfit", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --display-weight: 400;
+  --display-tracking: -0.03em;
+  --display-tracking-xl: -0.04em;
+}
+</style>
+<!-- 中文页面：Outfit（zettlab.com 的字体）没有汉字，汉字由 Noto Sans SC 显示（苹方、微软雅黑兜底）；中文标题不收紧字距 -->
+<style>
+:root {
+  --font-display: "Outfit", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-text: "Outfit", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --display-tracking: -0.01em; --display-tracking-xl: -0.015em;
+}
+</style>
+<link rel="stylesheet" href="assets/ui/base.css">
+<link rel="stylesheet" href="assets/ui/window/fragment.css">
+<link rel="stylesheet" href="assets/ui/doc/fragment.css">
+<link rel="stylesheet" href="assets/ui/chat/fragment.css">
+<link rel="stylesheet" href="assets/ui/notify/fragment.css">
+<link rel="stylesheet" href="assets/ui/checklist/fragment.css">
+<link rel="stylesheet" href="assets/ui/stat/fragment.css">
+<link rel="stylesheet" href="assets/ui/search/fragment.css">
+<link rel="stylesheet" href="assets/ui/toggles/fragment.css">
+<link rel="stylesheet" href="assets/diagrams/diagram.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+<script src="assets/backgrounds/backgrounds.js"></script>
+<style>
+  /* 首屏：右侧的小卡片（今晨待确认的三件事） */
+  .hero__art > .ly-piece--note { left: var(--s-6); bottom: var(--s-6); width: 300px; z-index: 2; }
+  .z-card { background: #fff; color: #16181a; border-radius: 12px; padding: 14px 16px; font: 400 14px/1.4 var(--font-text); box-shadow: 0 0 0 1px rgb(0 0 0 / .07), 0 18px 44px -20px rgb(0 0 0 / .45); }
+  .z-card h5 { margin: 0 0 4px; font: 500 14px/1.3 var(--font-text); }
+  .z-card__row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .z-chip { display: inline-flex; align-items: center; gap: 5px; height: 22px; padding: 0 8px; border-radius: 99px; font-size: 13px; font-weight: 500; background: #ece8fb; color: #4a2fbf; white-space: nowrap; }
+  .z-line { display: flex; align-items: center; gap: 10px; padding: 7px 0; font-size: 13px; color: #3d4247; border-top: 1px solid rgb(0 0 0 / .06); }
+  .z-line:first-of-type { border-top: 0; }
+  .z-line i { width: 18px; height: 18px; border-radius: 50%; flex: none; display: grid; place-items: center; background: #e7f4ec; color: #17673f; font-style: normal; font-size: 12px; font-weight: 500; }
+  .z-line i.warn { background: #fdf0dc; color: #8a5300; }
+  .z-line b { font-weight: 500; color: #16181a; }
+  .hero__proof { font-size: var(--t-small); color: var(--muted); }
+  @media (max-width: 1023px) { .hero__art > .ly-piece--note { left: var(--s-4); bottom: var(--s-4); width: 270px; } }
+
+  /* 工作台：app-frame（sections-library.md） */
+  .app.ui { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: var(--s-7); background: var(--u-bg); border: 1px solid var(--u-border); border-radius: var(--u-r); box-shadow: var(--u-shadow); }
+  .app > .app__pane { position: relative; min-width: 0; min-height: 0; overflow: hidden; }
+  .app > .app__pane + .app__pane { border-left: 1px solid var(--u-line); }
+  .app > .app__pane > .ui-panel { width: 100%; border: 0; border-radius: 0; box-shadow: none; }
+  .app > .app__pane::after { content: ""; position: absolute; inset: auto 0 0 0; height: 64px; background: linear-gradient(transparent, var(--u-bg)); pointer-events: none; }
+  @media (min-width: 1024px) and (max-width: 1279px) { .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); } }
+  @media (max-width: 1023px) {
+    .app.ui { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+    .app > .app__pane--list { max-height: 252px; }
+    .app > .app__pane--list::after { display: none; }
+    .app .ui-win__side { display: none; }
+    .app .ui-win__body { grid-template-columns: minmax(0, 1fr); }
+    .app > .app__pane + .app__pane { border-left: 0; border-top: 1px solid var(--u-line); }
+  }
+  @media (max-width: 639px) {
+    .app.ui { grid-template-rows: minmax(0, 1fr); }
+    .app > .app__pane--list { display: none; }
+    .app > .app__pane + .app__pane { border-top: 0; }
+  }
+
+  /* 工作台右侧的草稿撑满窗格 */
+  .app > .app__pane--open > .ui-doc { width: 100%; padding: var(--s-5) 260px var(--s-5) var(--s-6); }
+  .app > .app__pane--open > .ui-doc .ui-doc__note { right: var(--s-5); top: var(--s-7); width: 220px; }
+  @media (max-width: 639px) { .app > .app__pane--open > .ui-doc { padding: var(--s-4) var(--s-4) 0; } .app > .app__pane--open > .ui-doc .ui-doc__note { position: static; width: auto; margin-top: var(--s-4); } }
+  .nav__logo img { display: block; height: 20px; width: auto; }
+  .footer .nav__logo img { height: 24px; }
+  .close__word { font-family: "Outfit", sans-serif; }
+  /* 岗位：六张卡片，三列两行 */
+  #jobs .panel { --p-h: 248px; }
+  @media (max-width: 639px) { #jobs .panel { --p-h: 140px; } #jobs .card > p { display: none; } }
+
+  /* ROI 计算器 */
+  .roi { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-5); margin-top: var(--s-7); }
+  .roi__inputs { display: grid; gap: var(--s-5); align-content: start; padding: var(--s-7); background: var(--g-alt, var(--p-surface)); border-radius: var(--r-lg); }
+  .roi__inputs .field input[type="range"] { width: 100%; accent-color: var(--p-accent); height: 44px; }
+  .roi__row { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-4); }
+  .roi__val { font: 500 16px/1.4 var(--font-text); font-variant-numeric: tabular-nums; }
+  .roi__out { display: grid; align-content: start; gap: var(--s-6); padding: var(--s-7); background: var(--p-inv-bg); color: var(--p-inv-ink); border-radius: var(--r-lg); }
+  .roi__out dl { margin: 0; display: grid; gap: var(--s-6); }
+  .roi__out dt { font-size: 14px; color: var(--p-inv-muted); }
+  .roi__out dd { margin: var(--s-2) 0 0; font: 400 var(--t-stat)/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .roi__out dd.is-key { color: #c9bdf7; }
+  .roi__note { font-size: 14px; color: var(--p-inv-muted); margin: 0; }
+  .roi__out .link { color: var(--p-inv-ink); }
+  #cases .panel { --p-h: 196px; }
+  #book .book__map { aspect-ratio: auto; height: 340px; }
+  @media (max-width: 639px) { #book .book__map { height: 540px; } #roi .roi__out { min-height: 640px; } #roi .roi__inputs { gap: var(--s-7); } #cases .panel { --p-h: 132px; } .rail > li .panel { --p-h: 96px; } #process .section-head p, #process .rail > li > p:last-child { display: none; } #pricing .card--plan ul, #pricing .card--plan > p.muted, #pricing .faq-row > .span-5 > :not(.t-card) { display: none; } }
+  #pricing .faq-row { margin-top: 0; }
+  #book .form { padding: var(--s-7); background: var(--g-alt, var(--p-surface)); border-radius: var(--r-lg); grid-template-columns: minmax(0, 1fr); }
+  @media (max-width: 639px) { #book .form { padding: var(--s-5); } }
+  .close__word { line-height: 1.05; padding-top: .04em; }
+  @media (max-width: 1023px) { .roi { grid-template-columns: minmax(0, 1fr); } .roi__inputs, .roi__out { padding: var(--s-6); } }
+
+  /* 数字分身：chapter 的宽框 */
+  #twin .frame--hero { aspect-ratio: auto; height: 380px; margin-top: var(--s-7); }
+  #twin .twin__names { margin-top: var(--s-6); }
+  @media (max-width: 639px) { #twin .frame--hero { height: 320px; } }
+
+  /* 案例：指标行 */
+  .case__rows { margin: var(--s-5) 0 0; display: grid; }
+  .case__rows > div { display: flex; justify-content: space-between; gap: var(--s-4); padding: var(--s-3) 0; border-top: 1px solid var(--line); font-size: 16px; }
+  .case__rows dd { margin: 0; color: var(--muted); }
+
+  /* 落地流程：时间轴 */
+  .rail { list-style: none; padding: 0; margin: var(--s-7) 0 0; }
+  .rail > li .panel { --p-h: 200px; }
+  .rail__dot { position: relative; height: 24px; margin: var(--s-5) 0 var(--s-3); }
+  .rail__dot::before { content: ""; position: absolute; left: 0; right: calc(-1 * var(--s-5)); top: 11px; height: 1px; background: var(--line); }
+  .rail > li:last-child .rail__dot::before { right: 0; }
+  .rail__dot::after { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+  .rail > li:last-child .rail__dot::after { background: var(--p-accent); }
+  @media (max-width: 1023px) { .rail__dot::before { display: none; } }
+</style>
+<link rel="stylesheet" href="assets/presentation.css">
+</head>
+<body>
+<!-- type: software
+     deal: hero collage, nav nav-cards -> nav-centre (no photographs for the picture cards), close close-word, footer footer-dark,
+           rhythm space, buttons pill, mark ring, ground sand (hero art only), effect none
+     palette: start.mjs brand on cool-grey-cobalt's ground and ink with the client's purple #5b3fd3 (Zettlab's own colour, FDE 实施流程页)
+     moments: pinned-chapters dealt and left out at the client's ask (no extra motion); waived in .taste-skill/waivers.json
+     草稿说明：案例指标、价格待补；标 data-draft="extend" 的场景是横向扩展，需确认能否交付 -->
+
+<header class="nav nav--centre">
+  <div class="wrap nav__bar">
+    <a class="skip-link" href="#top">跳到正文</a>
+    <a class="nav__logo" href="#top"><img src="assets/brand/zettlab-logo.png" alt="Zettlab" width="121" height="20"></a>
+    <nav class="nav__links" aria-label="主导航">
+      <div class="nav__item"><a class="nav__link" href="#jobs">岗位</a></div>
+      <div class="nav__item"><a class="nav__link" href="#roi">算账</a></div>
+      <div class="nav__item"><a class="nav__link" href="#twin">分身</a></div>
+      <div class="nav__item"><a class="nav__link" href="#process">流程</a></div>
+      <div class="nav__item"><a class="nav__link" href="#pricing">价格</a></div>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn btn--primary" href="#book">预约落地评估</a>
+    </div>
+    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="菜单">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 01 首屏 -->
+  <section class="hero hero--video" data-enter aria-labelledby="hero-h">
+    <video class="hero__film" data-enter-media autoplay muted loop playsinline preload="auto" poster="assets/video/hero-terminal-poster.webp" aria-hidden="true" tabindex="-1">
+      <source src="assets/video/hero-terminal.mp4" type="video/mp4">
+    </video>
+    <div class="wrap">
+      <div class="hero__text">
+        <h1 id="hero-h" data-enter-whole><span>让团队每位成员，拥有</span> <span>7×24 小时在岗的 AI 数字分身</span></h1>
+        <p class="hero__lead">跟单、询盘、建档、单证这些重复工作交给数字分身，成员把精力放在判断、客户和创造上。Zettlab 帮你搭建人与 Agent 一起工作的新团队。</p>
+        <div class="btn-row"><a class="btn btn--primary" href="#book">预约落地评估<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a><a class="btn btn--secondary" href="#roi">算算能省多少</a></div>
+        <p class="hero__proof">1 台 NAS + 每人 1 台 Agent Computer，4–8 周上线。</p>
+      </div>
+    </div>
+    <button class="hero__playback" type="button" aria-label="暂停背景视频" aria-pressed="false">
+      <svg class="hero__pause-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3v10M11 3v10"/></svg>
+      <svg class="hero__play-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg>
+    </button>
+  </section>
+
+  <!-- 02 工作台（app-frame） -->
+  <section class="section" id="desk" aria-labelledby="desk-h">
+    <div class="wrap">
+      <div class="grid">
+        <h2 id="desk-h" class="span-5">AI 员工的工作台</h2>
+        <p class="span-6 start-7 muted">夜里的询盘、物流异常和单证缺件，第二天上班前已经处理好。需要人判断的，列在最前面等你确认。<a class="link" href="#jobs">看各岗位能接手的工作</a></p>
+      </div>
+      <div class="ui app fill" role="img" aria-label="AI 员工的夜间工作队列：十项任务，其中三项等人确认；右侧是给德国客户的物流异常通知草稿" data-ui-pause-host>
+        <div class="app__pane app__pane--list">
+          <div class="ui ui-panel ui-win" data-ui="window" data-open="待处理" data-work="处理中" data-done="已完成">
+            <div class="ui-win__bar">
+              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="ui-win__crumb">工作台 <i>/</i> <b>昨夜</b></span>
+              <span class="ui-spacer"></span>
+            </div>
+            <div class="ui-win__body">
+              <nav class="ui-win__side" aria-hidden="true">
+                <span class="ui-win__nav is-on">全部<em>10</em></span>
+                <span class="ui-win__nav">待确认<em>3</em></span>
+                <span class="ui-win__nav">已完成<em>6</em></span>
+              </nav>
+              <div class="ui-win__main">
+                <ul class="ui-win__rows">
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-01.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">李娜的分身</span><span class="ui-win__sub">SO-2611 清关滞留，客户通知草稿</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">02:14</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-02.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">王磊的分身</span><span class="ui-win__sub">10 月单证包缺 2 份报关单</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">03:05</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-03.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">客服 AI</span><span class="ui-win__sub">7 封英文咨询，回复草稿已备好</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">04:30</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-04.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">陈思的分身</span><span class="ui-win__sub">3 条 WhatsApp 询盘，已分级建档</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">01:42</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-05.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">运营 AI</span><span class="ui-win__sub">竞品官网 2 处价格变动</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:00</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-06.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">采购 AI</span><span class="ui-win__sub">3 家供应商报价已汇总比对</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:20</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-07.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">市场 AI</span><span class="ui-win__sub">社群新帖 46 条，归纳 5 个需求</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:10</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-08.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">财务 AI</span><span class="ui-win__sub">报销单据 12 张，核对完成</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:40</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-09.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">经营简报</span><span class="ui-win__sub">昨日询盘、订单与反馈汇总</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">07:30</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-10.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">销售 AI</span><span class="ui-win__sub">5 位客户今天到期跟进</span><span class="ui-win__st" data-st>待处理</span><span class="ui-win__age">08:00</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app__pane app__pane--open">
+          <div class="ui ui-doc" data-ui="doc">
+            <article class="ui-doc__page">
+              <div class="ui-doc__label">李娜的分身 · 02:14 生成 · 待确认后发送</div>
+              <div class="ui-doc__title">致 Daniel：订单 SO-2611 物流更新</div>
+              <div class="ui-doc__text">Hi Daniel, your order SO-2611 is <mark class="ui-doc__mark is-on">held at German customs</mark> since 8 November.</div>
+              <div class="ui-doc__text">Our forwarder is sending the <mark class="ui-doc__mark" data-kind="依据" data-msg="货代已在 11 月 10 日 01:58 回复确认" data-where="货代微信群">missing customs document</mark> today. We expect delivery by 14 November.</div>
+              <div class="ui-doc__text">We will update you as soon as the parcel moves. Thank you for your patience.</div>
+              <div class="ui-doc__text">Best regards, Li Na</div>
+              <div class="ui-doc__text">附：DHL 轨迹截图 · 合同 · 商业发票</div>
+              <div class="ui-doc__text">抄送：物流负责人</div>
+            </article>
+            <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
+              <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>依据</span></div>
+              <div class="ui-doc__msg" data-doc-msg>DHL 轨迹 11 月 8 日起停在清关，超过 48 小时阈值。</div>
+              <div class="ui-doc__where" data-doc-where>DHL 官网轨迹 · 订单台账</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 岗位与自定义工作流 -->
+  <section class="section g2" id="jobs" aria-labelledby="jobs-h">
+    <div class="wrap">
+      <div class="group">
+        <div class="section-head">
+          <h2 id="jobs-h">按岗位接手重复工作。<span class="muted">人只做判断和确认。</span></h2>
+        </div>
+        <div class="grid">
+          <article class="card card--row card--open span-4">
+            <h3>销售：询盘分级和客户建档</h3>
+            <p>邮件、WhatsApp、官网的询盘自动分级，客户资料和每次往来自动归档。</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+                <div class="ui ui-panel ui-search" data-ui="search">
+                  <div class="ui-search__field">
+                    <svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
+                    <span class="ui-search__q"><span data-search-q>张总 报价</span><i class="ui-search__caret"></i></span>
+                  </div>
+                  <div class="ui-search__group">客户档案</div>
+                  <ul class="ui-search__list" data-search-list>
+                    <li class="ui-search__row is-sel"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t"><b>张总</b>：第二版<b>报价</b></span><span class="ui-search__m">邮件</span></li>
+                    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 4.5h11v8h-11z"/><path d="m2.5 5 5.5 4 5.5-4"/></svg></span><span class="ui-search__t">拜访录音 10 月 14 日</span><span class="ui-search__m">录音</span></li>
+                    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t">客户表：意向高</span><span class="ui-search__m">表格</span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-4">
+            <h3>客服：多语言回复草稿</h3>
+            <p>按产品资料和历史回复写好对应语种的草稿，问题自动分派给负责人。</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+                <div class="ui ui-panel ui-chat" data-ui="chat">
+                  <div class="ui-head"><span class="ui-agent" aria-hidden="true"></span><div class="ui-title">客服 AI</div><span class="ui-chat__online">在线</span><span class="ui-spacer"></span></div>
+                  <div class="ui-chat__body">
+                    <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">When will my order arrive?</span></div>
+                    <div class="ui-msg ui-msg--bot" data-chat-a>
+                      <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                      <span class="ui-msg__col">
+                        <span class="ui-chat__answer">草稿：预计 <b>11 月 14 日</b>签收，等你确认后发送。</span>
+                        <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>订单台账</span></span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="ui-chat__input"><span class="ui-chat__ph">写回复</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+                </div>
+              </div></div>
+            </div>
+          </article>
+          <article class="card card--row card--open span-4">
+            <h3>订单：物流跟踪和异常预警</h3>
+            <p>每天自动查轨迹，清关滞留、派送失败按优先级提醒，群里 @ 一下就能查进度。</p>
+            <div class="panel">
+              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+                <div class="ui ui-notify" data-ui="notify">
+                  <ul class="ui-notify__list" data-notify-list>
+                    <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">SO-2611 清关滞留<time>02:14</time></span><span class="ui-note__body">DHL · 超过 48 小时未更新</span></span></li>
+                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">SO-2603 已签收<time>00:32</time></span><span class="ui-note__body">FedEx · 已通知客户</span></span></li>
+                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">本周在途 38 单<time>昨天</time></span><span class="ui-note__body">台账已自动更新</span></span></li>
+                  </ul>
+                </div>
+              </div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-4">
+          <h3>财务：单证自动归档</h3>
+          <p>合同、发票、箱单、报关单、面单按订单和月份整理，缺件提前提醒。</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">SO-2598 单证</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>3 / 5 份</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.6"></i></div>
+                <ul class="ui-checks__list">
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">合同</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">商业发票</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">付款记录</span></li>
+                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">国际物流面单</span></li>
+                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">报关单</span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4">
+          <h3>运营：数据周报和竞品监控</h3>
+          <p>每周汇总播放、互动和询盘，竞品官网的价格和新品有变化就推送。</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+              <div class="ui ui-panel ui-stat" data-ui="stat" data-from="12" data-to="18" data-suffix=" 条">
+                <div class="ui-stat__head">
+                  <div class="ui-stat__top"><span class="ui-stat__label">视频带来的询盘</span><span class="ui-stat__range">本周</span></div>
+                  <div class="ui-stat__line"><span class="ui-stat__num" data-stat-num>18 条</span><span class="ui-stat__sub">上周 12 条</span></div>
+                </div>
+                <div class="ui-stat__chart">
+                  <svg class="ui-stat__svg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+                    <path class="ui-stat__grid" d="M0 30.5H400M0 60.5H400M0 90.5H400"/>
+                    <path class="ui-stat__cover" fill-rule="evenodd" d=""/>
+                    <g class="ui-stat__bars"><rect rx="3" x="0.00" y="60" width="44" height="60"/><rect rx="3" x="59" y="48" width="44" height="72"/><rect rx="3" x="118" y="70" width="44" height="50"/><rect rx="3" x="177" y="40" width="44" height="80"/><rect rx="3" x="236" y="52" width="44" height="68"/><rect rx="3" x="295" y="30" width="44" height="90"/><rect rx="3" x="354" y="22" width="44" height="98"/></g>
+                  </svg>
+                  <div class="ui-stat__axis" aria-hidden="true"><span>周一</span><span>周四</span><span>今天</span></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </article>
+        <article class="card card--row card--open span-4">
+          <h3>管理者：设定 AI 能做什么</h3>
+          <p>哪些事 AI 直接做，哪些必须人确认，由你按岗位逐项打开。</p>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
+              <div class="ui ui-panel ui-toggles" data-ui="toggles">
+                <div class="ui-head"><svg class="ui-icon ui-toggles__ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 13 4v3.6c0 3-2.1 5.4-5 6.6-2.9-1.2-5-3.6-5-6.6V4z"/><path d="m5.8 8 1.6 1.6 3-3.2"/></svg><div class="ui-title">销售 AI 的权限</div><span class="ui-spacer"></span><div class="ui-meta" data-tg-count>3 / 5 项开启</div></div>
+                <ul class="ui-toggles__list">
+                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">自动建档</span><span class="ui-tg__sub">首次询盘起</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="自动建档" tabindex="-1"><i></i></button></li>
+                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">写回复草稿</span><span class="ui-tg__sub">中英日三种语言</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="写回复草稿" tabindex="-1"><i></i></button></li>
+                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">直接对外发送</span><span class="ui-tg__sub">关闭时必须人确认</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="直接对外发送" tabindex="-1"><i></i></button></li>
+                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">每日跟进提醒</span><span class="ui-tg__sub">早上 9:00</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="每日跟进提醒" tabindex="-1"><i></i></button></li>
+                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">修改报价金额</span><span class="ui-tg__sub">始终需要人确认</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="修改报价金额" tabindex="-1"><i></i></button></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+        </article>
+      </div>
+      <div class="job-builder" data-job-builder aria-labelledby="job-builder-h">
+        <div class="job-builder__intro">
+          <p class="job-builder__eyebrow">你的团队，不止这些可能</p>
+          <h3 id="job-builder-h">更多 AI 员工岗位<span>由你随心构建。</span></h3>
+          <p class="job-builder__description">把你的经验、工具和工作规则，组合成专属的 AI 员工。岗位怎么设，工作怎么做，由你定义。</p>
+          <a class="link" href="#book">聊聊你想构建的岗位</a>
+        </div>
+        <div class="job-builder__canvas">
+          <div class="job-builder__bar"><span class="job-builder__indicator" aria-hidden="true"></span><span>AI 员工工作流</span></div>
+          <div class="job-builder__presets" role="group" aria-label="选择岗位演示">
+            <button type="button" data-job-preset="0" aria-pressed="true">采购助理</button>
+            <button type="button" data-job-preset="1" aria-pressed="false">招聘助理</button>
+            <button type="button" data-job-preset="2" aria-pressed="false">内容运营</button>
+            <button type="button" data-job-preset="3" aria-pressed="false"><span aria-hidden="true">＋</span> 自定义岗位</button>
+          </div>
+          <div class="job-builder__graph">
+            <svg class="job-builder__wires" viewBox="0 0 600 340" preserveAspectRatio="none" aria-hidden="true"><path d="M100 34V70C100 112 300 78 300 134"/><path d="M300 34V134"/><path d="M500 34V70C500 112 300 78 300 134"/><path d="M300 236V295"/></svg>
+            <div class="job-builder__sources" role="group" aria-label="切换工作流数据源">
+              <button type="button" data-job-source aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2"/><path d="m3 5 7 5 7-5"/></svg><span data-source-name>邮件</span></button>
+              <button type="button" data-job-source aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="2.5" width="14" height="15" rx="2"/><path d="M3 7h14M8 7v10M3 12h14"/></svg><span data-source-name>报价表</span></button>
+              <button type="button" data-job-source aria-pressed="true"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 9.5a7 7 0 0 1-7 7H4l-2 1v-8a7.5 7.5 0 0 1 15 0Z"/><path d="M6 9h7M6 12h4"/></svg><span data-source-name>聊天记录</span></button>
+            </div>
+            <div class="job-builder__agent">
+              <div class="job-builder__agent-head"><span class="job-builder__agent-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="14" rx="5"/><path d="M12 6V3M9 12h.01M15 12h.01M9 16h6"/></svg></span><div><strong data-job-name>采购 AI 助理</strong><span>按你设定的规则</span></div><i aria-hidden="true"></i></div>
+              <p data-job-task>比较供应商报价，整理差异与建议</p>
+              <div class="job-builder__connected"><span data-job-count>3 个数据源已连接</span><span aria-hidden="true">↗</span></div>
+            </div>
+            <div class="job-builder__steps"><span>收集资料</span><span>生成草稿</span><span>等你确认</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ROI 计算器 -->
+  <section class="section" id="roi" style="--hm: 2" aria-labelledby="roi-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="roi-h">算一下每月能省多少人力成本</h2>
+        <p>填你团队的真实情况，结果按每月 174 个工作小时折算。</p>
+      </div>
+      <form class="roi" data-roi onsubmit="return false" aria-label="人力成本计算器">
+        <div class="roi__inputs">
+          <div class="field">
+            <div class="roi__row"><label for="roi-people">做这些重复工作的人数</label><output class="roi__val" for="roi-people" data-out="people">3 人</output></div>
+            <input id="roi-people" name="people" type="range" min="1" max="50" step="1" value="3">
+          </div>
+          <div class="field">
+            <label for="roi-cost">人均每月人力成本（元，含社保）</label>
+            <input id="roi-cost" name="cost" type="text" inputmode="numeric" value="12000" autocomplete="off">
+          </div>
+          <div class="field">
+            <div class="roi__row"><label for="roi-hours">每人每周花在重复工作上的小时数</label><output class="roi__val" for="roi-hours" data-out="hours">15 小时</output></div>
+            <input id="roi-hours" name="hours" type="range" min="1" max="40" step="1" value="15">
+          </div>
+          <div class="field">
+            <div class="roi__row"><label for="roi-share">你预估 AI 能接手的比例</label><output class="roi__val" for="roi-share" data-out="share">50%</output></div>
+            <input id="roi-share" name="share" type="range" min="10" max="90" step="5" value="50">
+          </div>
+        </div>
+        <div class="roi__out ground-inverse" aria-live="polite">
+          <dl>
+            <div><dt>每月可释放的工时</dt><dd data-res="hours">97 小时</dd></div>
+            <div><dt>折合每月人力成本</dt><dd data-res="month">6,690 元</dd></div>
+            <div><dt>折合每年人力成本</dt><dd class="is-key" data-res="year">80,280 元</dd></div>
+          </dl>
+          <p class="roi__note">公式：人数 × 每周小时 × 4.33 周 × 接手比例；成本按人均月成本 ÷ 174 小时折算。方案费用评估后单独报价。</p>
+          <a class="link" href="#book">用你的真实数据做一次评估</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- 05 三个支柱：1 NAS + N AC（split-text-left + fanin 图） -->
+  <section class="section" id="system" aria-labelledby="system-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-5 stack-6">
+          <h2 id="system-h">1 台 NAS 加 N 台 Agent Computer</h2>
+          <p class="t-lead">每位成员一台 Agent Computer，数字分身在工作现场 7×24 小时运行工作流。整理好的工作数据按权限汇入企业 NAS，成为团队共用的数据资产。</p>
+          <ul class="stack-4">
+            <li>7×24 小时持续运行，夜里的事第二天前处理好</li>
+            <li>数据存在企业自有 NAS，归企业所有</li>
+            <li>成员通过分身协作，少开会、少被打断</li>
+          </ul>
+          <a class="link" href="#faq">看数据安全的问答</a>
+        </div>
+        <div class="frame frame--split span-6 start-7">
+          <div class="dg" data-dg-still data-diagram='{"layout":"fanin","alt":"销售、客服、订单、财务、运营和管理者的 Agent Computer 把工作数据汇入企业 NAS，再供数字分身和经营简报调用。","sources":[{"label":"销售","icon":"ui:user","sub":"Agent Computer"},{"label":"客服","icon":"ui:message-circle","sub":"Agent Computer"},{"label":"订单","icon":"ui:package","sub":"Agent Computer"},{"label":"财务","icon":"ui:receipt","sub":"Agent Computer"},{"label":"运营","icon":"ui:chart-column","sub":"Agent Computer"},{"label":"管理者","icon":"ui:briefcase","sub":"Agent Computer"}],"target":{"label":"企业 NAS","icon":"ui:database"},"then":{"label":"数字分身","icon":"ui:bot","meta":"按权限"}}'></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 数字分身（chapter） -->
+  <section class="section" id="twin" aria-labelledby="twin-h">
+    <div class="wrap">
+      <div class="grid">
+        <h2 id="twin-h" class="span-5">数字分身：同事先问分身，不打断本人</h2>
+        <p class="span-6 start-7 muted">分身只引用本人说过、确认过的内容，每句回答都能追溯到原话或录音时间点。答不了的问题，转给本人。<a class="link" href="#process">看落地流程</a></p>
+      </div>
+      <div class="frame frame--hero frame--lit">
+        <div class="stage stage--fade-b">
+          <div class="at-rise to-edge fit" style="--fit-max:440px;--ax:max(24px, 50% - 220px);--ay:48px;--ay-sm:24px">
+            <div class="ui ui-panel ui-chat" data-ui="chat">
+              <div class="ui-head"><span class="ui-agent" aria-hidden="true"></span><div class="ui-title">李娜的分身</div><span class="ui-chat__online">在线</span><span class="ui-spacer"></span></div>
+              <div class="ui-chat__body">
+                <div class="ui-chat__day">今天 10:12 · 王磊提问</div>
+                <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">张总的订单答应过哪天发货？</span></div>
+                <div class="ui-msg ui-msg--bot" data-chat-a>
+                  <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
+                  <span class="ui-msg__col">
+                    <span class="ui-chat__answer">10 月 14 日拜访时李娜答应<b>11 月 20 日前发货</b>，前提是 11 月 5 日前收到定金。</span>
+                    <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M8 2.5v8M5 7.5a3 3 0 0 0 6 0M8 13.5v-3"/></svg>拜访录音 23:40</span><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>合同第 4 条</span></span>
+                  </span>
+                </div>
+              </div>
+              <div class="ui-chat__input"><span class="ui-chat__ph">问李娜的分身</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid twin__names">
+        <div class="span-3"><p class="t-card">只说本人确认过的</p><p class="muted">本人观点、转发内容和 AI 草稿分开存放</p></div>
+        <div class="span-3"><p class="t-card">每句都有出处</p><p class="muted">点开就是原话、文件或录音时间点</p></div>
+        <div class="span-3"><p class="t-card">答不了就转给本人</p><p class="muted">没有依据时说“依据不足”</p></div>
+        <div class="span-3"><p class="t-card">按权限可见</p><p class="muted">谁能问谁的分身，由企业统一配置</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 案例：正在交付的行业（指标待验收后补） -->
+  <section class="section" id="cases" style="--hm: 2" aria-labelledby="cases-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="cases-h">他们都在用</h2>
+        <p>每个项目都以上线前的人工耗时为基线，验收数据经客户同意后公布。</p>
+      </div>
+      <div class="grid">
+        <article class="card card--row card--open span-4">
+          <p class="t-label muted">外贸 / 跨境电商</p>
+          <h3>询盘、跟单、单证交给 AI 员工</h3>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:320px;--ax:max(24px, 50% - 160px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">接手的工作</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>2 / 4</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.5"></i></div>
+                <ul class="ui-checks__list"><li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">询盘分级建档</span></li><li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">物流异常预警</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">月底单证归档</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">竞品与关键词监控</span></li></ul>
+              </div>
+            </div></div>
+          </div>
+          <dl class="case__rows"><div><dt>人工耗时降低</dt><dd>验收后公布</dd></div><div><dt>上线周期</dt><dd>验收后公布</dd></div><div><dt>每周释放工时</dt><dd>验收后公布</dd></div></dl>
+        </article>
+        <article class="card card--row card--open span-4">
+          <p class="t-label muted">连锁餐饮</p>
+          <h3>门店经营数据交给 AI 员工</h3>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:320px;--ax:max(24px, 50% - 160px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">接手的工作</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>1 / 4</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.25"></i></div>
+                <ul class="ui-checks__list"><li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">门店经营周报</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">会员运营分析</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">用户评价归纳</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">经营月报</span></li></ul>
+              </div>
+            </div></div>
+          </div>
+          <dl class="case__rows"><div><dt>报告产出时间</dt><dd>验收后公布</dd></div><div><dt>上线周期</dt><dd>验收后公布</dd></div><div><dt>每周释放工时</dt><dd>验收后公布</dd></div></dl>
+        </article>
+        <article class="card card--row card--open span-4">
+          <p class="t-label muted">硬件品牌</p>
+          <h3>用户反馈和内容交给 AI 员工</h3>
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:320px;--ax:max(24px, 50% - 160px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">接手的工作</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>1 / 4</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.25"></i></div>
+                <ul class="ui-checks__list"><li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">社群评论挖掘</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">电商评论归纳</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">视频脚本</span></li><li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">售后问题归类</span></li></ul>
+              </div>
+            </div></div>
+          </div>
+          <dl class="case__rows"><div><dt>反馈整理时间</dt><dd>验收后公布</dd></div><div><dt>上线周期</dt><dd>验收后公布</dd></div><div><dt>每周释放工时</dt><dd>验收后公布</dd></div></dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 4–8 周落地流程（timeline-rail） -->
+  <section class="section" id="process" style="--hm: 2" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process-h">4 到 8 周上线，分 4 个阶段</h2>
+        <p>单个岗位、数据源少约 4 周；多系统、多岗位约 8 周。每个阶段都有你能看到的产出。</p>
+      </div>
+      <ol class="grid rail">
+        <li class="span-3">
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:260px;--ax:max(16px, 50% - 130px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">需求确认表</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>2 / 3</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.66"></i></div>
+                <ul class="ui-checks__list">
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">选定岗位：跟单</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">记录现状耗时</span></li>
+                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">确认验收标准</span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+          <div class="rail__dot" aria-hidden="true"></div>
+          <p class="t-label muted">第 1 周</p>
+          <h3 class="t-card">需求工作坊</h3>
+          <p>选一个最耗人力的岗位，记录基线。</p>
+        </li>
+        <li class="span-3">
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:260px;--ax:max(16px, 50% - 130px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-search" data-ui="search">
+                <div class="ui-search__field"><svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg><span class="ui-search__q"><span data-search-q>接入数据源</span><i class="ui-search__caret"></i></span></div>
+                <ul class="ui-search__list" data-search-list>
+                  <li class="ui-search__row is-sel"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 4.5h11v8h-11z"/><path d="m2.5 5 5.5 4 5.5-4"/></svg></span><span class="ui-search__t">Gmail 邮箱</span><span class="ui-search__m">已接入</span></li>
+                  <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t">飞书客户表</span><span class="ui-search__m">已接入</span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+          <div class="rail__dot" aria-hidden="true"></div>
+          <p class="t-label muted">第 1–3 周</p>
+          <h3 class="t-card">数据接入和 Demo</h3>
+          <p>接入邮箱、IM 和表格，用真实数据演示。</p>
+        </li>
+        <li class="span-3">
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:260px;--ax:max(16px, 50% - 130px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-notify" data-ui="notify">
+                <ul class="ui-notify__list" data-notify-list>
+                  <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">影子运行第 9 天<time>今天</time></span><span class="ui-note__body">AI 与人工结果逐单对照</span></span></li>
+                  <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">差异已标出<time>昨天</time></span><span class="ui-note__body">规则已按你的判断调整</span></span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+          <div class="rail__dot" aria-hidden="true"></div>
+          <p class="t-label muted">第 3–6 周</p>
+          <h3 class="t-card">影子运行</h3>
+          <p>AI 和人并行处理，逐单对照结果。</p>
+        </li>
+        <li class="span-3">
+          <div class="panel">
+            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:260px;--ax:max(16px, 50% - 130px);--ay:24px;--ay-sm:16px">
+              <div class="ui ui-panel ui-checks" data-ui="checklist">
+                <div class="ui-checks__head"><div class="ui-title">验收报告</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>3 / 3</div></div>
+                <div class="ui-checks__bar"><i data-checks-bar style="--k:1"></i></div>
+                <ul class="ui-checks__list">
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">对照第 1 周基线</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">工作流正式上线</span></li>
+                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">规划下一个岗位</span></li>
+                </ul>
+              </div>
+            </div></div>
+          </div>
+          <div class="rail__dot" aria-hidden="true"></div>
+          <p class="t-label muted">第 4–8 周</p>
+          <h3 class="t-card">上线验收</h3>
+          <p>AI 主跑、人做确认，按基线验收。</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 09 价格（待补：价格面议） -->
+  <section class="section g2" id="pricing" aria-labelledby="pricing-h">
+    <div class="wrap">
+      <div class="group">
+      <div class="section-head">
+        <h2 id="pricing-h">价格按岗位报价</h2>
+        <p>硬件、订阅、行业工作流和 FDE 交付打包报价，评估免费。</p>
+      </div>
+      <div class="grid">
+        <article class="card card--plan span-4">
+          <h3>单岗位试点</h3>
+          <p class="muted">先拿一个岗位验证效果</p>
+          <p class="price"><span class="t-stat">面议</span></p>
+          <a class="btn btn--secondary" href="#roi">算算能省多少</a>
+          <ul class="stack-3">
+            <li>1 台 NAS + 所需的 Agent Computer</li>
+            <li>1 个岗位的工作流</li>
+            <li>约 4 周上线</li>
+            <li>按基线验收</li>
+          </ul>
+        </article>
+        <article class="card card--plan span-4 is-featured">
+          <span class="badge">多数团队的选择</span>
+          <h3>团队版</h3>
+          <p class="muted">多个岗位一起接入</p>
+          <p class="price"><span class="t-stat">面议</span></p>
+          <a class="btn btn--primary" href="#book">预约落地评估</a>
+          <ul class="stack-3">
+            <li>每位成员一台 Agent Computer</li>
+            <li>多个岗位的工作流和数字分身</li>
+            <li>约 6–8 周上线</li>
+            <li>FDE 持续优化</li>
+          </ul>
+        </article>
+        <article class="card card--plan span-4">
+          <h3>企业定制</h3>
+          <p class="muted">跨部门、多系统的企业</p>
+          <p class="price"><span class="t-stat">面议</span></p>
+          <a class="btn btn--secondary" href="#faq">查看常见问题</a>
+          <ul class="stack-3">
+            <li>按部门部署 NAS 与权限</li>
+            <li>行业工作流定制</li>
+            <li>按阶段验收</li>
+            <li>驻场或远程交付</li>
+          </ul>
+        </article>
+      </div>
+      </div>
+      <div class="grid faq-row" id="faq">
+        <div class="span-5 stack-4">
+          <p class="t-card">常见问题</p>
+          <p class="muted">数据安全、交付方式和技术门槛，先说清楚。</p>
+          <a class="link" href="#book">还有问题，预约时一起问</a>
+        </div>
+        <div class="faq span-6 start-7">
+          <div class="faq__item"><h3>数据安全吗？会被拿去训练模型吗？</h3><p>数据存在企业自有的 NAS，归企业所有。敏感资料先在本地脱敏，再调用云端模型。</p></div>
+          <div class="faq__item"><h3>AI 会不会乱发邮件、乱操作？</h3><p>不会。对外发送、付款、改报价这类动作默认必须人确认，每一步都有运行记录。</p></div>
+          <div class="faq__item"><h3>我们没有技术团队，能用吗？</h3><p>能。FDE 负责交付，员工在飞书群里 @ 机器人，或在原来的工具里使用。</p></div>
+          <div class="faq__item"><h3>能接我们现有的系统吗？</h3><p>能接邮箱、飞书、企业微信、WhatsApp 和独立站后台；没有接口的网站用浏览器自动操作。</p></div>
+          <div class="faq__item"><h3>项目会不会拖很久？</h3><p>4 到 8 周，分 4 个阶段，影子运行阶段就能看到 AI 与人工的对照数据。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 预约表单 -->
+  <section class="section" id="book" style="--hm: 2" aria-labelledby="book-h">
+    <div class="wrap">
+      <div class="grid">
+        <div class="span-5 stack-4">
+          <h2 id="book-h">预约落地评估</h2>
+          <p class="t-lead">告诉我们最耗人力的那项工作。FDE 会和你一起记录现状耗时，给出能接手的范围和上线周期。</p>
+          <p class="muted">评估时先接入这些数据源，飞书和企业微信也能接。</p>
+          <div class="frame frame--split book__map">
+            <div class="dg" data-dg-still data-diagram='{"layout":"hub","alt":"评估时先接入的数据源：Gmail、WhatsApp、Shopify、YouTube、WordPress 和 PayPal，汇入企业 NAS。","center":{"label":"企业 NAS","icon":"ui:database"},"spokes":[{"label":"Gmail","icon":"gmail"},{"label":"WhatsApp","icon":"whatsapp"},{"label":"Shopify","icon":"shopify"},{"label":"YouTube","icon":"youtube"},{"label":"WordPress","icon":"wordpress"},{"label":"PayPal","icon":"paypal"}]}'></div>
+          </div>
+          <p class="t-small muted">产品名称和标志归各自所有者。</p>
+        </div>
+        <!-- 表单地址待补：拿到表单服务地址后填入 data-endpoint，并删去 mailto -->
+        <form class="form span-6 start-7" action="mailto:hello@zettlab.example" method="post" enctype="text/plain" data-endpoint="" data-sent="你的落地评估预约已提交，我们会在 1 个工作日内联系你。" novalidate>
+          <div class="field"><label for="f-name">姓名</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="f-name-err">
+            <p class="field__error" id="f-name-err" hidden>请填写你的姓名。</p></div>
+          <div class="field"><label for="f-email">工作邮箱</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
+            <p class="field__error" id="f-email-err" hidden>请填写带 @ 的邮箱地址。</p></div>
+          <div class="field"><label for="f-company">公司名称</label>
+            <input id="f-company" name="company" type="text" autocomplete="organization" required aria-describedby="f-company-err">
+            <p class="field__error" id="f-company-err" hidden>请填写公司名称。</p></div>
+          <div class="field"><label for="f-team">团队人数</label>
+            <input id="f-team" name="team" type="text" inputmode="numeric" autocomplete="off" required aria-describedby="f-team-err">
+            <p class="field__error" id="f-team-err" hidden>请用数字填写团队人数。</p></div>
+          <div class="field"><label for="f-job">最想先交给 AI 的工作</label>
+            <input id="f-job" name="job" type="text" autocomplete="off" required aria-describedby="f-job-err">
+            <p class="field__error" id="f-job-err" hidden>请写一项工作，例如物流跟单。</p></div>
+          <div class="btn-row"><button class="btn btn--primary" type="submit">预约落地评估</button></div>
+          <p class="form__status" role="status" data-form-status></p>
+          <p class="t-small muted">我们会在 1 个工作日内回复。</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer closing footer--dark ground-inverse" id="contact" aria-labelledby="close-h">
+  <div class="wrap">
+    <div class="closing__cta">
+      <div class="section-head--split">
+        <div><h2 id="close-h">先算一笔账，再决定要不要做</h2><p class="t-lead">评估免费，4–8 周上线。</p></div>
+        <a class="btn btn--primary" href="#book">预约落地评估<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      </div>
+    </div>
+    <div class="closing__links">
+      <div class="grid">
+        <div class="span-4 stack-4">
+          <a class="nav__logo" href="#top"><img src="assets/brand/zettlab-logo-white.png" alt="Zettlab" width="145" height="24"></a>
+          <p class="footer__lede">深圳市吾云创新科技有限公司</p>
+        </div>
+        <div class="span-2 footer__col"><h3>岗位</h3><ul><li><a href="#desk">工作台</a></li><li><a href="#jobs">岗位工作流</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>算账</h3><ul><li><a href="#roi">成本计算器</a></li><li><a href="#cases">交付行业</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>分身</h3><ul><li><a href="#system">NAS 与 Agent Computer</a></li><li><a href="#twin">数字分身</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>流程</h3><ul><li><a href="#process">落地流程</a></li><li><a href="#pricing">价格</a></li><li><a href="#faq">常见问题</a></li></ul></div>
+      </div>
+      <div class="footer__legal">
+        <span>&copy; 2026 Zettlab</span>
+        <div class="socials"></div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="快捷操作">
+  <a class="btn btn--primary" href="#book">预约落地评估</a>
+</nav>
+
+<script>
+  // ROI 计算器：只用访客自己填的数据，不带任何预设结论
+  (() => {
+    const f = document.querySelector('[data-roi]'); if (!f) return;
+    const fmt = n => Math.round(n).toLocaleString('zh-CN');
+    const num = v => { const n = parseFloat(String(v).replace(/[^\d.]/g, '')); return isFinite(n) ? n : 0; };
+    const run = () => {
+      const people = num(f.people.value), cost = num(f.cost.value), hours = num(f.hours.value), share = num(f.share.value) / 100;
+      f.querySelector('[data-out="people"]').textContent = people + ' 人';
+      f.querySelector('[data-out="hours"]').textContent = hours + ' 小时';
+      f.querySelector('[data-out="share"]').textContent = Math.round(share * 100) + '%';
+      const h = people * hours * 4.33 * share, m = h * cost / 174;
+      f.querySelector('[data-res="hours"]').textContent = fmt(h) + ' 小时';
+      f.querySelector('[data-res="month"]').textContent = fmt(m) + ' 元';
+      f.querySelector('[data-res="year"]').textContent = fmt(m * 12) + ' 元';
+    };
+    f.addEventListener('input', run); run();
+  })();
+</script>
+<script type="module" src="assets/system.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
+<script type="module" src="assets/layout/layout.js"></script>
+<script type="module" src="assets/diagrams/mount.js"></script>
+<script type="module" src="assets/presentation.js"></script>
+</body>
+</html>
