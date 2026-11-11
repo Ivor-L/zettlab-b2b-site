@@ -267,6 +267,11 @@ function revealSections() {
     $$('.ui-doc__page > div', el).forEach((line, index) => enter(line, 280 + index * 70, 8));
     enter($('.ui-doc__note', el), 680, 10);
   });
+  onceVisible($$('[data-hardware-reveal]'), el => {
+    enter(el, 0, 26);
+    $$('.hardware-flow__number', el).forEach((step, index) => enter(step, 140 + index * 120, 8));
+  });
+  onceVisible($$('[data-pain-reveal]'), el => enter(el, 0, 18));
 }
 
 function playExistingDemos() {

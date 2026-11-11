@@ -147,7 +147,7 @@
   .rail > li:last-child .rail__dot::after { background: var(--p-accent); }
   @media (max-width: 1023px) { .rail__dot::before { display: none; } }
 </style>
-<link rel="stylesheet" href="assets/presentation.css?v=20261111-features">
+<link rel="stylesheet" href="assets/presentation.css?v=20261111-story">
 </head>
 <body>
 <!-- type: software
@@ -197,19 +197,27 @@
     </button>
   </section>
 
-  <!-- 02 工作台（app-frame） -->
+  <!-- 02 企业视角：增长成本、知识资产与执行管理 -->
   <section class="section" id="desk" aria-labelledby="desk-h">
     <div class="wrap">
       <div class="grid">
-        <h2 id="desk-h" class="span-5">AI 员工的工作台</h2>
-        <p class="span-6 start-7 muted">夜里的询盘、物流异常和单证缺件，第二天上班前已经处理好。需要人判断的，列在最前面等你确认。<a class="link" href="#jobs">看各岗位能接手的工作</a></p>
+        <h2 id="desk-h" class="span-6">业务增长，<br>不能总靠加人。</h2>
+        <p class="span-6 start-7 muted desk-lead">让 AI 接手重复工作，<br>让经验和数据留在公司。</p>
       </div>
-      <div class="ui app fill" role="img" aria-label="AI 员工的夜间工作队列：十项任务，其中三项等人确认；右侧是给德国客户的物流异常通知草稿" data-ui-pause-host>
+      <ol class="desk-pains" aria-label="企业增长中的三个问题">
+        <li data-pain-reveal><span class="desk-pains__number">01 · 人力成本</span><h3>增量靠加人。</h3><p>业务一增长，人力成本就跟着涨。</p></li>
+        <li data-pain-reveal><span class="desk-pains__number">02 · 知识资产</span><h3>经验跟着人走。</h3><p>骨干一离开，客户与项目经验就断层。</p></li>
+        <li data-pain-reveal><span class="desk-pains__number">03 · 执行管理</span><h3>执行靠人盯。</h3><p>跨部门进度，仍要管理者逐个追问。</p></li>
+      </ol>
+      <div class="desk-actions"><a class="link" href="#roi">算算能省多少人力投入</a><a class="link" href="#jobs">看 AI 能接手哪些岗位</a></div>
+      <details class="desk-example">
+        <summary><span>看一个岗位如何接手</span><span class="desk-example__hint">工作示意 <span aria-hidden="true">＋</span></span></summary>
+      <div class="ui app fill" role="img" aria-label="AI 员工工作示意：集中整理任务，三项待人确认；右侧展示物流异常的原因、处理准备与待确认事项" data-ui-pause-host>
         <div class="app__pane app__pane--list">
           <div class="ui ui-panel ui-win" data-ui="window" data-open="待处理" data-work="处理中" data-done="已完成">
             <div class="ui-win__bar">
               <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="ui-win__crumb">工作台 <i>/</i> <b>昨夜</b></span>
+              <span class="ui-win__crumb">AI 已整理 <i>/</i> <b>等你确认</b></span>
               <span class="ui-spacer"></span>
             </div>
             <div class="ui-win__body">
@@ -238,14 +246,11 @@
         <div class="app__pane app__pane--open">
           <div class="ui ui-doc" data-ui="doc">
             <article class="ui-doc__page">
-              <div class="ui-doc__label">李娜的分身 · 02:14 生成 · 待确认后发送</div>
-              <div class="ui-doc__title">致 Daniel：订单 SO-2611 物流更新</div>
-              <div class="ui-doc__text">Hi Daniel, your order SO-2611 is <mark class="ui-doc__mark is-on">held at German customs</mark> since 8 November.</div>
-              <div class="ui-doc__text">Our forwarder is sending the <mark class="ui-doc__mark" data-kind="依据" data-msg="货代已在 11 月 10 日 01:58 回复确认" data-where="货代微信群">missing customs document</mark> today. We expect delivery by 14 November.</div>
-              <div class="ui-doc__text">We will update you as soon as the parcel moves. Thank you for your patience.</div>
-              <div class="ui-doc__text">Best regards, Li Na</div>
-              <div class="ui-doc__text">附：DHL 轨迹截图 · 合同 · 商业发票</div>
-              <div class="ui-doc__text">抄送：物流负责人</div>
+              <div class="ui-doc__label">工作示意 · 物流跟单 AI · 待你确认</div>
+              <div class="ui-doc__title">这票货卡在清关，处理准备已做好。</div>
+              <div class="ui-doc__text"><strong>发现了什么</strong><br>订单 SO-2611 <mark class="ui-doc__mark is-on">清关超过 48 小时无更新</mark>，已标记为待跟进异常。</div>
+              <div class="ui-doc__text"><strong>AI 已经做了什么</strong><br>核对轨迹、订单台账和货代回复，确认<mark class="ui-doc__mark" data-kind="补件依据" data-msg="货代已回复确认，今天补交缺失的清关文件。" data-where="货代沟通记录 · 01:58">缺失的清关文件今天补交</mark>；给客户的英文邮件草稿和相关附件已备好。</div>
+              <div class="ui-doc__text desk-confirm"><strong>现在只需你确认</strong><br>核实补件安排与预计送达时间，再决定发送。对外通知由你把关。</div>
             </article>
             <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
               <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>依据</span></div>
@@ -255,6 +260,7 @@
           </div>
         </div>
       </div>
+      </details>
     </div>
   </section>
 
@@ -536,24 +542,71 @@
     </div>
   </section>
 
-  <!-- 05 三个支柱：1 NAS + N AC（split-text-left + fanin 图） -->
+  <!-- 05 软硬一体：个人 AC 持续执行，企业 NAS 沉淀知识 -->
   <section class="section" id="system" aria-labelledby="system-h">
     <div class="wrap">
-      <div class="grid">
-        <div class="span-5 stack-6">
-          <h2 id="system-h">1 台 NAS 加 N 台 Agent Computer</h2>
-          <p class="t-lead">每位成员一台 Agent Computer，数字分身在工作现场 7×24 小时运行工作流。整理好的工作数据按权限汇入企业 NAS，成为团队共用的数据资产。</p>
-          <ul class="stack-4">
-            <li>7×24 小时持续运行，夜里的事第二天前处理好</li>
-            <li>数据存在企业自有 NAS，归企业所有</li>
-            <li>成员通过分身协作，少开会、少被打断</li>
-          </ul>
-          <a class="link" href="#faq">看数据安全的问答</a>
-        </div>
-        <div class="frame frame--split span-6 start-7">
-          <div class="dg" data-dg-still data-diagram='{"layout":"fanin","alt":"销售、客服、订单、财务、运营和管理者的 Agent Computer 把工作数据汇入企业 NAS，再供数字分身和经营简报调用。","sources":[{"label":"销售","icon":"ui:user","sub":"Agent Computer"},{"label":"客服","icon":"ui:message-circle","sub":"Agent Computer"},{"label":"订单","icon":"ui:package","sub":"Agent Computer"},{"label":"财务","icon":"ui:receipt","sub":"Agent Computer"},{"label":"运营","icon":"ui:chart-column","sub":"Agent Computer"},{"label":"管理者","icon":"ui:briefcase","sub":"Agent Computer"}],"target":{"label":"企业 NAS","icon":"ui:database"},"then":{"label":"数字分身","icon":"ui:bot","meta":"按权限"}}'></div>
-        </div>
+      <div class="section-head hardware-head">
+        <p class="hardware-eyebrow">软硬一体的 AI 团队方案</p>
+        <h2 id="system-h">1 台 NAS + N 台 Agent Computer</h2>
+        <p>每位成员一台 AC，让数字分身持续执行工作。团队共用一台 NAS，让整理好的资料、经验和成果，积累为企业自己的知识资产。</p>
       </div>
+
+      <div class="hardware-products">
+        <article class="hardware-product hardware-product--ac" data-hardware-reveal>
+          <div class="hardware-product__visual">
+            <img src="assets/hardware/memo-desk.webp" alt="桌面上的 Zettlab Memo Agent Computer，与手机和显示器一起使用" width="1200" height="900" loading="lazy" decoding="async">
+            <span class="hardware-product__badge">每位成员一台</span>
+          </div>
+          <div class="hardware-product__body">
+            <p class="hardware-eyebrow">ZETTLAB MEMO · AGENT COMPUTER</p>
+            <h3>给 AI 员工一台自己的电脑。</h3>
+            <p>AC（Agent Computer）是数字分身的工作主机。把约定好的任务交给它，定时检查、资料整理和长时间工作流，就有了持续运行的地方。</p>
+            <dl class="hardware-facts">
+              <div><dt>7×24 小时</dt><dd>持续运行任务</dd></div>
+              <div><dt>接上工作上下文</dt><dd>串联邮件、会议与文件</dd></div>
+              <div><dt>重要动作交给你</dt><dd>随时查看、补充与确认</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="hardware-product hardware-product--nas" data-hardware-reveal>
+          <div class="hardware-product__visual hardware-product__visual--nas">
+            <img src="assets/hardware/nas-d6.webp" alt="Zettlab D6 NAS 实物，作为团队资料与知识资产的存储设备" width="1200" height="1200" loading="lazy" decoding="async">
+            <span class="hardware-product__badge">团队共用一台</span>
+          </div>
+          <div class="hardware-product__body">
+            <p class="hardware-eyebrow">ZETTLAB NAS · 企业数据底座</p>
+            <h3>让每个人的成果，成为团队的积累。</h3>
+            <p>企业 NAS 承接各岗位整理好的工作数据。客户档案、订单资料、产品知识和项目记录集中保存，再按权限供团队成员与数字分身调用。</p>
+            <dl class="hardware-facts">
+              <div><dt>企业自有</dt><dd>资料存入自己的 NAS</dd></div>
+              <div><dt>统一沉淀</dt><dd>保留工作记录与成果</dd></div>
+              <div><dt>按权限复用</dt><dd>协作时有共同的上下文</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+
+      <div class="hardware-flow" id="hardware-flow" data-hardware-reveal>
+        <div class="hardware-flow__intro"><span class="hardware-eyebrow">从个人执行，到团队协作</span><p>工作持续推进，知识持续积累。</p></div>
+        <ol aria-label="AC 与 NAS 的协作方式">
+          <li><span class="hardware-flow__number">01</span><div><strong>AC 执行</strong><span>各岗位持续处理任务</span></div></li>
+          <li><span class="hardware-flow__number">02</span><div><strong>NAS 沉淀</strong><span>汇集整理后的资料与成果</span></div></li>
+          <li><span class="hardware-flow__number">03</span><div><strong>团队复用</strong><span>数字分身按权限调用</span></div></li>
+        </ol>
+      </div>
+
+      <div class="hardware-scenes">
+        <article class="hardware-scene" data-hardware-reveal>
+          <div class="hardware-scene__image"><img src="assets/hardware/memo-mobile.webp" alt="在户外用手机查看 Zettlab Memo 的任务进度" width="1000" height="750" loading="lazy" decoding="async"></div>
+          <div class="hardware-scene__body"><p class="hardware-eyebrow">随时掌握进展</p><h3>人离开工位，工作也能继续。</h3><p>从手机查看进度、补充信息、确认下一步。需要你判断的事，带着上下文交到你手里。</p></div>
+        </article>
+        <article class="hardware-scene" data-hardware-reveal>
+          <div class="hardware-scene__image"><img src="assets/hardware/memo-dashboard.webp" alt="Zettlab Memo 将任务与工作结果呈现为可视化看板" width="1000" height="556" loading="lazy" decoding="async"></div>
+          <div class="hardware-scene__body"><p class="hardware-eyebrow">让结果看得见</p><h3>从一句任务，到一张工作看板。</h3><p>把定时任务与执行结果变成可视化页面。待办、进度和重点变化集中呈现，打开就知道该关注什么。</p></div>
+        </article>
+      </div>
+      <div class="hardware-foot"><span>AC 负责执行，NAS 负责积累，人负责判断和确认。</span><a class="link" href="#faq">看数据安全的问答</a></div>
     </div>
   </section>
 
@@ -889,6 +942,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
-<script type="module" src="assets/presentation.js?v=20261111-features"></script>
+<script type="module" src="assets/presentation.js?v=20261111-story"></script>
 </body>
 </html>

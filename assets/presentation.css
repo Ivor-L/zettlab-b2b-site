@@ -221,6 +221,126 @@ footer#contact.closing {
   grid-template-rows: auto auto;
 }
 
+/* Lead with the daily work that consumes a team's time, then show the handoff. */
+main > #desk { height: auto; min-height: 0; }
+main > #desk > .wrap { height: auto; }
+#desk .desk-lead { max-width: 36em; align-self: center; font-size: 17px; line-height: 1.9; }
+.desk-pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 0; margin: 40px 0; list-style: none; }
+.desk-pains > li { min-width: 0; display: flex; flex-direction: column; padding-top: 18px; border-top: 1px solid var(--line); }
+.desk-pains__number { font: 400 12px/1.5 var(--font-mono); color: var(--p-muted); }
+.desk-pains h3 { margin-top: 12px; font-size: 23px; line-height: 1.4; }
+.desk-pains p { margin-block: 12px 20px; max-width: 25em; color: var(--p-muted); font-size: 15px; line-height: 1.85; }
+.desk-actions { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: 14px; }
+.desk-example { margin-top: 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.desk-example > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 20px; cursor: pointer; list-style: none; font-size: 15px; }
+.desk-example > summary::-webkit-details-marker { display: none; }
+.desk-example__hint { display: flex; align-items: center; gap: 18px; color: var(--p-muted); font-size: 12px; }
+.desk-example__hint > span { display: block; font-size: 20px; line-height: 1; transition: rotate .25s; }
+.desk-example[open] .desk-example__hint > span { rotate: 45deg; }
+.desk-example[open] { padding-bottom: 24px; }
+#desk .app.ui { flex: none; height: 430px; margin-top: 24px; }
+#desk .app > .app__pane--open > .ui-doc { padding: 28px 24px 72px; }
+#desk .ui-doc__page { padding: 22px; }
+#desk .ui-doc__text { font-size: 14px; line-height: 1.85; }
+#desk .ui-doc__text + .ui-doc__text { margin-top: 14px; }
+#desk .ui-doc__text strong { color: var(--p-ink); font-weight: 500; }
+#desk .desk-confirm { border-top: 1px solid var(--line); padding-top: 14px; }
+#desk .ui-doc .ui-doc__note { display: none; }
+@media (max-width: 1023px) and (min-width: 640px) {
+  #desk .app.ui { grid-template-columns: minmax(0, 4fr) minmax(0, 6fr); grid-template-rows: auto; height: 510px; }
+  #desk .app > .app__pane--list { max-height: none; }
+  #desk .app > .app__pane + .app__pane { border-top: 0; border-left: 1px solid var(--u-line); }
+}
+@media (max-width: 767px) {
+  #desk .desk-lead { font-size: 16px; }
+  .desk-pains { gap: 18px; }
+  .desk-pains h3 { font-size: 20px; }
+  .desk-pains p { font-size: 14px; }
+}
+@media (max-width: 639px) {
+  #desk .desk-lead { font-size: 15px; line-height: 1.9; }
+  .desk-pains { grid-template-columns: minmax(0, 1fr); gap: 22px; margin: 28px 0 32px; }
+  .desk-pains > li { padding-top: 18px; }
+  .desk-pains h3 { margin-top: 10px; }
+  .desk-pains p { max-width: none; margin-block: 10px 12px; }
+  .desk-example { margin-top: 24px; }
+  #desk .app.ui { height: auto; }
+  #desk .app > .app__pane--open > .ui-doc { padding: 16px 14px 56px; }
+  #desk .ui-doc__page { padding: 18px; }
+  #desk .ui-doc__label { font-size: 11px; }
+  #desk .ui-doc__title { margin-block: 10px 18px; font-size: 18px; line-height: 1.6; }
+  #desk .ui-doc__mark { white-space: normal; }
+}
+
+/* Hardware uses real product imagery and grows with its content at every width. */
+main > #system { height: auto; min-height: 0; }
+main > #system > .wrap { height: auto; gap: 28px; }
+#system .hardware-head { max-width: none; margin-bottom: 12px; gap: 18px; }
+#system .hardware-head > p:last-child { max-width: 56em; color: var(--p-muted); }
+#system .hardware-eyebrow { font: 500 12px/1.6 var(--font-text); letter-spacing: .06em; color: var(--p-accent); }
+.hardware-products, .hardware-scenes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.hardware-product { min-width: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; background: color-mix(in oklab, var(--p-bg) 55%, white); }
+.hardware-product__visual { position: relative; height: clamp(260px, 28vw, 380px); overflow: hidden; background: var(--p-surface); }
+.hardware-product__visual > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hardware-product__visual--nas { background: radial-gradient(ellipse at 50% 35%, #f8f9fb, #dce0e7); }
+.hardware-product__visual--nas > img { position: absolute; left: 50%; top: 50%; width: 124%; height: auto; max-width: none; translate: -50% -50%; }
+.hardware-product__badge { position: absolute; top: 20px; left: 20px; padding: 7px 12px; border: 1px solid rgb(255 255 255 / .45); border-radius: 99px; background: rgb(238 240 243 / .9); color: var(--p-ink); font-size: 12px; backdrop-filter: blur(12px); }
+.hardware-product__body { display: flex; flex-direction: column; flex: 1; padding: 30px; }
+.hardware-product__body > h3 { margin-top: 12px; font-size: clamp(21px, 1.8vw, 26px); line-height: 1.45; }
+.hardware-product__body > p:not(.hardware-eyebrow) { margin-block: 16px 24px; color: var(--p-muted); font-size: 15px; line-height: 1.9; }
+.hardware-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; padding-top: 22px; border-top: 1px solid var(--line); margin: auto 0 0; }
+.hardware-facts dt { font-size: 14px; font-weight: 500; }
+.hardware-facts dd { margin: 6px 0 0; color: var(--p-muted); font-size: 12px; line-height: 1.7; }
+.hardware-flow { display: grid; grid-template-columns: minmax(210px, 1fr) minmax(0, 2fr); align-items: center; gap: 36px; padding: 30px; border: 1px solid var(--line); border-radius: var(--r-lg); }
+.hardware-flow__intro > p { margin-top: 8px; font-size: 17px; line-height: 1.6; }
+.hardware-flow ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; list-style: none; padding: 0; }
+.hardware-flow li { position: relative; display: flex; align-items: center; gap: 12px; }
+.hardware-flow li:not(:last-child)::after { content: "→"; position: absolute; right: -20px; color: var(--p-muted); font-size: 16px; }
+.hardware-flow__number { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; color: var(--p-accent); background: color-mix(in oklab, var(--p-accent) 8%, var(--p-bg)); font: 400 12px var(--font-mono); }
+.hardware-flow strong { display: block; font-size: 14px; font-weight: 500; }
+.hardware-flow li div > span { display: block; margin-top: 5px; color: var(--p-muted); font-size: 12px; line-height: 1.6; }
+.hardware-scene { min-width: 0; }
+.hardware-scene__image { aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--r-lg); background: var(--p-surface); }
+.hardware-scene__image > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hardware-scene__body { padding: 24px 4px 4px; }
+.hardware-scene__body > h3 { margin-top: 9px; font-size: 23px; line-height: 1.45; }
+.hardware-scene__body > p:last-child { margin-top: 12px; max-width: 36em; color: var(--p-muted); font-size: 15px; line-height: 1.9; }
+.hardware-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid var(--line); padding-top: 24px; color: var(--p-muted); font-size: 13px; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .hardware-product__visual > img, .hardware-scene__image > img { transition: scale 800ms cubic-bezier(.22, 1, .36, 1); }
+  .hardware-product:hover .hardware-product__visual > img, .hardware-scene:hover img { scale: 1.025; }
+}
+@media (max-width: 1100px) {
+  .hardware-product__body { padding: 24px; }
+  .hardware-facts { gap: 12px; }
+  .hardware-flow { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px; }
+}
+@media (max-width: 767px) {
+  .hardware-products { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .hardware-product__visual { height: auto; aspect-ratio: 20 / 13; }
+  .hardware-scenes { gap: 20px; }
+  .hardware-scene__body > h3 { font-size: 20px; }
+}
+@media (max-width: 639px) {
+  main > #system > .wrap { gap: 24px; }
+  #system .hardware-head { gap: 14px; margin-bottom: 4px; }
+  #system .hardware-head > p:last-child { font-size: 16px; line-height: 1.8; }
+  .hardware-product__body { padding: 22px 20px; }
+  .hardware-product__badge { left: 16px; top: 16px; padding: 6px 10px; font-size: 11px; }
+  .hardware-product__body > p:not(.hardware-eyebrow) { font-size: 14px; }
+  .hardware-facts { gap: 10px; padding-top: 18px; }
+  .hardware-facts dt { font-size: 12px; }
+  .hardware-facts dd { font-size: 11px; }
+  .hardware-flow ol { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .hardware-flow li { gap: 14px; }
+  .hardware-flow li:not(:last-child)::after { content: "↓"; top: 41px; left: 11px; right: auto; font-size: 13px; }
+  .hardware-flow li div > span { margin-top: 3px; }
+  .hardware-scenes { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hardware-scene__body { padding-top: 20px; }
+  .hardware-scene__body > p:last-child { font-size: 14px; }
+  .hardware-foot { align-items: flex-start; font-size: 12px; }
+}
+
 /* Detailed role demonstrations and the custom role builder share one section. */
 main > #jobs { height: auto; min-height: 0; }
 main > #jobs.g2 > .wrap {
