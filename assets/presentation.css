@@ -211,6 +211,10 @@ html[data-buttons] .hero--video .btn--secondary:active {
   border-color: transparent;
 }
 
+/* The appointment form can grow beyond one screen, including validation messages. */
+main > #book { height: auto; min-height: 0; }
+main > #book > .wrap { height: auto; }
+
 /* Let the footer's call to action and navigation determine its height. */
 footer#contact.closing {
   height: auto;
