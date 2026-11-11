@@ -221,23 +221,13 @@ footer#contact.closing {
   grid-template-rows: auto auto;
 }
 
-/* Lead with the daily work that consumes a team's time, then show the handoff. */
+/* Keep the company pain points brief and the workbench directly visible. */
 main > #desk { height: auto; min-height: 0; }
 main > #desk > .wrap { height: auto; }
-#desk .desk-lead { max-width: 36em; align-self: center; font-size: 17px; line-height: 1.9; }
-.desk-pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 0; margin: 40px 0; list-style: none; }
-.desk-pains > li { min-width: 0; display: flex; flex-direction: column; padding-top: 18px; border-top: 1px solid var(--line); }
-.desk-pains__number { font: 400 12px/1.5 var(--font-mono); color: var(--p-muted); }
-.desk-pains h3 { margin-top: 12px; font-size: 23px; line-height: 1.4; }
-.desk-pains p { margin-block: 12px 20px; max-width: 25em; color: var(--p-muted); font-size: 15px; line-height: 1.85; }
+.desk-pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 0; margin: 28px 0 24px; list-style: none; }
+.desk-pains > li { min-width: 0; padding-top: 16px; border-top: 1px solid var(--line); }
+.desk-pains h3 { font-size: 21px; line-height: 1.4; }
 .desk-actions { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: 14px; }
-.desk-example { margin-top: 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.desk-example > summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-block: 20px; cursor: pointer; list-style: none; font-size: 15px; }
-.desk-example > summary::-webkit-details-marker { display: none; }
-.desk-example__hint { display: flex; align-items: center; gap: 18px; color: var(--p-muted); font-size: 12px; }
-.desk-example__hint > span { display: block; font-size: 20px; line-height: 1; transition: rotate .25s; }
-.desk-example[open] .desk-example__hint > span { rotate: 45deg; }
-.desk-example[open] { padding-bottom: 24px; }
 #desk .app.ui { flex: none; height: 430px; margin-top: 24px; }
 #desk .app > .app__pane--open > .ui-doc { padding: 28px 24px 72px; }
 #desk .ui-doc__page { padding: 22px; }
@@ -252,18 +242,13 @@ main > #desk > .wrap { height: auto; }
   #desk .app > .app__pane + .app__pane { border-top: 0; border-left: 1px solid var(--u-line); }
 }
 @media (max-width: 767px) {
-  #desk .desk-lead { font-size: 16px; }
   .desk-pains { gap: 18px; }
   .desk-pains h3 { font-size: 20px; }
-  .desk-pains p { font-size: 14px; }
 }
 @media (max-width: 639px) {
-  #desk .desk-lead { font-size: 15px; line-height: 1.9; }
-  .desk-pains { grid-template-columns: minmax(0, 1fr); gap: 22px; margin: 28px 0 32px; }
-  .desk-pains > li { padding-top: 18px; }
-  .desk-pains h3 { margin-top: 10px; }
-  .desk-pains p { max-width: none; margin-block: 10px 12px; }
-  .desk-example { margin-top: 24px; }
+  .desk-pains { gap: 12px; margin: 24px 0; }
+  .desk-pains > li { padding-top: 12px; }
+  .desk-pains h3 { font-size: 16px; line-height: 1.6; }
   #desk .app.ui { height: auto; }
   #desk .app > .app__pane--open > .ui-doc { padding: 16px 14px 56px; }
   #desk .ui-doc__page { padding: 18px; }
