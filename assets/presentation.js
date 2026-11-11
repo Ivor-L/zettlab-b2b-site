@@ -91,6 +91,83 @@ function videoHero() {
   sync();
 }
 
+
+function featureShowcase() {
+  const root = $('[data-feature-showcase]');
+  if (!root) return;
+  const tabs = $$('[data-feature-tab]', root);
+  const panels = $$('[data-feature-panel]', root);
+  const captions = [[["订单台账", "归集订单与运单，按履约节点持续更新。"], ["物流跟踪", "按你的异常规则，把需要跟进的订单提出来。"], ["异常跟进", "带上异常原因和建议动作，交给负责人处理。"]], [["询盘整理", "看清客户在问什么，再决定先跟进谁。"], ["客服回复", "用产品知识准备草稿，把发送决定交给人。"], ["客户归档", "保留时间、渠道、摘要和原文，接手也有上下文。"]], [["创意研究", "带着产品和市场找参考，留下可用的拍摄思路。"], ["脚本策划", "把参考转成你自己的拍摄计划。"], ["内容复盘", "让本周的数据，成为下周创作的依据。"]], [["单证整理", "把散落的文件，放回对应的订单。"], ["归档检查", "先核对是否齐全，再交给财务。"], ["月度复盘", "把分散的业务记录，连成一份月度报告。"]], [["竞品监控", "用变化记录代替一次次重复打开网页。"], ["用户调研", "把散落的讨论，整理成可以回查的主题。"], ["需求挖掘", "让每条建议，都能回到用户的具体反馈。"]], [["关键词整理", "同一市场、同一来源，才方便持续比较。"], ["趋势观察", "把相对热度和搜索量分别看清。"], ["投放建议", "把重复查数，变成一份可讨论的行动清单。"]]];
+  const selectedSteps = panels.map(() => 0);
+  let active = 0;
+  const list = $('.feature-tabs', root);
+  list.setAttribute('role', 'tablist');
+  list.setAttribute('aria-label', 'AI 员工具体功能');
+  root.classList.add('is-enhanced');
+
+  function showStep(group, index, motion = true) {
+    const panel = panels[group];
+    selectedSteps[group] = index;
+    const scenes = $$('[data-feature-scene]', panel);
+    $$('[data-feature-step]', panel).forEach((button, i) => {
+      button.setAttribute('aria-pressed', String(i === index));
+      button.classList.toggle('is-active', i === index);
+    });
+    scenes.forEach((scene, i) => { scene.hidden = i !== index; });
+    $('[data-feature-count]', panel).textContent = `0${index + 1} / 03`;
+    $('[data-feature-caption]', panel).textContent = captions[group][index][0];
+    $('[data-feature-detail]', panel).textContent = captions[group][index][1];
+    if (motion) {
+      enter(scenes[index], 0, 10);
+      $$('.fd-bar', scenes[index]).forEach((bar, i) => animate(bar,
+        [{ transform: 'scaleY(.18)' }, { transform: 'scaleY(1)' }],
+        { duration: 650, delay: i * 45 }));
+      $$('.fd-timeline li', scenes[index]).forEach((row, i) => enter(row, i * 80, 7));
+      enter($('.fd-note', scenes[index]), 100, 6);
+    }
+  }
+  function showGroup(index, focus = false) {
+    active = index;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('role', 'tab');
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.setAttribute('aria-controls', panels[i].id);
+      tab.tabIndex = i === index ? 0 : -1;
+    });
+    panels.forEach((panel, i) => {
+      panel.hidden = i !== index;
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabs[i].id);
+    });
+    if (focus) tabs[index].focus({ preventScroll: true });
+    showStep(index, selectedSteps[index], false);
+    enter($('.feature-copy', panels[index]), 0, 8);
+    enter($('.feature-demo', panels[index]), 50, 14);
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', event => { event.preventDefault(); showGroup(i); });
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (active + 1) % tabs.length;
+      if (event.key === 'ArrowLeft') next = (active - 1 + tabs.length) % tabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = tabs.length - 1;
+      if (next !== undefined) { event.preventDefault(); showGroup(next, true); }
+    });
+  });
+  panels.forEach((panel, group) => {
+    $$('[data-feature-step]', panel).forEach((step, i) => step.addEventListener('click', () => showStep(group, i)));
+    $('[data-feature-prev]', panel).addEventListener('click', () => showStep(group, (selectedSteps[group] + 2) % 3));
+    $('[data-feature-next]', panel).addEventListener('click', () => showStep(group, (selectedSteps[group] + 1) % 3));
+  });
+  const hashGroup = panels.findIndex(panel => `#${panel.id}` === location.hash);
+  showGroup(hashGroup < 0 ? 0 : hashGroup);
+  addEventListener('hashchange', () => {
+    const target = panels.findIndex(panel => `#${panel.id}` === location.hash);
+    if (target >= 0 && target !== active) showGroup(target);
+  });
+}
+
 function jobBuilder() {
   const root = $('[data-job-builder]');
   if (!root) return;
@@ -322,6 +399,7 @@ function previews() {
 }
 
 videoHero();
+featureShowcase();
 jobBuilder();
 previews();
 countROI();

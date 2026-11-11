@@ -147,7 +147,7 @@
   .rail > li:last-child .rail__dot::after { background: var(--p-accent); }
   @media (max-width: 1023px) { .rail__dot::before { display: none; } }
 </style>
-<link rel="stylesheet" href="assets/presentation.css">
+<link rel="stylesheet" href="assets/presentation.css?v=20261111-features">
 </head>
 <body>
 <!-- type: software
@@ -261,130 +261,207 @@
   <!-- 03 岗位与自定义工作流 -->
   <section class="section g2" id="jobs" aria-labelledby="jobs-h">
     <div class="wrap">
-      <div class="group">
+      <div class="feature-showcase" data-feature-showcase>
         <div class="section-head">
           <h2 id="jobs-h">按岗位接手重复工作。<span class="muted">人只做判断和确认。</span></h2>
+          <p>从每天重复的具体工作开始，看看 AI 员工如何与你配合。</p>
         </div>
-        <div class="grid">
-          <article class="card card--row card--open span-4">
-            <h3>销售：询盘分级和客户建档</h3>
-            <p>邮件、WhatsApp、官网的询盘自动分级，客户资料和每次往来自动归档。</p>
-            <div class="panel">
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-                <div class="ui ui-panel ui-search" data-ui="search">
-                  <div class="ui-search__field">
-                    <svg class="ui-icon" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="m10.5 10.5 3 3"/></svg>
-                    <span class="ui-search__q"><span data-search-q>张总 报价</span><i class="ui-search__caret"></i></span>
-                  </div>
-                  <div class="ui-search__group">客户档案</div>
-                  <ul class="ui-search__list" data-search-list>
-                    <li class="ui-search__row is-sel"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t"><b>张总</b>：第二版<b>报价</b></span><span class="ui-search__m">邮件</span></li>
-                    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M2.5 4.5h11v8h-11z"/><path d="m2.5 5 5.5 4 5.5-4"/></svg></span><span class="ui-search__t">拜访录音 10 月 14 日</span><span class="ui-search__m">录音</span></li>
-                    <li class="ui-search__row"><span class="ui-search__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg></span><span class="ui-search__t">客户表：意向高</span><span class="ui-search__m">表格</span></li>
-                  </ul>
-                </div>
-              </div></div>
+        <nav class="feature-tabs" aria-label="按岗位查看具体功能">
+          <a class="feature-tab" id="feature-tab-logistics" href="#feature-logistics" data-feature-tab="0"><span class="feature-tab__num">01</span>物流履约</a>
+          <a class="feature-tab" id="feature-tab-customers" href="#feature-customers" data-feature-tab="1"><span class="feature-tab__num">02</span>客户与售后</a>
+          <a class="feature-tab" id="feature-tab-content" href="#feature-content" data-feature-tab="2"><span class="feature-tab__num">03</span>内容运营</a>
+          <a class="feature-tab" id="feature-tab-finance" href="#feature-finance" data-feature-tab="3"><span class="feature-tab__num">04</span>财务与经营</a>
+          <a class="feature-tab" id="feature-tab-research" href="#feature-research" data-feature-tab="4"><span class="feature-tab__num">05</span>竞品与用户研究</a>
+          <a class="feature-tab" id="feature-tab-keywords" href="#feature-keywords" data-feature-tab="5"><span class="feature-tab__num">06</span>关键词与投放</a>
+        </nav>
+        <div class="feature-panels">
+          <article class="feature-panel" id="feature-logistics" data-feature-panel="0" aria-labelledby="feature-title-logistics">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">物流履约 AI</p>
+              <h3 id="feature-title-logistics">从订单建账，到签收跟进。</h3>
+              <p class="feature-intro">把分散的订单、运单和异常信息，放进同一条工作流。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-logistics-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>订单状态，一处查清</strong><span>汇总订单与运单信息，记录客户、产品、承运商和负责人。在飞书里输入订单号或运单号，即可查询当前环节和最新进展。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-logistics-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>物流轨迹，持续跟踪</strong><span>按设定频率查询已接入承运商的轨迹，回写最新节点。清关滞留、派送失败或长时间无更新，按业务规则标记优先级。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-logistics-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>异常提醒，跟进有记录</strong><span>在飞书共享待处理订单和每日在途汇总。对异常反馈整理对应语种的邮件草稿，交给负责人确认，再联系客户或货代。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 物流履约</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-logistics-0" data-feature-scene="0" aria-label="订单台账演示">
+                  <div class="feature-scene__head"><p>订单 · 运单 · 负责人</p><h4>订单状态看板</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">订单 / 客户</th><th scope="col">当前节点</th><th scope="col">负责人</th></tr></thead><tbody><tr><td>SO-2618 <small>North Studio</small></td><td><span class="fd-badge ">运输中</span></td><td>销售 A</td></tr><tr><td>SO-2617 <small>Atlas Lab</small></td><td><span class="fd-badge is-warn">清关待跟进</span></td><td>销售 B</td></tr><tr><td>SO-2616 <small>Field Works</small></td><td><span class="fd-badge ">已签收</span></td><td>销售 A</td></tr></tbody></table></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>在飞书里直接问</strong><p>“查一下 SO-2618” → 返回运单、产品、当前状态与负责人。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-logistics-1" data-feature-scene="1" aria-label="物流跟踪演示" hidden>
+                  <div class="feature-scene__head"><p>轨迹同步 · 异常识别</p><h4>物流轨迹与异常</h4></div>
+                  <div class="feature-scene__body"><div class="fd-split-meta"><div><small>SO-2617 / DHL</small><h4>清关节点待跟进</h4></div><span class="fd-badge is-warn">优先处理</span></div><ol class="fd-timeline"><li><i aria-hidden="true"></i><div><strong>已揽收</strong><span>物流轨迹已同步</span></div></li><li><i aria-hidden="true"></i><div><strong>到达目的地</strong><span>等待清关进展</span></div></li><li><i aria-hidden="true"></i><div><strong>清关无新节点</strong><span>达到团队设定的提醒阈值</span></div></li></ol><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>按规则识别异常</strong><p>清关滞留、派送失败、地址异常，分别进入对应跟进队列。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-logistics-2" data-feature-scene="2" aria-label="异常跟进演示" hidden>
+                  <div class="feature-scene__head"><p>提醒 · 邮件草稿 · 处理记录</p><h4>待处理异常</h4></div>
+                  <div class="feature-scene__body"><div class="fd-message"><div class="fd-message-head"><span class="fd-agent">Z</span><strong>物流 AI</strong><span>飞书提醒</span></div><h4>SO-2617 需要跟进清关</h4><p>已附最新轨迹与运单信息，请销售 B 联系客户确认清关材料。</p><span class="fd-badge is-warn">待负责人处理</span></div><div class="fd-draft"><small>英文邮件草稿 · 待审核</small><p>Your shipment requires customs clearance. Please check the required documents with the carrier.</p><div class="fd-draft-foot"><span>附：订单与物流信息</span><b>人工确认后发送 ↗</b></div></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>订单台账</strong><p data-feature-detail>归集订单与运单，按履约节点持续更新。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="物流履约：上一个功能">←</button><button type="button" data-feature-next aria-label="物流履约：下一个功能">→</button></div></div>
             </div>
           </article>
-          <article class="card card--row card--open span-4">
-            <h3>客服：多语言回复草稿</h3>
-            <p>按产品资料和历史回复写好对应语种的草稿，问题自动分派给负责人。</p>
-            <div class="panel">
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-                <div class="ui ui-panel ui-chat" data-ui="chat">
-                  <div class="ui-head"><span class="ui-agent" aria-hidden="true"></span><div class="ui-title">客服 AI</div><span class="ui-chat__online">在线</span><span class="ui-spacer"></span></div>
-                  <div class="ui-chat__body">
-                    <div class="ui-msg ui-msg--me" data-chat-q><span class="ui-msg__text">When will my order arrive?</span></div>
-                    <div class="ui-msg ui-msg--bot" data-chat-a>
-                      <span class="ui-agent ui-msg__av" aria-hidden="true"></span>
-                      <span class="ui-msg__col">
-                        <span class="ui-chat__answer">草稿：预计 <b>11 月 14 日</b>签收，等你确认后发送。</span>
-                        <span class="ui-chat__srcs"><span class="ui-chat__src"><svg class="ui-icon" viewBox="0 0 16 16"><path d="M4 2.5h5l3 3v8H4z"/><path d="M9 2.5v3h3"/></svg>订单台账</span></span>
-                      </span>
-                    </div>
-                  </div>
-                  <div class="ui-chat__input"><span class="ui-chat__ph">写回复</span><span class="ui-chat__send" aria-hidden="true"><svg viewBox="0 0 16 16" width="14" height="14"><path d="M8 13V3.5M3.8 7.5 8 3.3l4.2 4.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-                </div>
-              </div></div>
+          <article class="feature-panel" id="feature-customers" data-feature-panel="1" aria-labelledby="feature-title-customers">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">客户与售后 AI</p>
+              <h3 id="feature-title-customers">从第一条询盘，了解每位客户。</h3>
+              <p class="feature-intro">把回复所需的资料备齐，把每一次交流留下来。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-customers-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>询盘集中，先分清重点</strong><span>汇集已授权渠道的消息，识别语言与询价、交期、售后等意图。结合价格、MOQ、样品和技术问题，辅助判断意向与跟进优先级。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-customers-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>多语言草稿，先给人确认</strong><span>结合产品资料、报价口径与历史交流，准备对应语种的回复草稿。产品参数、付款方式与交期信息有据可查，由人工审核后发送。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-customers-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>客户档案，随交流积累</strong><span>将联系人、询盘摘要、跟进状态及售后记录归入飞书客户表。新客户与跨渠道身份冲突进入人工复核，销售与管理层按权限查看。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 客户与售后</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-customers-0" data-feature-scene="0" aria-label="询盘整理演示">
+                  <div class="feature-scene__head"><p>Gmail · 已接入的会话渠道</p><h4>统一询盘工作台</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">消息 / 意图</th><th scope="col">来源</th><th scope="col">跟进</th></tr></thead><tbody><tr><td>“Price and MOQ?”<small>询价 · 样品需求</small></td><td>Gmail</td><td><span class="fd-badge ">高意向</span></td></tr><tr><td>“Is it compatible?”<small>参数 · 兼容性</small></td><td>已接入会话</td><td><span class="fd-badge ">技术咨询</span></td></tr><tr><td>“Shipping update?”<small>交期 · 物流查询</small></td><td>Gmail</td><td><span class="fd-badge ">老客户</span></td></tr></tbody></table></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>信息先整理好</strong><p>语言、意图、产品、联系信息与原消息一起保留。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-customers-1" data-feature-scene="1" aria-label="客服回复演示" hidden>
+                  <div class="feature-scene__head"><p>产品知识 · 历史交流 · 人工审核</p><h4>回复草稿</h4></div>
+                  <div class="feature-scene__body"><div class="fd-question"><small>客户来信 · English</small><p>Could you share the MOQ and lead time?</p></div><div class="fd-draft"><small>AI 回复草稿</small><p>Thanks for your interest. I’ve prepared the MOQ and lead time details based on our current product information.</p><div class="fd-tags"><span>产品资料</span><span>报价口径</span><span>历史交流</span></div></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>发送前，由你把关</strong><p>审核参数、报价和交期后，再把回复发给客户。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-customers-2" data-feature-scene="2" aria-label="客户归档演示" hidden>
+                  <div class="feature-scene__head"><p>询盘 · 订单 · 售后历史</p><h4>客户交互档案</h4></div>
+                  <div class="feature-scene__body"><div class="fd-profile"><img src="assets/avatars/employee-03.jpg" alt="" width="44" height="44"><div><h4>示例客户 · Alex</h4><p>企业询盘 / 跟进负责人：销售 A</p></div><span class="fd-badge ">报价中</span></div><ol class="fd-timeline"><li><i aria-hidden="true"></i><div><strong>首次询盘</strong><span>Gmail · 产品与应用场景已记录</span></div></li><li><i aria-hidden="true"></i><div><strong>沟通跟进</strong><span>样品与报价讨论，保留原文和附件</span></div></li><li><i aria-hidden="true"></i><div><strong>售后记录</strong><span>关联设备问题、处理过程与结果</span></div></li></ol><div class="fd-access">仅授权销售与管理层可见 <span>身份冲突交由人工复核</span></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>询盘整理</strong><p data-feature-detail>看清客户在问什么，再决定先跟进谁。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="客户与售后：上一个功能">←</button><button type="button" data-feature-next aria-label="客户与售后：下一个功能">→</button></div></div>
             </div>
           </article>
-          <article class="card card--row card--open span-4">
-            <h3>订单：物流跟踪和异常预警</h3>
-            <p>每天自动查轨迹，清关滞留、派送失败按优先级提醒，群里 @ 一下就能查进度。</p>
-            <div class="panel">
-              <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-                <div class="ui ui-notify" data-ui="notify">
-                  <ul class="ui-notify__list" data-notify-list>
-                    <li class="ui-note"><span class="ui-agent ui-note__av" aria-hidden="true"></span><span class="ui-note__text"><span class="ui-note__title">SO-2611 清关滞留<time>02:14</time></span><span class="ui-note__body">DHL · 超过 48 小时未更新</span></span></li>
-                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">SO-2603 已签收<time>00:32</time></span><span class="ui-note__body">FedEx · 已通知客户</span></span></li>
-                    <li class="ui-note"><span class="ui-note__ico"><svg class="ui-icon" viewBox="0 0 16 16"><path d="m3.5 8.4 2.8 2.8 6.2-6.4"/></svg></span><span class="ui-note__text"><span class="ui-note__title">本周在途 38 单<time>昨天</time></span><span class="ui-note__body">台账已自动更新</span></span></li>
-                  </ul>
-                </div>
-              </div></div>
+          <article class="feature-panel" id="feature-content" data-feature-panel="2" aria-labelledby="feature-title-content">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">内容运营 AI</p>
+              <h3 id="feature-title-content">从创意参考，到下一周怎么拍。</h3>
+              <p class="feature-intro">让产品资料、参考内容和发布数据，接上同一轮创作。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-content-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>找到参考，也看懂拍法</strong><span>输入产品、目标市场和受众，筛选相关视频。拆解开头、分镜节奏、卖点和结尾引导，整理可以借鉴的表达方式。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-content-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>结合产品，形成分镜脚本</strong><span>把产品信息与参考拆解转成创意方案，展开画面、口播和字幕，整理拍摄与素材清单，供团队选择方向、继续制作。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-content-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>每周复盘，给出下期建议</strong><span>汇总已授权的播放、留存、互动与评论数据，比较内容表现，归纳用户关注点。在看板呈现总结与下一周选题建议。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 内容运营</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-content-0" data-feature-scene="0" aria-label="创意研究演示">
+                  <div class="feature-scene__head"><p>产品 · 目标市场 · 行业</p><h4>创意参考库</h4></div>
+                  <div class="feature-scene__body"><div class="fd-tags"><span>相机模块</span><span>美国市场</span><span>农业应用</span></div><div class="fd-video-grid"><div class="fd-video-tile"><div class="fd-video-art"><span class="fd-lens"></span><i>▷</i></div><strong>产品应用演示</strong><small>先展示场景，再解释功能</small></div><div class="fd-video-tile"><div class="fd-video-art is-alt"><span class="fd-lens"></span><i>▷</i></div><strong>功能对比测试</strong><small>同一场景，展示效果差异</small></div></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>参考拆解</strong><p>开头钩子 → 场景铺垫 → 卖点呈现 → 行动引导。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-content-1" data-feature-scene="1" aria-label="脚本策划演示" hidden>
+                  <div class="feature-scene__head"><p>画面 · 口播 · 字幕</p><h4>分镜脚本</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">镜头</th><th scope="col">画面</th><th scope="col">口播 / 字幕</th></tr></thead><tbody><tr><td>01</td><td>应用现场特写</td><td>用一个真实场景提出问题</td></tr><tr><td>02</td><td>产品操作与细节</td><td>展示解决问题的关键功能</td></tr><tr><td>03</td><td>结果前后对比</td><td>用可观察的变化说明价值</td></tr><tr><td>04</td><td>产品与使用环境</td><td>引导了解参数与适用场景</td></tr></tbody></table></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>交给创作团队继续制作</strong><p>产品信息、镜头建议、口播和素材清单一起整理。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-content-2" data-feature-scene="2" aria-label="内容复盘演示" hidden>
+                  <div class="feature-scene__head"><p>表现对比 · 评论归纳 · 选题建议</p><h4>内容周报</h4></div>
+                  <div class="feature-scene__body"><div class="fd-metric-grid"><div><small>发布内容</small><strong>3 <em>条</em></strong></div><div><small>表现趋势</small><strong>↗ <em>较上周</em></strong></div><div><small>高频反馈</small><strong>应用场景</strong></div></div><div class="fd-chart" aria-label="示例数据趋势"><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:52%"></span><small>视频 A</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:85%"></span><small>视频 B</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:66%"></span><small>视频 C</small></div></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>下周选题建议</strong><p>围绕评论里反复出现的使用问题，增加一条场景演示与一条操作说明。</p></div></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>创意研究</strong><p data-feature-detail>带着产品和市场找参考，留下可用的拍摄思路。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="内容运营：上一个功能">←</button><button type="button" data-feature-next aria-label="内容运营：下一个功能">→</button></div></div>
+            </div>
+          </article>
+          <article class="feature-panel" id="feature-finance" data-feature-panel="3" aria-labelledby="feature-title-finance">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">财务与经营 AI</p>
+              <h3 id="feature-title-finance">单证有人整理，复盘有据可循。</h3>
+              <p class="feature-intro">把归档与复盘需要的数据，在日常工作中逐步备齐。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-finance-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>单证归类，关联对应订单</strong><span>收集邮箱附件与群内文件，识别合同、商业发票、付款凭证和物流面单，按订单号、客户与月份整理。纸质件上传后一起归档。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-finance-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>缺件检查，月底按月归档</strong><span>按订单所需清单检查齐备度，提醒责任人补交。报关单等按业务规则判断是否需要，月底依照财务命名规范整理归档包。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-finance-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>经营复盘，看清问题在哪</strong><span>在询盘、订单、物流和客户反馈数据齐备后，按约定口径汇总月度表现，归纳客户高频问题，输出经营复盘与改进建议。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 财务与经营</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-finance-0" data-feature-scene="0" aria-label="单证整理演示">
+                  <div class="feature-scene__head"><p>合同 · 发票 · 付款凭证 · 面单</p><h4>订单单证夹</h4></div>
+                  <div class="feature-scene__body"><div class="fd-folder"><span aria-hidden="true">▱</span><div><strong>11 月 / SO-2618 / 示例客户</strong><small>文件按订单与客户归集</small></div></div><div class="fd-row"><span>合同</span><strong>Contract.pdf</strong><span class="fd-badge ">已归类</span></div><div class="fd-row"><span>商业发票</span><strong>CI.pdf</strong><span class="fd-badge ">已归类</span></div><div class="fd-row"><span>付款凭证</span><strong>Payment.pdf</strong><span class="fd-badge ">已归类</span></div><div class="fd-row"><span>国际物流面单</span><strong>Waybill.pdf</strong><span class="fd-badge ">已归类</span></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>纸质单据也能归档</strong><p>先由人工上传，再识别类型并关联订单。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-finance-1" data-feature-scene="1" aria-label="归档检查演示" hidden>
+                  <div class="feature-scene__head"><p>按订单核对 · 按月份归档</p><h4>单证齐备度</h4></div>
+                  <div class="feature-scene__body"><div class="fd-split-meta"><div><small>SO-2618 / 归档检查</small><h4>还差一份国内面单</h4></div><strong class="fd-large">4<span>/5</span></strong></div><div class="fd-progress"><i style="width:80%"></i></div><div class="fd-row"><span>合同 / CI / 付款凭证</span><strong>已齐备</strong></div><div class="fd-row"><span>国际物流面单</span><strong>已归档</strong></div><div class="fd-row"><span>国内物流面单</span><strong>待补交</strong><span class="fd-badge is-warn">提醒负责人</span></div><div class="fd-row"><span>报关单</span><strong>按订单规则核对</strong></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>月底归档包</strong><p>按订单号、客户与下单月份整理，交付财务核对。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-finance-2" data-feature-scene="2" aria-label="月度复盘演示" hidden>
+                  <div class="feature-scene__head"><p>询盘 · 订单 · 履约 · 反馈</p><h4>月度经营复盘</h4></div>
+                  <div class="feature-scene__body"><div class="fd-metric-grid"><div><small>询盘与转化</small><strong>渠道分布</strong></div><div><small>订单与履约</small><strong>交付表现</strong></div><div><small>客户反馈</small><strong>高频问题</strong></div></div><div class="fd-chart" aria-label="示例数据趋势"><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:66%"></span><small>询盘</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:82%"></span><small>订单</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:74%"></span><small>履约</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:49%"></span><small>反馈</small></div></div><div class="fd-report"><small>月度复盘摘要</small><h4>从记录，找到改进方向</h4><p>汇总询盘、订单和物流数据；将邮件与售后反馈中的共性问题，整理成下一步行动。</p></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>单证整理</strong><p data-feature-detail>把散落的文件，放回对应的订单。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="财务与经营：上一个功能">←</button><button type="button" data-feature-next aria-label="财务与经营：下一个功能">→</button></div></div>
+            </div>
+          </article>
+          <article class="feature-panel" id="feature-research" data-feature-panel="4" aria-labelledby="feature-title-research">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">竞品与用户研究 AI</p>
+              <h3 id="feature-title-research">市场的变化，用户的声音。</h3>
+              <p class="feature-intro">把浏览过的信息，整理成产品与运营能用的依据。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-research-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>竞品有变化，及时看到</strong><span>按清单定时检查可访问的官网、产品页和公告，提取价格、规格与新品信息。保留前后差异、页面快照和原始链接。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-research-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>用户反馈，按主题读懂</strong><span>按已授权范围收集 Reddit、论坛及电商评论，清洗去重，归纳功能、质量、文档和售后问题。社区频道先验证可访问性，再确定覆盖范围。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-research-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>从高频痛点，到改进清单</strong><span>将评论和社媒反馈合并分析，提炼未满足的需求，按产品设计、质量、文档与售后输出改进建议，保留来源供团队核验。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 竞品与用户研究</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-research-0" data-feature-scene="0" aria-label="竞品监控演示">
+                  <div class="feature-scene__head"><p>价格 · 产品信息 · 公告</p><h4>竞品变化记录</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">监控页面</th><th scope="col">发现变化</th><th scope="col">留存依据</th></tr></thead><tbody><tr><td>竞品 A / 产品页</td><td>价格字段变化</td><td><span class="fd-badge ">前后快照</span></td></tr><tr><td>竞品 B / 公告</td><td>发布新品信息</td><td><span class="fd-badge ">原文链接</span></td></tr><tr><td>行业论坛 / 订阅</td><td>新增相关讨论</td><td><span class="fd-badge ">主题摘要</span></td></tr></tbody></table></div><div class="fd-diff"><span><small>上次记录</small>产品信息 V1</span><i>→</i><span><small>本次记录</small>产品信息 V2</span></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>只把有变化的内容交给你</strong><p>保留来源与更新时间，便于团队进一步核实。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-research-1" data-feature-scene="1" aria-label="用户调研演示" hidden>
+                  <div class="feature-scene__head"><p>反馈归类 · 原文依据</p><h4>用户声音看板</h4></div>
+                  <div class="feature-scene__body"><div class="fd-tags"><span>Reddit / 论坛</span><span>电商评论</span><span>已授权社区</span></div><div class="fd-voice"><small>产品功能</small><p>“希望可以更方便地接入现有设备。”</p><span>归纳：兼容性与接入说明</span></div><div class="fd-voice"><small>使用文档</small><p>“安装步骤能否再详细一点？”</p><span>归纳：上手教程与操作示例</span></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>示例反馈归类</strong><p>去重、翻译、分主题，保留原文供回查。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-research-2" data-feature-scene="2" aria-label="需求挖掘演示" hidden>
+                  <div class="feature-scene__head"><p>主题洞察 · 优先级 · 反馈依据</p><h4>产品改进建议</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">需求主题</th><th scope="col">改进方向</th><th scope="col">交给谁</th></tr></thead><tbody><tr><td>兼容性反馈</td><td>补充适配清单</td><td>产品团队</td></tr><tr><td>安装与上手</td><td>完善图文教程</td><td>文档团队</td></tr><tr><td>售后共性问题</td><td>补充排查指引</td><td>客服团队</td></tr></tbody></table></div><div class="fd-evidence"><span>社媒讨论</span><span>电商评论</span><span>同类问题聚合</span><strong>→ 改进清单</strong></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>建议有依据，团队做判断</strong><p>按频次与业务关注点排列，链接回具体反馈。</p></div></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>竞品监控</strong><p data-feature-detail>用变化记录代替一次次重复打开网页。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="竞品与用户研究：上一个功能">←</button><button type="button" data-feature-next aria-label="竞品与用户研究：下一个功能">→</button></div></div>
+            </div>
+          </article>
+          <article class="feature-panel" id="feature-keywords" data-feature-panel="5" aria-labelledby="feature-title-keywords">
+            <div class="feature-copy">
+              <p class="feature-eyebrow">关键词与投放 AI</p>
+              <h3 id="feature-title-keywords">先看需求，再决定投放方向。</h3>
+              <p class="feature-intro">持续整理关键词数据，让运营少做重复查询。</p>
+              <ol class="feature-steps">
+                <li><button class="feature-step is-active" type="button" data-feature-step="0" aria-pressed="true" aria-controls="feature-scene-keywords-0"><span class="feature-step__number">01</span><span class="feature-step__copy"><strong>关键词入库，统一数据口径</strong><span>按产品与目标市场建立关键词清单，汇集已授权工具里的月均搜索量、竞争程度和预估点击成本，记录来源与更新时间。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="1" aria-pressed="false" aria-controls="feature-scene-keywords-1"><span class="feature-step__number">02</span><span class="feature-step__copy"><strong>跟踪热度，看见趋势变化</strong><span>结合 Google Trends 观察相对热度与季节性，再与关键词工具的月均搜索量分开呈现，辅助判断需求正在上升还是回落。</span></span></button></li>
+                <li><button class="feature-step" type="button" data-feature-step="2" aria-pressed="false" aria-controls="feature-scene-keywords-2"><span class="feature-step__number">03</span><span class="feature-step__copy"><strong>每日整理，给出测试建议</strong><span>按约定阈值标记低潜力词，推荐相关长尾关键词。输出“建议测试、继续观察、暂不优先投放”等建议，由运营决定下一步。</span></span></button></li>
+              </ol>
+            </div>
+            <div class="feature-visual">
+              <div class="feature-orbit" aria-hidden="true"></div>
+              <div class="feature-demo">
+                <div class="feature-demo__bar"><span class="fd-agent">Z</span><span>Zettlab <b>/</b> 关键词与投放</span><span class="feature-demo__sample">功能示意</span></div>
+                <section class="feature-scene" id="feature-scene-keywords-0" data-feature-scene="0" aria-label="关键词整理演示">
+                  <div class="feature-scene__head"><p>月均搜索量 · 竞争程度 · 预估点击成本</p><h4>关键词工作台</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">关键词</th><th scope="col">月均搜索量</th><th scope="col">竞争程度</th></tr></thead><tbody><tr><td>robot camera</td><td>1,000–10,000</td><td><span class="fd-badge ">中</span></td></tr><tr><td>agriculture camera</td><td>100–1,000</td><td><span class="fd-badge ">低</span></td></tr><tr><td>vision module</td><td>1,000–10,000</td><td><span class="fd-badge ">高</span></td></tr></tbody></table></div><div class="fd-access">示例市场：美国 <span>数据来源与更新时间随记录保留</span></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>先对齐口径</strong><p>搜索量、竞争程度和预估点击成本，使用同一工具口径比较。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-keywords-1" data-feature-scene="1" aria-label="趋势观察演示" hidden>
+                  <div class="feature-scene__head"><p>相对热度 · 周期变化</p><h4>关键词趋势</h4></div>
+                  <div class="feature-scene__body"><div class="fd-split-meta"><div><small>Google Trends / 相对热度示例</small><h4>观察需求变化</h4></div><span class="fd-badge ">持续跟踪</span></div><div class="fd-chart" aria-label="示例数据趋势"><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:33%"></span><small>第 1 周</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:42%"></span><small>第 2 周</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:38%"></span><small>第 3 周</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:59%"></span><small>第 4 周</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:75%"></span><small>第 5 周</small></div><div class="fd-bar-col"><span class="fd-bar" style="--bar-height:88%"></span><small>第 6 周</small></div></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>相对热度 ≠ 绝对搜索量</strong><p>趋势与关键词工具的月均搜索量分别呈现，再结合市场与季节判断。</p></div></div></div>
+                </section>
+                <section class="feature-scene" id="feature-scene-keywords-2" data-feature-scene="2" aria-label="投放建议演示" hidden>
+                  <div class="feature-scene__head"><p>建议测试 · 继续观察 · 暂不优先</p><h4>关键词日报</h4></div>
+                  <div class="feature-scene__body"><div class="fd-table-wrap"><table class="fd-table"><thead><tr><th scope="col">关键词方向</th><th scope="col">建议</th><th scope="col">判断依据</th></tr></thead><tbody><tr><td>场景 + 产品长尾词</td><td><span class="fd-badge ">建议测试</span></td><td>相关度较高</td></tr><tr><td>核心产品词</td><td><span class="fd-badge ">继续观察</span></td><td>趋势需持续比对</td></tr><tr><td>低需求泛词</td><td><span class="fd-badge is-warn">暂不优先</span></td><td>低于约定阈值</td></tr></tbody></table></div><div class="fd-note"><span class="fd-spark" aria-hidden="true">✧</span><div><strong>运营确认后执行</strong><p>每日汇总数据与替代词建议，投放决定由团队做出。</p></div></div></div>
+                </section>
+              </div>
+              <div class="feature-caption"><div><span class="feature-caption__count" data-feature-count>01 / 03</span><strong data-feature-caption>关键词整理</strong><p data-feature-detail>同一市场、同一来源，才方便持续比较。</p></div><div class="feature-arrows"><button type="button" data-feature-prev aria-label="关键词与投放：上一个功能">←</button><button type="button" data-feature-next aria-label="关键词与投放：下一个功能">→</button></div></div>
             </div>
           </article>
         </div>
-      </div>
-      <div class="grid">
-        <article class="card card--row card--open span-4">
-          <h3>财务：单证自动归档</h3>
-          <p>合同、发票、箱单、报关单、面单按订单和月份整理，缺件提前提醒。</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-              <div class="ui ui-panel ui-checks" data-ui="checklist">
-                <div class="ui-checks__head"><div class="ui-title">SO-2598 单证</div><span class="ui-spacer"></span><div class="ui-meta" data-checks-count>3 / 5 份</div></div>
-                <div class="ui-checks__bar"><i data-checks-bar style="--k:0.6"></i></div>
-                <ul class="ui-checks__list">
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">合同</span></li>
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">商业发票</span></li>
-                  <li class="ui-check is-done"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">付款记录</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">国际物流面单</span></li>
-                  <li class="ui-check"><span class="ui-check__box"><svg viewBox="0 0 16 16"><path d="m4.5 8.2 2.3 2.3 4.7-5"/></svg></span><span class="ui-check__label">报关单</span></li>
-                </ul>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <h3>运营：数据周报和竞品监控</h3>
-          <p>每周汇总播放、互动和询盘，竞品官网的价格和新品有变化就推送。</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-              <div class="ui ui-panel ui-stat" data-ui="stat" data-from="12" data-to="18" data-suffix=" 条">
-                <div class="ui-stat__head">
-                  <div class="ui-stat__top"><span class="ui-stat__label">视频带来的询盘</span><span class="ui-stat__range">本周</span></div>
-                  <div class="ui-stat__line"><span class="ui-stat__num" data-stat-num>18 条</span><span class="ui-stat__sub">上周 12 条</span></div>
-                </div>
-                <div class="ui-stat__chart">
-                  <svg class="ui-stat__svg" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
-                    <path class="ui-stat__grid" d="M0 30.5H400M0 60.5H400M0 90.5H400"/>
-                    <path class="ui-stat__cover" fill-rule="evenodd" d=""/>
-                    <g class="ui-stat__bars"><rect rx="3" x="0.00" y="60" width="44" height="60"/><rect rx="3" x="59" y="48" width="44" height="72"/><rect rx="3" x="118" y="70" width="44" height="50"/><rect rx="3" x="177" y="40" width="44" height="80"/><rect rx="3" x="236" y="52" width="44" height="68"/><rect rx="3" x="295" y="30" width="44" height="90"/><rect rx="3" x="354" y="22" width="44" height="98"/></g>
-                  </svg>
-                  <div class="ui-stat__axis" aria-hidden="true"><span>周一</span><span>周四</span><span>今天</span></div>
-                </div>
-              </div>
-            </div></div>
-          </div>
-        </article>
-        <article class="card card--row card--open span-4">
-          <h3>管理者：设定 AI 能做什么</h3>
-          <p>哪些事 AI 直接做，哪些必须人确认，由你按岗位逐项打开。</p>
-          <div class="panel">
-            <div class="stage stage--fade-b"><div class="at-rise fit" style="--fit-max:340px;--ax:max(24px, 50% - 170px);--ay:32px;--ay-sm:16px">
-              <div class="ui ui-panel ui-toggles" data-ui="toggles">
-                <div class="ui-head"><svg class="ui-icon ui-toggles__ico" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.8 13 4v3.6c0 3-2.1 5.4-5 6.6-2.9-1.2-5-3.6-5-6.6V4z"/><path d="m5.8 8 1.6 1.6 3-3.2"/></svg><div class="ui-title">销售 AI 的权限</div><span class="ui-spacer"></span><div class="ui-meta" data-tg-count>3 / 5 项开启</div></div>
-                <ul class="ui-toggles__list">
-                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">自动建档</span><span class="ui-tg__sub">首次询盘起</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="自动建档" tabindex="-1"><i></i></button></li>
-                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">写回复草稿</span><span class="ui-tg__sub">中英日三种语言</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="写回复草稿" tabindex="-1"><i></i></button></li>
-                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">直接对外发送</span><span class="ui-tg__sub">关闭时必须人确认</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="直接对外发送" tabindex="-1"><i></i></button></li>
-                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">每日跟进提醒</span><span class="ui-tg__sub">早上 9:00</span></span><button class="ui-switch is-on" type="button" role="switch" aria-checked="true" aria-label="每日跟进提醒" tabindex="-1"><i></i></button></li>
-                  <li class="ui-tg"><span class="ui-tg__text"><span class="ui-tg__label">修改报价金额</span><span class="ui-tg__sub">始终需要人确认</span></span><button class="ui-switch" type="button" role="switch" aria-checked="false" aria-label="修改报价金额" tabindex="-1"><i></i></button></li>
-                </ul>
-              </div>
-            </div></div>
-          </div>
-        </article>
       </div>
       <div class="job-builder" data-job-builder aria-labelledby="job-builder-h">
         <div class="job-builder__intro">
@@ -812,6 +889,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
-<script type="module" src="assets/presentation.js"></script>
+<script type="module" src="assets/presentation.js?v=20261111-features"></script>
 </body>
 </html>
