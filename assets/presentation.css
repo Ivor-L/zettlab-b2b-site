@@ -225,9 +225,11 @@ footer#contact.closing {
   grid-template-rows: auto auto;
 }
 
-/* Present the workbench directly, with space determined by the illustration. */
+/* A concise workbench introduction follows the role demonstrations. */
 main > #desk { height: auto; min-height: 0; padding-block: clamp(32px, 4vw, 56px); }
 main > #desk > .wrap { height: auto; }
+#desk .section-head { margin-bottom: 32px; }
+#desk .section-head > p { color: var(--p-muted); font-size: 16px; line-height: 1.8; }
 #desk .app.ui { flex: none; height: 430px; margin-top: 0; }
 #desk .app > .app__pane--open > .ui-doc { padding: 28px 24px 72px; }
 #desk .ui-doc__page { padding: 22px; }

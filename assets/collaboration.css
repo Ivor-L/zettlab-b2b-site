@@ -1,0 +1,81 @@
+/* Employees and their own ACs form a network around shared company knowledge. */
+main > #network { height: auto; min-height: 0; padding-block: 88px 72px; }
+main > #network > .wrap { height: auto; }
+#network .section-head { max-width: 100%; margin-bottom: 40px; }
+#network .section-head > p { max-width: 54em; color: var(--p-muted); font-size: 17px; line-height: 1.8; }
+.collaboration-network { --network-line: color-mix(in srgb, var(--p-accent) 34%, transparent); width: 100%; }
+.network-columns { display: grid; grid-template-columns: 24% 38% 38%; margin-bottom: 14px; font-size: 12px; color: var(--p-muted); letter-spacing: .04em; }
+.network-columns > :nth-child(2) { padding-left: 29%; }
+.network-columns > :nth-child(3) { text-align: center; padding-left: 29%; }
+.network-board { position: relative; height: 500px; }
+.network-wires { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; fill: none; color: var(--p-accent); }
+.network-wires path { vector-effect: non-scaling-stroke; }
+.network-wire-pair, .network-wire-asset { stroke: var(--network-line); stroke-width: 1.5; marker-start: url(#network-arrow); marker-end: url(#network-arrow); }
+.network-wire-peer { stroke: var(--network-line); stroke-width: 1.5; stroke-dasharray: 4 6; marker-start: url(#network-arrow); marker-end: url(#network-arrow); }
+.network-wire-flow { stroke: var(--p-accent); stroke-width: 2; stroke-dasharray: 9 400; stroke-linecap: round; animation: network-transmit 12s linear infinite; opacity: .65; }
+.network-member, .network-ac { position: absolute; top: calc(20px + var(--row) * 160px); height: 118px; display: flex; align-items: center; gap: 14px; background: var(--p-bg); border: 1px solid var(--line, rgb(11 12 14 / .12)); border-radius: 14px; }
+.network-member { left: 0; width: 24%; padding: 20px; }
+.network-member > img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; flex: none; }
+.network-member strong, .network-ac strong { display: block; font-size: 17px; font-weight: 500; line-height: 1.5; }
+.network-member span { display: block; margin-top: 7px; color: var(--p-muted); font-size: 12px; line-height: 1.6; }
+.network-ac { left: 35%; width: 29%; padding: 16px; border-color: color-mix(in srgb, var(--p-accent) 20%, transparent); background: color-mix(in srgb, var(--p-bg) 90%, white); box-shadow: 0 10px 30px -24px var(--p-accent); }
+.network-ac__device { flex: none; display: grid; place-items: center; width: 50px; height: 50px; border: 1px solid rgb(255 255 255 / .9); border-radius: 15px; background: linear-gradient(145deg, #fcfcfd, #e2e5ea); box-shadow: 0 5px 0 -1px #d4d7df, 0 8px 14px rgb(11 12 14 / .08); }
+.network-ac__device img { width: 24px; height: auto; opacity: .65; }
+.network-ac strong { font-size: 16px; }
+.network-ac em { margin-left: 5px; color: var(--p-accent); font: 11px/1.5 var(--font-mono, monospace); white-space: nowrap; }
+.network-ac span, .network-ac small { display: block; font-size: 12px; line-height: 1.6; color: var(--p-muted); }
+.network-ac span { margin-block: 5px 2px; color: var(--p-ink); }
+.network-ac small { font-size: 10px; }
+.network-peer-label { position: absolute; left: 56%; top: 153px; width: 10%; padding: 7px 0; color: var(--p-accent); background: var(--p-bg); font-size: 10px; line-height: 1.5; text-align: center; }
+.network-nas { position: absolute; top: 82px; right: 0; width: 26%; height: 320px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid var(--line, rgb(11 12 14 / .12)); border-radius: 18px; background: radial-gradient(ellipse at 50% 30%, #fafbfc, var(--p-bg) 75%); }
+.network-nas > img { width: 88%; height: 160px; object-fit: cover; object-position: 50% 44%; }
+.network-nas > strong { margin-top: 2px; font-size: 24px; font-weight: 500; }
+.network-nas > span { margin-top: 9px; color: var(--p-muted); font-size: 12px; }
+.network-nas > div { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line, rgb(11 12 14 / .12)); width: 84%; font-size: 13px; }
+.network-nas small { display: block; margin-top: 5px; font-size: 11px; color: var(--p-muted); }
+.network-context { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; border-top: 1px solid var(--line, rgb(11 12 14 / .12)); padding-top: 24px; font-size: 14px; line-height: 1.8; }
+.network-context b { margin-right: 12px; color: var(--p-accent); font-weight: 500; }
+.network-context small { display: block; margin-top: 5px; color: var(--p-muted); font-size: 12px; }
+@keyframes network-transmit { to { stroke-dashoffset: -818; } }
+@media (max-width: 1050px) and (min-width: 721px) {
+ .network-member { padding: 12px; gap: 9px; }
+ .network-member > img { width: 34px; height: 34px; }
+ .network-member strong { font-size: 14px; }
+ .network-member span { font-size: 10px; }
+ .network-ac { padding: 12px; gap: 9px; }
+ .network-ac__device { width: 34px; height: 40px; }
+ .network-ac strong { font-size: 14px; }
+ .network-ac span, .network-ac small { font-size: 10px; }
+ .network-ac em { font-size: 9px; }
+}
+@media (max-width: 720px) {
+ main > #network { padding-block: 56px 32px; }
+ #network .section-head { margin-bottom: 28px; }
+ #network .section-head > p { font-size: 15px; }
+ .network-columns { grid-template-columns: 43% 57%; }
+ .network-columns > :nth-child(2) { padding-left: 12%; }
+ .network-columns > :nth-child(3), .network-wires, .network-peer-label { display: none; }
+ .network-board { height: auto; display: grid; grid-template-columns: 43% 49%; column-gap: 8%; row-gap: 28px; padding-top: 10px; }
+ .network-member, .network-ac { position: relative; top: auto; left: auto; width: 100%; height: 118px; padding: 12px; }
+ .network-member { flex-direction: column; align-items: start; gap: 6px; }
+ .network-member > img { width: 32px; height: 32px; }
+ .network-member strong { font-size: 14px; }
+ .network-member span { margin-top: 3px; font-size: 9px; }
+ .network-member::after { content: '↔'; position: absolute; right: -17%; top: 42%; color: var(--p-accent); }
+ .network-ac { gap: 8px; }
+ .network-ac__device { width: 32px; height: 36px; border-radius: 11px; }
+ .network-ac__device img { width: 17px; }
+ .network-ac strong { font-size: 13px; }
+ .network-ac em { display: block; margin-left: 0; font-size: 10px; }
+ .network-ac span { font-size: 10px; }
+ .network-ac small { font-size: 9px; }
+ .network-ac::after { content: ''; position: absolute; left: 50%; top: 100%; height: 28px; width: 1px; border-left: 1px dashed var(--p-accent); opacity: .45; }
+ .network-nas { position: relative; top: auto; right: auto; grid-column: 1 / -1; width: 100%; height: auto; min-height: 250px; margin-top: 4px; padding: 20px; }
+ .network-nas > img { width: 175px; height: 120px; }
+ .network-nas > strong { font-size: 21px; }
+ .network-nas > div { margin-top: 15px; padding-top: 12px; }
+ .network-context { grid-template-columns: 1fr; gap: 18px; margin-top: 24px; font-size: 12px; }
+ .network-context b { display: block; }
+ .network-context small { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) { .network-wire-flow { animation: none; } }

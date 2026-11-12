@@ -147,7 +147,8 @@
   .rail > li:last-child .rail__dot::after { background: var(--p-accent); }
   @media (max-width: 1023px) { .rail__dot::before { display: none; } }
 </style>
-<link rel="stylesheet" href="assets/presentation.css?v=20261112-workbench">
+<link rel="stylesheet" href="assets/presentation.css?v=20261112-workbench-placement">
+<link rel="stylesheet" href="assets/collaboration.css?v=20261112-network">
 </head>
 <body>
 <!-- type: software
@@ -197,61 +198,27 @@
     </button>
   </section>
 
-  <!-- 02 直接展示 AI 员工工作台 -->
-  <section class="section" id="desk" aria-label="AI 员工工作台">
+  <!-- 企业协作网络 -->
+  <section class="section" id="network" aria-labelledby="network-h">
     <div class="wrap">
-      <div class="ui app fill" role="img" aria-label="AI 员工工作示意：集中整理任务，三项待人确认；右侧展示物流异常的原因、处理准备与待确认事项" data-ui-pause-host>
-        <div class="app__pane app__pane--list">
-          <div class="ui ui-panel ui-win" data-ui="window" data-open="待处理" data-work="处理中" data-done="已完成">
-            <div class="ui-win__bar">
-              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
-              <span class="ui-win__crumb">AI 已整理 <i>/</i> <b>等你确认</b></span>
-              <span class="ui-spacer"></span>
-            </div>
-            <div class="ui-win__body">
-              <nav class="ui-win__side" aria-hidden="true">
-                <span class="ui-win__nav is-on">全部<em>10</em></span>
-                <span class="ui-win__nav">待确认<em>3</em></span>
-                <span class="ui-win__nav">已完成<em>6</em></span>
-              </nav>
-              <div class="ui-win__main">
-                <ul class="ui-win__rows">
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-01.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">李娜的分身</span><span class="ui-win__sub">SO-2611 清关滞留，客户通知草稿</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">02:14</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-02.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">王磊的分身</span><span class="ui-win__sub">10 月单证包缺 2 份报关单</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">03:05</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-03.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">客服 AI</span><span class="ui-win__sub">7 封英文咨询，回复草稿已备好</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">04:30</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-04.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">陈思的分身</span><span class="ui-win__sub">3 条 WhatsApp 询盘，已分级建档</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">01:42</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-05.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">运营 AI</span><span class="ui-win__sub">竞品官网 2 处价格变动</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:00</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-06.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">采购 AI</span><span class="ui-win__sub">3 家供应商报价已汇总比对</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:20</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-07.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">市场 AI</span><span class="ui-win__sub">社群新帖 46 条，归纳 5 个需求</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:10</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-08.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">财务 AI</span><span class="ui-win__sub">报销单据 12 张，核对完成</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:40</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-09.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">经营简报</span><span class="ui-win__sub">昨日询盘、订单与反馈汇总</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">07:30</span></li>
-                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-10.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">销售 AI</span><span class="ui-win__sub">5 位客户今天到期跟进</span><span class="ui-win__st" data-st>待处理</span><span class="ui-win__age">08:00</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="app__pane app__pane--open">
-          <div class="ui ui-doc" data-ui="doc">
-            <article class="ui-doc__page">
-              <div class="ui-doc__label">工作示意 · 物流跟单 AI · 待你确认</div>
-              <div class="ui-doc__title">这票货卡在清关，处理准备已做好。</div>
-              <div class="ui-doc__text"><strong>发现了什么</strong><br>订单 SO-2611 <mark class="ui-doc__mark is-on">清关超过 48 小时无更新</mark>，已标记为待跟进异常。</div>
-              <div class="ui-doc__text"><strong>AI 已经做了什么</strong><br>核对轨迹、订单台账和货代回复，确认<mark class="ui-doc__mark" data-kind="补件依据" data-msg="货代已回复确认，今天补交缺失的清关文件。" data-where="货代沟通记录 · 01:58">缺失的清关文件今天补交</mark>；给客户的英文邮件草稿和相关附件已备好。</div>
-              <div class="ui-doc__text desk-confirm"><strong>现在只需你确认</strong><br>核实补件安排与预计送达时间，再决定发送。对外通知由你把关。</div>
-            </article>
-            <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
-              <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>依据</span></div>
-              <div class="ui-doc__msg" data-doc-msg>DHL 轨迹 11 月 8 日起停在清关，超过 48 小时阈值。</div>
-              <div class="ui-doc__where" data-doc-where>DHL 官网轨迹 · 订单台账</div>
-            </aside>
-          </div>
-        </div>
-      </div>
+      <div class="section-head"><h2 id="network-h">每位员工一个 AC，<span class="muted">连成企业协作网络。</span></h2><p>人负责决策，AC 全天候接手重复工作。个人上下文持续积累，团队成果汇入企业 NAS。</p></div>
+<div class="collaboration-network" role="img" aria-label="企业协作网络：每位员工与专属 AC 双向协作，员工负责决策，AC 全天候处理重复工作并保存个人上下文。各 AC 通过 NAS 沉淀并按权限复用企业数据，也能相互传递信息。">
+<div class="network-columns" aria-hidden="true"><span>员工负责决策</span><span>AC 持续执行与记忆</span><span>NAS 沉淀企业资产</span></div>
+<div class="network-board">
+<svg class="network-wires network-wires--desktop" viewBox="0 0 1100 500" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="network-arrow" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M1 1 7 4 1 7" fill="none" stroke="currentColor" stroke-width="1.4"/></marker></defs><g class="network-wire-pair"><path d="M264 79H372"/><path d="M264 239H372"/><path d="M264 399H372"/></g><g class="network-wire-asset"><path d="M705 79H745Q775 79 775 109V209Q775 239 815 239"/><path d="M705 239H815"/><path d="M705 399H745Q775 399 775 369V269Q775 239 815 239"/></g><path class="network-wire-peer" d="M682 142V336"/><g class="network-wire-flow"><path d="M264 79H372"/><path d="M264 239H372"/><path d="M264 399H372"/><path d="M705 79H745Q775 79 775 109V209Q775 239 815 239"/><path d="M705 399H745Q775 399 775 369V269Q775 239 815 239"/></g></svg>
+<div class="network-member" style="--row:0"><img src="assets/avatars/employee-01.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>销售同事</strong><span>判断方向 · 确认关键动作</span></div></div>
+<div class="network-ac" style="--row:0"><div class="network-ac__device" aria-hidden="true"><img src="assets/brand/zettlab-mark.png" alt="" width="26" height="26"></div><div><strong>专属 AC <em>7×24h</em></strong><span>询盘整理、客户跟进</span><small>客户往来与报价记录</small></div></div><div class="network-member" style="--row:1"><img src="assets/avatars/employee-02.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>运营同事</strong><span>判断方向 · 确认关键动作</span></div></div>
+<div class="network-ac" style="--row:1"><div class="network-ac__device" aria-hidden="true"><img src="assets/brand/zettlab-mark.png" alt="" width="26" height="26"></div><div><strong>专属 AC <em>7×24h</em></strong><span>内容整理、市场研究</span><small>产品资料与运营经验</small></div></div><div class="network-member" style="--row:2"><img src="assets/avatars/employee-03.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>财务同事</strong><span>判断方向 · 确认关键动作</span></div></div>
+<div class="network-ac" style="--row:2"><div class="network-ac__device" aria-hidden="true"><img src="assets/brand/zettlab-mark.png" alt="" width="26" height="26"></div><div><strong>专属 AC <em>7×24h</em></strong><span>单证归档、经营汇总</span><small>订单单证与核对规则</small></div></div>
+<div class="network-peer-label">AC 之间传递信息</div>
+<div class="network-nas"><img src="assets/hardware/nas-d6.webp" alt="Zettlab 企业 NAS" width="240" height="180" loading="lazy"><strong>企业 NAS</strong><span>客户 · 订单 · 知识 · 工作成果</span><div>企业自有数据资产<small>按权限沉淀、共享与复用</small></div></div>
+</div>
+<div class="network-context"><span><b>个人上下文</b> AC 留存每位成员的全量工作上下文<small>覆盖已接入的邮件、沟通、文件和执行记录</small></span><span><b>团队协作</b> 成员通过各自 AC 传递信息<small>关键动作由人确认，数据按权限流转</small></span></div>
+</div>
     </div>
   </section>
 
-  <!-- 03 岗位与自定义工作流 -->
+  <!-- 02 岗位与自定义工作流 -->
   <section class="section g2" id="jobs" aria-labelledby="jobs-h">
     <div class="wrap">
       <div class="feature-showcase" data-feature-showcase>
@@ -484,6 +451,64 @@
               <div class="job-builder__connected"><span data-job-count>3 个数据源已连接</span><span aria-hidden="true">↗</span></div>
             </div>
             <div class="job-builder__steps"><span>收集资料</span><span>生成草稿</span><span>等你确认</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 岗位展示后的 AI 员工工作台 -->
+  <section class="section" id="desk" aria-labelledby="desk-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="desk-h">AI 先处理，<span class="muted">你来确认。</span></h2>
+        <p>任务进度、处理结果与待确认事项，集中在一个工作台。处理依据和下一步清晰呈现，关键动作由你把关。</p>
+      </div>
+      <div class="ui app fill" role="img" aria-label="AI 员工工作示意：集中整理任务，三项待人确认；右侧展示物流异常的原因、处理准备与待确认事项" data-ui-pause-host>
+        <div class="app__pane app__pane--list">
+          <div class="ui ui-panel ui-win" data-ui="window" data-open="待处理" data-work="处理中" data-done="已完成">
+            <div class="ui-win__bar">
+              <span class="ui-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="ui-win__crumb">AI 已整理 <i>/</i> <b>等你确认</b></span>
+              <span class="ui-spacer"></span>
+            </div>
+            <div class="ui-win__body">
+              <nav class="ui-win__side" aria-hidden="true">
+                <span class="ui-win__nav is-on">全部<em>10</em></span>
+                <span class="ui-win__nav">待确认<em>3</em></span>
+                <span class="ui-win__nav">已完成<em>6</em></span>
+              </nav>
+              <div class="ui-win__main">
+                <ul class="ui-win__rows">
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-01.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">李娜的分身</span><span class="ui-win__sub">SO-2611 清关滞留，客户通知草稿</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">02:14</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-02.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">王磊的分身</span><span class="ui-win__sub">10 月单证包缺 2 份报关单</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">03:05</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-03.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">客服 AI</span><span class="ui-win__sub">7 封英文咨询，回复草稿已备好</span><span class="ui-win__st is-you" data-st>待确认</span><span class="ui-win__age">04:30</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-04.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">陈思的分身</span><span class="ui-win__sub">3 条 WhatsApp 询盘，已分级建档</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">01:42</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-05.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">运营 AI</span><span class="ui-win__sub">竞品官网 2 处价格变动</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:00</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-06.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">采购 AI</span><span class="ui-win__sub">3 家供应商报价已汇总比对</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">05:20</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-07.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">市场 AI</span><span class="ui-win__sub">社群新帖 46 条，归纳 5 个需求</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:10</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-08.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">财务 AI</span><span class="ui-win__sub">报销单据 12 张，核对完成</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">06:40</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-09.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">经营简报</span><span class="ui-win__sub">昨日询盘、订单与反馈汇总</span><span class="ui-win__st is-done" data-st>已完成</span><span class="ui-win__age">07:30</span></li>
+                  <li class="ui-win__row" data-row><img class="ui-avatar ui-avatar--photo" src="assets/avatars/employee-10.jpg" alt="" width="24" height="24" loading="lazy" decoding="async"><span class="ui-win__who">销售 AI</span><span class="ui-win__sub">5 位客户今天到期跟进</span><span class="ui-win__st" data-st>待处理</span><span class="ui-win__age">08:00</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="app__pane app__pane--open">
+          <div class="ui ui-doc" data-ui="doc">
+            <article class="ui-doc__page">
+              <div class="ui-doc__label">工作示意 · 物流跟单 AI · 待你确认</div>
+              <div class="ui-doc__title">这票货卡在清关，处理准备已做好。</div>
+              <div class="ui-doc__text"><strong>发现了什么</strong><br>订单 SO-2611 <mark class="ui-doc__mark is-on">清关超过 48 小时无更新</mark>，已标记为待跟进异常。</div>
+              <div class="ui-doc__text"><strong>AI 已经做了什么</strong><br>核对轨迹、订单台账和货代回复，确认<mark class="ui-doc__mark" data-kind="补件依据" data-msg="货代已回复确认，今天补交缺失的清关文件。" data-where="货代沟通记录 · 01:58">缺失的清关文件今天补交</mark>；给客户的英文邮件草稿和相关附件已备好。</div>
+              <div class="ui-doc__text desk-confirm"><strong>现在只需你确认</strong><br>核实补件安排与预计送达时间，再决定发送。对外通知由你把关。</div>
+            </article>
+            <aside class="ui-doc__note ui-panel is-on" aria-live="polite">
+              <div class="ui-doc__kind"><span class="ui-doc__dot"></span><span data-doc-kind>依据</span></div>
+              <div class="ui-doc__msg" data-doc-msg>DHL 轨迹 11 月 8 日起停在清关，超过 48 小时阈值。</div>
+              <div class="ui-doc__where" data-doc-where>DHL 官网轨迹 · 订单台账</div>
+            </aside>
           </div>
         </div>
       </div>
@@ -889,7 +914,7 @@
           <a class="nav__logo" href="#top"><img src="assets/brand/zettlab-logo-white.png" alt="Zettlab" width="145" height="24"></a>
           <p class="footer__lede">深圳市吾云创新科技有限公司</p>
         </div>
-        <div class="span-2 footer__col"><h3>岗位</h3><ul><li><a href="#desk">工作台</a></li><li><a href="#jobs">岗位工作流</a></li></ul></div>
+        <div class="span-2 footer__col"><h3>岗位</h3><ul><li><a href="#desk">工作台</a></li><li><a href="#jobs">岗位工作流</a></li><li><a href="briefing.html" target="_blank" rel="noopener">客户讲解版</a></li></ul></div>
         <div class="span-2 footer__col"><h3>算账</h3><ul><li><a href="#roi">成本计算器</a></li><li><a href="#cases">交付行业</a></li></ul></div>
         <div class="span-2 footer__col"><h3>分身</h3><ul><li><a href="#system">NAS 与 Agent Computer</a></li><li><a href="#twin">数字分身</a></li></ul></div>
         <div class="span-2 footer__col"><h3>流程</h3><ul><li><a href="#process">落地流程</a></li><li><a href="#pricing">价格</a></li><li><a href="#faq">常见问题</a></li></ul></div>
@@ -929,6 +954,6 @@
 <script type="module" src="assets/motion/motion.js"></script>
 <script type="module" src="assets/layout/layout.js"></script>
 <script type="module" src="assets/diagrams/mount.js"></script>
-<script type="module" src="assets/presentation.js?v=20261112-workbench"></script>
+<script type="module" src="assets/presentation.js?v=20261112-workbench-placement"></script>
 </body>
 </html>
