@@ -10,6 +10,7 @@
   const notes = JSON.parse($('#slide-notes').textContent);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   let index = 0;
+  let rendered = false;
   let statusTimer;
   const fromHash = () => Math.max(0, slides.findIndex(slide => slide.id === decodeURIComponent(location.hash.slice(1))));
   const fit = () => {
@@ -19,6 +20,7 @@
   function show(next, updateHash = true) {
     if (!Number.isFinite(next)) return;
     next = Math.max(0, Math.min(slides.length - 1, next));
+    const changed = index !== next;
     const outgoing = slides[index];
     const focusMoves = outgoing?.contains(document.activeElement);
     index = next;
@@ -40,10 +42,11 @@
       if (current.contains(video) && !reduced.matches && !document.hidden) video.play().catch(()=>{});
       else video.pause();
     });
-    if (!reduced.matches) {
+    if (rendered && changed && !reduced.matches) {
       current.getAnimations().forEach(animation=>animation.cancel());
       current.animate([{opacity:0,translate:'28px 0'},{opacity:1,translate:'0 0'}],{duration:400,easing:'cubic-bezier(.22,1,.36,1)'});
     }
+    rendered = true;
   }
   function status(message) {
     clearTimeout(statusTimer);
