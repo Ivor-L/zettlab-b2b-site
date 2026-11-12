@@ -271,7 +271,6 @@ function revealSections() {
     enter(el, 0, 26);
     $$('.hardware-flow__number', el).forEach((step, index) => enter(step, 140 + index * 120, 8));
   });
-  onceVisible($$('[data-pain-reveal]'), el => enter(el, 0, 18));
 }
 
 function playExistingDemos() {

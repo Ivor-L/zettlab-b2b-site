@@ -225,14 +225,10 @@ footer#contact.closing {
   grid-template-rows: auto auto;
 }
 
-/* Keep the company pain points brief and the workbench directly visible. */
-main > #desk { height: auto; min-height: 0; }
+/* Present the workbench directly, with space determined by the illustration. */
+main > #desk { height: auto; min-height: 0; padding-block: clamp(32px, 4vw, 56px); }
 main > #desk > .wrap { height: auto; }
-.desk-pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; padding: 0; margin: 28px 0 24px; list-style: none; }
-.desk-pains > li { min-width: 0; padding-top: 16px; border-top: 1px solid var(--line); }
-.desk-pains h3 { font-size: 21px; line-height: 1.4; }
-.desk-actions { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: 14px; }
-#desk .app.ui { flex: none; height: 430px; margin-top: 24px; }
+#desk .app.ui { flex: none; height: 430px; margin-top: 0; }
 #desk .app > .app__pane--open > .ui-doc { padding: 28px 24px 72px; }
 #desk .ui-doc__page { padding: 22px; }
 #desk .ui-doc__text { font-size: 14px; line-height: 1.85; }
@@ -245,14 +241,7 @@ main > #desk > .wrap { height: auto; }
   #desk .app > .app__pane--list { max-height: none; }
   #desk .app > .app__pane + .app__pane { border-top: 0; border-left: 1px solid var(--u-line); }
 }
-@media (max-width: 767px) {
-  .desk-pains { gap: 18px; }
-  .desk-pains h3 { font-size: 20px; }
-}
 @media (max-width: 639px) {
-  .desk-pains { gap: 12px; margin: 24px 0; }
-  .desk-pains > li { padding-top: 12px; }
-  .desk-pains h3 { font-size: 16px; line-height: 1.6; }
   #desk .app.ui { height: auto; }
   #desk .app > .app__pane--open > .ui-doc { padding: 16px 14px 56px; }
   #desk .ui-doc__page { padding: 18px; }
