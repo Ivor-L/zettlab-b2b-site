@@ -81,6 +81,7 @@
     if (button.hasAttribute('data-next')) show(index+1);
     else if (button.hasAttribute('data-prev')) show(index-1);
     else if (button.hasAttribute('data-goto')) { show(Number(button.dataset.goto)); outline.close(); }
+    else if (button.hasAttribute('data-slide')) show(slides.findIndex(slide=>slide.id===button.dataset.slide));
     else if (button.hasAttribute('data-fullscreen')) fullscreen();
     else if (button.hasAttribute('data-outline')) toggleOutline();
     else if (button.hasAttribute('data-close-outline')) outline.close();
@@ -94,6 +95,7 @@
         item.setAttribute('aria-pressed',String(i===selected));
       });
       root.querySelectorAll('.brief-scene').forEach((scene,i)=>scene.hidden=i!==selected);
+      root.querySelectorAll('[data-chat-scene]').forEach(chat=>chat.hidden=Number(chat.dataset.chatScene)!==selected);
     } else if (button.hasAttribute('data-preset')) {
       const selected = Number(button.dataset.preset);
       $$('[data-preset]').forEach((item,i)=>item.setAttribute('aria-pressed',String(i===selected)));
