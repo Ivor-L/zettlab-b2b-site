@@ -6,6 +6,7 @@
   const canvas = $('.deck-canvas');
   const stage = $('.deck-stage');
   const outline = $('.outline-dialog');
+  const caseDialog = $('#case-image-dialog');
   const notePanel = $('.speaker-notes');
   const notes = JSON.parse($('#slide-notes').textContent);
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -70,6 +71,11 @@
     if (outline.open) outline.close();
     else outline.showModal();
   }
+  function setCaseMode(root, mode) {
+    root.querySelector('[data-case-gallery]').hidden = mode !== 'screenshots';
+    root.querySelector('[data-case-flow]').hidden = mode !== 'flow';
+    root.querySelectorAll('[data-case-mode]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.caseMode === mode)));
+  }
   const presets = [
     ['邮件、报价表、聊天记录','比较供应商报价，整理差异与建议','报价对比表与待确认清单'],
     ['岗位要求、简历、面试记录','整理候选人资料，形成匹配依据','候选人对照表与面试准备'],
@@ -87,8 +93,18 @@
     else if (button.hasAttribute('data-close-outline')) outline.close();
     else if (button.hasAttribute('data-notes')) toggleNotes();
     else if (button.hasAttribute('data-close-notes')) toggleNotes(false);
+    else if (button.hasAttribute('data-case-mode')) setCaseMode(button.closest('[data-role-demo]'), button.dataset.caseMode);
+    else if (button.hasAttribute('data-case-image')) {
+      const fullImage = $('[data-case-full-image]');
+      fullImage.src = button.dataset.caseImage;
+      fullImage.alt = button.querySelector('img').alt;
+      $('#case-image-title').textContent = button.dataset.caseTitle;
+      caseDialog.showModal();
+      $('.case-image-scroll').scrollTop = 0;
+    } else if (button.hasAttribute('data-close-case-image')) caseDialog.close();
     else if (button.hasAttribute('data-scene')) {
       const root = button.closest('[data-role-demo]');
+      if (root.querySelector('[data-case-gallery]')) setCaseMode(root, 'flow');
       const selected = Number(button.dataset.scene);
       root.querySelectorAll('[data-scene]').forEach((item,i)=>{
         item.classList.toggle('is-active',i===selected);
@@ -111,7 +127,7 @@
   document.addEventListener('keydown', event => {
     if (event.ctrlKey || event.altKey || event.metaKey || event.defaultPrevented) return;
     if (event.target.closest('input,textarea,select,[contenteditable=true]')) return;
-    if (outline.open) return;
+    if (outline.open || caseDialog.open) return;
     if (['ArrowRight','PageDown'].includes(event.key)) { event.preventDefault(); show(index+1); }
     else if (['ArrowLeft','PageUp'].includes(event.key)) { event.preventDefault(); show(index-1); }
     else if (event.key === ' ' && !event.target.closest('button,a')) { event.preventDefault(); show(index+1); }
