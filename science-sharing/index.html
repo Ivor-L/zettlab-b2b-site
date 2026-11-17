@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>给科普视频，配一位 AI 搭子 · Zettlab</title>
+<link rel="stylesheet" href="deck.css">
+<script defer src="deck.js"></script>
+</head>
+<body>
+<main class="stage" aria-label="科普创作者分享">
+<div class="canvas">
+
+<!-- 01 封面 -->
+<section class="slide s-cover" id="cover" data-title="封面" hidden>
+  <video class="bg-video" muted loop playsinline preload="auto" poster="media/hero-terminal-poster.webp" aria-hidden="true"><source src="media/hero-terminal.mp4" type="video/mp4"></video>
+  <div class="bg-shade" aria-hidden="true"></div>
+  <div class="cover-copy">
+    <p class="eyebrow rise">ZETTLAB · 科普创作者分享</p>
+    <h1 class="rise d1">给你的工作，<br>配一位<em>全天候 AI 搭档</em></h1>
+    <p class="cover-lead rise d2">它有自己的电脑，记得你的工作，<br>也能和同事的智能体一起协作。</p>
+    <p class="cover-foot rise d3">你负责判断与确认，Memo 持续配合。</p>
+  </div>
+</section>
+
+<!-- 02 我的同事 -->
+<section class="slide s-colleague" id="colleague" data-title="这是我的同事" hidden>
+  <figure class="colleague-photo zoom-in">
+    <img src="media/img/memo-desk.webp" alt="桌上的 Memo Agent Computer">
+    <span class="ping" aria-hidden="true"></span>
+  </figure>
+  <div class="colleague-copy">
+    <p class="kicker rise">这是我的同事 · Memo</p>
+    <p class="mega rise d1"><span data-count="80">0</span><small>%</small></p>
+    <p class="mega-label rise d2">我的执行工作，由它完成</p>
+    <div class="split-duty rise d3">
+      <div><span>我</span><strong>判断 · 确认</strong></div>
+      <div class="is-ai"><span>它</span><strong>执行 · 记忆 · 7×24</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 1:1 -->
+<section class="slide s-ratio" id="ratio" data-title="员工与 AI 1:1" hidden>
+  <div class="ratio-head">
+    <p class="ratio-big rise"><span>1</span><i>:</i><span class="ai">1</span></p>
+    <p class="ratio-label rise d1">员工 和 AI 同事</p>
+  </div>
+  <ul class="role-grid">
+    <li style="--i:0"><img src="media/img/employee-01.jpg" alt=""><b class="orb"></b><span>人事</span></li>
+    <li style="--i:1"><img src="media/img/employee-02.jpg" alt=""><b class="orb"></b><span>研发</span></li>
+    <li style="--i:2"><img src="media/img/employee-03.jpg" alt=""><b class="orb"></b><span>市场</span></li>
+    <li style="--i:3"><img src="media/img/employee-04.jpg" alt=""><b class="orb"></b><span>运营</span></li>
+    <li style="--i:4"><img src="media/img/employee-05.jpg" alt=""><b class="orb"></b><span>内容</span></li>
+    <li style="--i:5"><img src="media/img/employee-06.jpg" alt=""><b class="orb"></b><span>物流</span></li>
+    <li style="--i:6"><img src="media/img/employee-07.jpg" alt=""><b class="orb"></b><span>财务</span></li>
+    <li style="--i:7"><img src="media/img/employee-08.jpg" alt=""><b class="orb"></b><span>客服</span></li>
+    <li style="--i:8"><img src="media/img/employee-09.jpg" alt=""><b class="orb"></b><span>投放</span></li>
+  </ul>
+  <p class="corner-note">头像为示意</p>
+</section>
+
+<!-- 04 我是一个怎样的人 -->
+<section class="slide s-who" id="who-am-i" data-title="我是一个怎样的人？" hidden>
+  <div class="who-evidence">
+    <p class="kicker rise">它从这些记录里认识我</p>
+    <p class="mega rise d1"><span data-count="2368">0</span></p>
+    <p class="mega-label rise d2">条工作证据 · 2026 年 9 月起</p>
+    <ul class="tag-row rise d3"><li>本机屏幕记录</li><li>本机生成</li><li>仅本人可见</li></ul>
+  </div>
+  <div class="who-chat">
+    <p class="bubble-q rise d2">Memo，我是一个怎样的人？</p>
+    <p class="bubble-a" data-type data-delay="1400">你是一个只认结果的人。
+先跑通最小闭环，再一步步扩大；
+没验证过的，你不会说“做完了”。</p>
+    <ul class="trait-row">
+      <li style="--i:0"><b>只认真实证据</b><span>36 条</span></li>
+      <li style="--i:1"><b>先跑通最小闭环</b><span>15 条</span></li>
+      <li style="--i:2"><b>持续打磨可靠性</b><span>16 条</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 05 闭环 -->
+<section class="slide s-loop" id="loop" data-title="一条科普视频的闭环" hidden>
+  <h2 class="title rise">一条科普视频，<span>四个环节</span></h2>
+  <div class="loop">
+    <svg class="loop-ring" viewBox="0 0 600 600" aria-hidden="true">
+      <circle class="track" cx="300" cy="300" r="240"/>
+      <circle class="draw" cx="300" cy="300" r="240"/>
+    </svg>
+    <div class="orbit" aria-hidden="true"><i></i></div>
+    <div class="loop-core zoom-in"><strong>AI 搭子</strong><span>7 × 24</span></div>
+    <div class="loop-node n1" style="--i:0"><em>01</em><b>热点采集</b></div>
+    <div class="loop-node n2" style="--i:1"><em>02</em><b>脚本撰写</b></div>
+    <div class="loop-node n3" style="--i:2"><em>03</em><b>视频剪辑</b></div>
+    <div class="loop-node n4" style="--i:3"><em>04</em><b>数据回收</b></div>
+  </div>
+</section>
+
+<!-- 06 热点采集 -->
+<section class="slide s-radar" id="hotspot" data-title="热点采集" hidden>
+  <h2 class="title rise"><em class="step">01</em>你在睡觉，<span>它在盯热点</span></h2>
+  <div class="radar zoom-in" aria-hidden="true">
+    <div class="radar-sweep"></div>
+    <span class="blip" style="--x:22%;--y:30%;--i:0">微博热搜</span>
+    <span class="blip" style="--x:70%;--y:22%;--i:1">B站</span>
+    <span class="blip" style="--x:78%;--y:58%;--i:2">小红书</span>
+    <span class="blip" style="--x:30%;--y:72%;--i:3">知乎</span>
+    <span class="blip" style="--x:52%;--y:84%;--i:4">抖音</span>
+    <span class="blip is-pro" style="--x:12%;--y:52%;--i:5">论文预印本</span>
+    <span class="blip is-pro" style="--x:44%;--y:14%;--i:6">官方发布</span>
+    <span class="radar-clock">03:00</span>
+  </div>
+  <div class="brief">
+    <p class="brief-head rise d1"><b>热点早报</b><span>07:30 · 示意</span></p>
+    <article class="brief-card" style="--i:0"><em class="up">↑ 上升</em><h3>流感季提前到来</h3><p>切口：流感和感冒，怎么分</p><small>来源：疾控周报</small></article>
+    <article class="brief-card" style="--i:1"><em class="rumor">待辟谣</em><h3>“喝咖啡导致骨质疏松”</h3><p>切口：剂量和证据说了什么</p><small>来源：系统综述</small></article>
+    <article class="brief-card" style="--i:2"><em class="new">新</em><h3>固态电池量产消息</h3><p>切口：“固态”到底固在哪</p><small>来源：论文预印本</small></article>
+  </div>
+</section>
+
+<!-- 07 脚本撰写 -->
+<section class="slide s-script" id="script" data-title="脚本撰写" hidden>
+  <h2 class="title rise"><em class="step">02</em>它写的稿子，<span>像你</span></h2>
+  <p class="topic rise d1">选题 · 为什么减肥会遇到平台期？</p>
+  <div class="script-compare">
+    <article class="draft is-generic rise d2">
+      <p class="draft-tag">通用 AI</p>
+      <p>减肥平台期是指体重在一段时间内不再下降的现象。造成平台期的原因有很多，包括代谢适应、饮食结构变化等。</p>
+    </article>
+    <article class="draft is-mine rise d3">
+      <p class="draft-tag">你的 AI 搭子</p>
+      <p><mark class="m1">先别急着饿自己。</mark>你不是没努力，是身体在“省电”——<mark class="m2">就像手机开了低电量模式。</mark>今天教你<mark class="m3">算出自己的下限</mark>。</p>
+      <small>每个事实附来源，待你确认</small>
+    </article>
+  </div>
+  <ul class="ctx-chips">
+    <li class="c1" style="--i:0">你的口头禅</li>
+    <li class="c2" style="--i:1">你常用的类比</li>
+    <li class="c3" style="--i:2">评论区的追问</li>
+    <li style="--i:3">你的旧稿与立场</li>
+  </ul>
+  <p class="corner-note">文案为示意</p>
+</section>
+
+<!-- 08 拆解学习 -->
+<section class="slide s-decode" id="decode" data-title="剪辑 ① 拆解学习" hidden>
+  <h2 class="title rise"><em class="step">03</em>拆解学习：<span>先把对标看懂</span></h2>
+  <div class="decode-top">
+    <div class="decode-count rise d1"><p class="mega"><span data-count="1178">0</span></p><p class="mega-label">个画面状态 · 14 条头部科普 · 59.6 分钟</p></div>
+    <div class="stat-tiles">
+      <div class="tile rise d2"><b><span data-count="19.8" data-decimals="1">0</span></b><span>次 / 分钟<br>画面变化</span></div>
+      <div class="tile rise d3"><b><span data-count="37">0</span>%</b><span>人物全屏<br>只占三成多</span></div>
+      <div class="tile rise d4"><b>硬切</b><span>动感在画面里<br>不在转场</span></div>
+    </div>
+  </div>
+  <div class="strip-wrap rise d3">
+    <div class="strip" data-strip aria-label="一分钟内画面状态示意"></div>
+    <div class="strip-legend"><span class="lg-p">人物全屏</span><span class="lg-m">素材主画面</span><span class="lg-t">0 — 60s</span></div>
+  </div>
+  <div class="rule-row">
+    <p class="rule rise d4"><b>转折 · 提问 · 评论</b><i>→</i><span>回到人物</span></p>
+    <p class="rule rise d5"><b>数字 · 事实 · 引用</b><i>→</i><span>素材主画面</span></p>
+  </div>
+</section>
+
+<!-- 09 组件化 -->
+<section class="slide s-comp" id="components" data-title="剪辑 ② 组件化" hidden>
+  <div class="comp-head">
+    <h2 class="title rise">组件化：<span>把手感变成零件</span></h2>
+    <p class="comp-count rise d1"><b><span data-count="63">0</span></b> 个组件 · 何时用 · 何时不用 · 落在哪个字</p>
+  </div>
+  <ul class="comp-grid">
+    <li style="--i:0"><video muted loop playsinline preload="none" poster="media/fx/hook-frame.jpg"><source src="media/fx/hook-frame.mp4" type="video/mp4"></video><span>开场钩子</span></li>
+    <li style="--i:1"><video muted loop playsinline preload="none" poster="media/fx/board-formula.jpg"><source src="media/fx/board-formula.mp4" type="video/mp4"></video><span>分步算式</span></li>
+    <li style="--i:2"><video muted loop playsinline preload="none" poster="media/fx/chain.jpg"><source src="media/fx/chain.mp4" type="video/mp4"></video><span>因果链</span></li>
+    <li style="--i:3"><video muted loop playsinline preload="none" poster="media/fx/number-tease.jpg"><source src="media/fx/number-tease.mp4" type="video/mp4"></video><span>悬念数字</span></li>
+    <li style="--i:4"><video muted loop playsinline preload="none" poster="media/fx/duo.jpg"><source src="media/fx/duo.mp4" type="video/mp4"></video><span>两侧人物卡</span></li>
+    <li style="--i:5"><video muted loop playsinline preload="none" poster="media/fx/collage.jpg"><source src="media/fx/collage.mp4" type="video/mp4"></video><span>拼贴墙</span></li>
+    <li style="--i:6"><video muted loop playsinline preload="none" poster="media/fx/compare.jpg"><source src="media/fx/compare.mp4" type="video/mp4"></video><span>对照表</span></li>
+    <li style="--i:7"><video muted loop playsinline preload="none" poster="media/fx/quote.jpg"><source src="media/fx/quote.mp4" type="video/mp4"></video><span>引语卡</span></li>
+    <li style="--i:8"><video muted loop playsinline preload="none" poster="media/fx/words-behind.jpg"><source src="media/fx/words-behind.mp4" type="video/mp4"></video><span>头后大字</span></li>
+    <li style="--i:9"><video muted loop playsinline preload="none" poster="media/fx/tip-items.jpg"><source src="media/fx/tip-items.mp4" type="video/mp4"></video><span>胸前清单</span></li>
+    <li style="--i:10"><video muted loop playsinline preload="none" poster="media/fx/breakdown.jpg"><source src="media/fx/breakdown.mp4" type="video/mp4"></video><span>数值拆分</span></li>
+    <li style="--i:11"><video muted loop playsinline preload="none" poster="media/fx/title-rays.jpg"><source src="media/fx/title-rays.mp4" type="video/mp4"></video><span>章节标题</span></li>
+  </ul>
+</section>
+
+<!-- 10 自动剪辑流程 -->
+<section class="slide s-pipe" id="pipeline" data-title="剪辑 ③ 自动剪辑" hidden>
+  <h2 class="title rise">自动剪辑：<span>口播进，成片出</span></h2>
+  <ol class="pipe">
+    <li style="--i:0"><i class="ic ic-mic"></i><b>口播</b></li>
+    <li style="--i:1"><i class="ic ic-text"></i><b>逐字时间轴</b></li>
+    <li style="--i:2"><i class="ic ic-tag"></i><b>判断台词作用</b></li>
+    <li style="--i:3"><i class="ic ic-grid"></i><b>匹配组件</b></li>
+    <li style="--i:4"><i class="ic ic-film"></i><b>成片 + 剪映工程</b></li>
+  </ol>
+  <div class="anchor">
+    <p class="anchor-label rise d3">组件落在“说到那个字”的瞬间</p>
+    <p class="words">
+      <span class="w">在</span><span class="w hit" style="--i:0" data-fx="衬线关键词">首尔</span><span class="w">，有一套房子……</span><span class="w hit" style="--i:1" data-fx="两侧人物卡">租客</span><span class="w">省下月租，</span><span class="w hit" style="--i:2" data-fx="两侧人物卡 · 右">房东</span><span class="w">用别人的钱加杠杆……</span><span class="w">名义是押金，</span><span class="w hit" style="--i:3" data-fx="锁屏卡">实质</span><span class="w">是一笔没有监管的贷款。</span>
+    </p>
+  </div>
+</section>
+
+<!-- 11 前后对比 -->
+<section class="slide s-ba" id="before-after" data-title="剪辑 · 前后对比" hidden>
+  <div class="ba-phones">
+    <figure class="phone rise"><video data-ba="before" muted playsinline preload="auto" poster="media/before.jpg"><source src="media/before.mp4" type="video/mp4"></video><figcaption>原始口播</figcaption></figure>
+    <span class="ba-arrow rise d1" aria-hidden="true">→</span>
+    <figure class="phone is-after rise d1"><video data-ba="after" playsinline preload="auto" poster="media/after.jpg"><source src="media/after.mp4" type="video/mp4"></video><figcaption>自动成片</figcaption></figure>
+    <button class="ba-play" type="button" data-ba-toggle aria-label="播放对比">▶</button>
+  </div>
+  <div class="ba-side">
+    <ul class="ba-stats rise d2">
+      <li><b>69</b><span>秒</span></li>
+      <li><b>9</b><span>个组件</span></li>
+      <li><b>22.6</b><span>次 / 分钟</span></li>
+      <li><b>99%</b><span>文稿匹配</span></li>
+    </ul>
+    <ol class="plan" data-plan>
+      <li data-from="0" data-to="1.9"><time>0:00</time><b>衬线关键词</b><span>「首尔」</span></li>
+      <li data-from="12.5" data-to="16"><time>0:12</time><b>分点序号头</b><span>「过去几十年」</span></li>
+      <li data-from="22.2" data-to="27.9"><time>0:22</time><b>两侧人物卡</b><span>「租客」「房东」</span></li>
+      <li data-from="33.9" data-to="36.5"><time>0:33</time><b>三段式</b><span>「加息」</span></li>
+      <li data-from="40.9" data-to="43.7"><time>0:40</time><b>反应贴片</b><span>「卖不掉」</span></li>
+      <li data-from="45" data-to="49.5"><time>0:45</time><b>拼贴墙聚焦</b><span>「才发现」</span></li>
+      <li data-from="55.6" data-to="60.8"><time>0:55</time><b>付费锁屏卡</b><span>「实质」</span></li>
+      <li data-from="60.8" data-to="64.5"><time>1:00</time><b>全屏氛围图</b><span>「别只看」</span></li>
+      <li data-from="64.5" data-to="69"><time>1:04</time><b>衬线关键词</b><span>「资产负债表」</span></li>
+    </ol>
+    <p class="ba-foot rise d3">可导出剪映工程，继续手改</p>
+  </div>
+</section>
+
+<!-- 12 数据回收 -->
+<section class="slide s-data" id="data" data-title="数据回收" hidden>
+  <h2 class="title rise"><em class="step">04</em>每发一条，<span>它更懂你的观众</span></h2>
+  <div class="retention">
+    <svg viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9a9ff" stop-opacity=".35"/><stop offset="1" stop-color="#b9a9ff" stop-opacity="0"/></linearGradient></defs>
+      <path class="ret-fill" d="M0,30 C80,60 140,80 220,92 C300,104 360,112 420,118 C470,124 500,128 540,190 C570,236 610,240 660,246 C760,256 860,266 1000,280 L1000,360 L0,360 Z"/>
+      <path class="ret-line" d="M0,30 C80,60 140,80 220,92 C300,104 360,112 420,118 C470,124 500,128 540,190 C570,236 610,240 660,246 C760,256 860,266 1000,280"/>
+    </svg>
+    <div class="dip"><span class="dip-dot"></span><p><b>这里流失 30%</b><span>连续 8 秒，画面没有变化</span></p></div>
+    <div class="track-row" aria-hidden="true">
+      <i style="--l:4%;--w:6%"></i><i style="--l:18%;--w:9%"></i><i style="--l:30%;--w:7%"></i><i class="gap" style="--l:42%;--w:12%"></i><i style="--l:62%;--w:8%"></i><i style="--l:76%;--w:10%"></i><i style="--l:90%;--w:6%"></i>
+    </div>
+    <p class="axis"><span>完播曲线</span><span>组件时间线</span></p>
+  </div>
+  <div class="comments">
+    <p class="c-bubble" style="--i:0">男生也适用吗？</p>
+    <p class="c-bubble" style="--i:1">骨架大小怎么判断？</p>
+    <p class="c-bubble" style="--i:2">多久测一次？</p>
+    <p class="c-arrow" aria-hidden="true">↓</p>
+    <p class="c-next">下期选题</p>
+  </div>
+  <p class="corner-note">数据为示意</p>
+</section>
+
+<!-- 13 结尾 -->
+<section class="slide s-end" id="end" data-title="结尾" hidden>
+  <video class="bg-video" muted loop playsinline preload="none" poster="media/hero-terminal-poster.webp" aria-hidden="true"><source src="media/hero-terminal.mp4" type="video/mp4"></video>
+  <div class="bg-shade is-heavy" aria-hidden="true"></div>
+  <div class="end-copy">
+    <p class="end-reveal rise">今天这份演示，</p>
+    <p class="end-reveal big rise d1">也是我和 <em>AI 搭子</em> 一起做的</p>
+    <ul class="end-three">
+      <li style="--i:0"><b>拆解</b>让风格可量化</li>
+      <li style="--i:1"><b>组件化</b>让手感可复用</li>
+      <li style="--i:2"><b>自动剪辑</b>让体力活可交付</li>
+    </ul>
+    <p class="end-cta rise d4">给我一条你的口播，现场共创 →</p>
+  </div>
+</section>
+
+</div>
+</main>
+
+<nav class="controls" aria-label="翻页">
+  <div class="progress"><i></i></div>
+  <button type="button" data-prev aria-label="上一页">←</button>
+  <span data-counter>01 / 13</span>
+  <button type="button" data-next aria-label="下一页">→</button>
+  <button type="button" data-notes aria-expanded="false">讲稿 N</button>
+  <button type="button" data-fullscreen>全屏 F</button>
+</nav>
+<aside class="notes" hidden><p data-note></p></aside>
+
+<script id="notes" type="application/json">[
+  "开场前 Memo 放在口袋里。“今天上台的不止我一个，我还带了一位同事。”",
+  "掏出 Memo：“介绍一下，这是我的同事 Memo。我 80% 的执行工作是它在做——整理资料、跟进进度、准备初稿。那我干什么？判断和确认。”",
+  "“这不是我一个人的情况。我们公司员工和 AI 同事是 1:1，人事、研发、市场、运营，每个人都有自己的 AI 搭子。新同事入职，账号是 AI 开的；群里发一张 Bug 截图，工单是 AI 建的。”",
+  "当场问 Memo：“我是一个怎样的人？”（备好录屏）。“这不是我写的自我介绍，是它根据过去两个多月我在电脑上的工作记录归纳的，2368 条证据，只在我自己电脑上，只有我看得到。准不准？没验证过的，我确实不会说做完了。”伏笔：所以待会儿它写的稿子，才会像我。留悬念：今天有一样东西是 AI 同事做的，最后揭晓。",
+  "“今天挑一个大家最熟悉的场景：内容创作。一条科普视频，四个环节——热点、脚本、剪辑、数据——最后又回到热点。我们市场部每周也在出视频，下面讲的是我们自己踩过坑的做法。”",
+  "“热点不等人。它有自己的电脑，7×24 小时盯平台，也盯论文和官方发布。你醒来，早报已经备好：热点、适合你的科普切口、可信来源。辟谣是科普最好做的选题之一，它会单独标出来。”早报内容为示意。",
+  "“通用 AI 写出来是 AI 腔。它写得像你，是因为它有你的上下文：口头禅、常用类比、评论区里粉丝问过什么。还记得刚才它说我是什么样的人吗？同一个道理。”强调：每个事实附来源，争议论断交给你确认。文案为示意。",
+  "重点段开始。“我们拆了一个头部科普账号 14 条视频、近 60 分钟、1178 个画面状态。平均每分钟画面变 19.8 次，人物全屏只占 37%，转场几乎全是硬切。最关键的规律：台词的作用决定画面——转折、提问回到人物；数字、事实、引用给素材。”参考片只用于研究，素材不进库。",
+  "“看懂之后，把每一种机制做成组件：开场钩子、分步算式、因果链、悬念数字……现在有 63 个。每个组件写清楚：什么时候用，什么时候别用，落在哪个字上。你的剪辑师离职了，手感还留在组件库里。”",
+  "“口播进来，先转成逐字时间轴，再判断每句台词的作用，匹配组件。注意：组件不是按秒放，是落在‘说到那个字’的瞬间。你重录一句，画面跟着字走。”",
+  "点击播放（成片有声音）。右侧计划表会跟着视频高亮当前组件。“69 秒、9 个组件、每分钟 22.6 次画面变化。而且能导出剪映工程，最后拍板的还是你。”（演示主播为数字人）",
+  "“发布之后，它把已授权的数据收回来。因为每个组件出现在哪个字上都有记录，完播曲线的掉点能对到具体画面——比如这里流失 30%，正好是 8 秒没有画面变化。评论区里反复出现的问题，变成下期选题，回到第一步。”数据为示意。",
+  "揭晓悬念：“今天这份演示，也是我和 AI 搭子一起做的。”三句话收束。发出共创邀请：给一条你的口播，或你最想对标的账号，我们帮你做一份专属风格包。进入 Q&A。"
+]</script>
+</body>
+</html>
