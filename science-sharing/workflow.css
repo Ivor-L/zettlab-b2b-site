@@ -1,0 +1,98 @@
+/* Additional layouts for workflow.html. The original deck and assets stay untouched. */
+.workflow-deck .canvas { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(var(--scale)); }
+.workflow-deck .title span { color: rgb(238 240 243 / .58); }
+.workflow-deck .corner-note { color: rgb(238 240 243 / .5); font-size: 16px; }
+.workflow-deck .cover-copy { padding-top: 110px; }
+.workflow-deck .s-cover h1 { font-size: 90px; }
+.workflow-deck .ratio-head .kicker { margin-bottom: 32px; }
+.workflow-deck em { font-style: normal; }
+.workflow-deck .s-colleague { grid-template-columns: 780px 1fr; gap: 64px; }
+.workflow-deck .split-duty { margin-top: 38px; }
+.workflow-deck .split-duty strong { font-size: 26px; white-space: nowrap; }
+.workflow-deck .script-link { color: var(--muted); padding: 8px 14px; text-decoration: none; border-radius: 10px; }
+.workflow-deck .script-link:hover { color: var(--ink); background: rgb(255 255 255 / .06); }
+.workflow-deck a:focus-visible, .workflow-deck button:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.workflow-deck .notes { width: min(620px, calc(100vw - 40px)); white-space: pre-line; }
+
+.statement { font-size: 88px; font-weight: 500; line-height: 1.4; letter-spacing: -.025em; margin-top: 52px; }
+.statement em, .app-title em, .poc-title em, .agent-title em { color: var(--accent); }
+.statement > span { color: rgb(238 240 243 / .64); }
+.principle-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 64px; }
+.principle-row > div { border-top: 1px solid var(--line); padding-top: 25px; }
+.principle-row span { display: block; font-size: 21px; color: var(--muted); }
+.principle-row b { display: block; font-size: 29px; font-weight: 500; margin-top: 12px; }
+
+.overview-head { display: flex; justify-content: space-between; align-items: center; }
+.overview-head .title { margin-top: 24px; }
+.hours { display: flex; align-items: center; gap: 20px; }
+.hours b { font-size: 150px; line-height: 1; font-weight: 500; letter-spacing: -.06em; color: var(--accent); }
+.hours > span { font-size: 23px; line-height: 1.6; color: var(--muted); }
+.six-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 58px; }
+.six-flow li { padding: 28px 32px; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; }
+.six-flow em { display: block; font-family: var(--mono); font-size: 20px; color: var(--accent); }
+.six-flow b { display: block; font-size: 36px; font-weight: 500; margin-top: 20px; }
+.six-flow li > span { display: block; font-size: 21px; color: var(--muted); margin-top: 12px; }
+.flow-return { margin-top: 32px; color: var(--muted); font-size: 23px; text-align: right; }
+.flow-return > span { color: var(--accent); padding: 0 18px; }
+
+.section-lead { margin-top: 28px; color: var(--muted); font-size: 26px; line-height: 1.6; }
+.method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 58px; }
+.method-card { min-width: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 22px; padding: 38px 32px; }
+.method-card > em { display: inline-block; font-size: 19px; color: var(--accent); border: 1px solid rgb(185 169 255 / .28); border-radius: 999px; padding: 7px 15px; }
+.method-card h3 { font-size: 32px; font-weight: 500; line-height: 1.4; margin-top: 34px; }
+.method-card p { color: var(--muted); font-size: 24px; line-height: 1.9; margin-top: 22px; }
+.method-card.is-accent { background: rgb(124 92 255 / .12); border-color: rgb(185 169 255 / .35); }
+.handoff { display: flex; align-items: center; gap: 22px; margin-top: 44px; border-top: 1px solid var(--line); padding-top: 30px; font-size: 22px; }
+.handoff > span { flex: 0 0 auto; color: var(--accent); }
+.handoff p { color: var(--muted); }
+.handoff b { margin-left: auto; font-size: 21px; font-weight: 500; }
+.check-sheet { margin-top: 42px; border: 1px solid var(--line); background: var(--panel); border-radius: 22px; overflow: hidden; }
+.check-sheet > div { display: grid; grid-template-columns: 1fr 1.45fr .8fr; align-items: center; gap: 28px; padding: 30px 34px; font-size: 25px; border-bottom: 1px solid var(--line); }
+.check-sheet > div:last-child { border: 0; }
+.check-sheet b { font-weight: 500; }
+.check-sheet p { color: var(--muted); }
+.check-sheet .check-header { font-size: 19px; color: var(--muted); padding-top: 22px; padding-bottom: 22px; }
+.check-tag { justify-self: start; font-size: 21px; color: var(--ok); background: rgb(95 211 164 / .08); padding: 9px 16px; border-radius: 9px; }
+.check-tag.pending { color: #ffd166; background: rgb(255 209 102 / .08); }
+
+.workflow-deck .s-pipe .pipe { margin-top: 54px; }
+.workflow-deck .anchor { margin-top: 56px; padding: 32px 40px 38px; }
+.workflow-deck .words { font-size: 37px; line-height: 2.7; margin-top: 43px; }
+.workflow-deck .decode-count .mega-label { font-size: 24px; }
+.workflow-deck .s-comp .comp-grid video { height: 275px; }
+.demo-result-title { font-size: 46px; font-weight: 500; line-height: 1.45; margin-top: 20px; margin-bottom: 30px; }
+.workflow-deck .s-ba .plan li { font-size: 20px; padding: 15px 6px; }
+.play-hint { margin-top: 18px; font-size: 18px; color: var(--muted); }
+
+.s-app { padding-top: 115px; }
+.app-title { font-size: 76px; font-weight: 500; line-height: 1.5; margin-top: 36px; letter-spacing: -.025em; }
+.app-modules { display: flex; gap: 18px; margin-top: 46px; }
+.app-modules > span { font-size: 25px; color: var(--muted); padding: 16px 30px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.app-demo-bottom { display: flex; align-items: center; gap: 40px; margin-top: 65px; }
+.app-open { display: inline-flex; align-items: center; gap: 40px; padding: 24px 36px; font-size: 29px; font-weight: 500; color: var(--bg); background: var(--accent); border-radius: 999px; text-decoration: none; }
+.app-open:hover { background: #cdbfff; }
+.app-demo-bottom > p { font-size: 23px; color: var(--muted); line-height: 1.7; }
+.app-address { margin-top: 27px; color: var(--muted); font-family: var(--mono); font-size: 20px; }
+.app-address > span { font-family: var(--font); font-size: 18px; }
+.poc-title { font-size: 65px; line-height: 1.5; font-weight: 500; margin-top: 30px; letter-spacing: -.025em; }
+.s-poc .method-grid { margin-top: 46px; }
+.s-poc .method-card { padding-top: 28px; padding-bottom: 28px; }
+.s-poc .method-card h3 { margin-top: 24px; font-size: 31px; }
+.agent-copy { position: relative; padding: 38px 30px 0; }
+.agent-title { font-size: 74px; font-weight: 500; line-height: 1.5; letter-spacing: -.025em; margin-top: 35px; }
+.agent-foot { font-size: 26px; color: var(--muted); margin-top: 42px; }
+@media (max-width: 600px) { .workflow-deck .controls { padding: 0 8px; gap: 2px; } .workflow-deck .controls button { padding: 8px; } .workflow-deck .script-link { font-size: 12px; padding: 6px; } }
+
+/* Business workflow overview; existing radar and retention visuals are reused. */
+.business-flow { grid-template-columns: repeat(5, 1fr); margin-top: 80px; gap: 18px; }
+.business-flow li { padding: 32px 24px; }
+.business-flow b { font-size: 31px; margin-top: 40px; }
+.business-flow li > span { font-size: 21px; line-height: 1.8; margin-top: 26px; }
+.workflow-deck .s-overview .title { font-size: 48px; }
+.workflow-deck #inspiration .brief-head > span { font-family: var(--font); font-size: 17px; }
+.workflow-deck #inspiration .brief-card h3 { font-size: 27px; }
+.workflow-deck #review .dip { left: 430px; }
+.workflow-deck #review .dip p { width: 390px; }
+.workflow-deck #review .dip p > span { line-height: 1.6; }
+.workflow-deck #content .method-card h3 { font-size: 30px; }
+.workflow-deck #fact-check .handoff { gap: 18px; font-size: 21px; }

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>如何搭建科普专属AI工作流 · Zettlab</title>
+<link rel="stylesheet" href="deck.css?v=20261118-eyes">
+<link rel="stylesheet" href="workflow.css">
+<script defer src="deck.js"></script>
+<script defer src="workflow.js"></script>
+</head>
+<body class="workflow-deck">
+<main class="stage" aria-label="如何搭建科普专属AI工作流">
+<div class="canvas">
+
+<section class="slide s-cover" id="cover" data-title="如何搭建科普专属AI工作流" hidden>
+  <video class="bg-video" muted loop playsinline preload="auto" poster="media/hero-terminal-poster.webp" aria-hidden="true"><source src="media/hero-terminal.mp4" type="video/mp4"></video>
+  <div class="bg-shade" aria-hidden="true"></div>
+  <div class="cover-copy">
+    <p class="eyebrow rise">ZETTLAB · 科普创作者分享</p>
+    <h1 class="rise d1">如何搭建<br><em>科普专属AI工作流</em></h1>
+    <p class="cover-lead rise d2">让 AI 参与团队协作，<br>让专业经验进入每一次创作。</p>
+  </div>
+</section>
+
+<section class="slide s-colleague" id="colleague" data-title="这是我的同事 Memo" hidden>
+  <figure class="colleague-photo zoom-in">
+    <img src="media/img/memo-desk.webp" alt="桌上的 Memo Agent Computer">
+    <span class="ping" aria-hidden="true"></span>
+  </figure>
+  <div class="colleague-copy">
+    <p class="kicker rise">这是我的同事 · Memo</p>
+    <p class="mega rise d1"><span data-count="80">0</span><small>%</small></p>
+    <p class="mega-label rise d2">我的执行工作，由它完成</p>
+    <div class="split-duty rise d3">
+      <div><span>我</span><strong>判断 · 确认</strong></div>
+      <div class="is-ai"><span>它</span><strong>执行 · 记忆 · 7×24</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide s-ratio" id="ratio" data-title="AI Native · 员工与 AI 1:1" hidden>
+  <div class="ratio-head">
+    <p class="kicker rise">一家 AI Native 公司的日常</p>
+    <p class="ratio-big rise d1"><span>1</span><i>:</i><span class="ai">1</span></p>
+    <p class="ratio-label rise d2">员工 和 AI 同事</p>
+  </div>
+  <ul class="role-grid">
+    <li style="--i:0"><img src="media/img/employee-01.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>人事</span></li>
+    <li style="--i:1"><img src="media/img/employee-02.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>研发</span></li>
+    <li style="--i:2"><img src="media/img/employee-03.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>市场</span></li>
+    <li style="--i:3"><img src="media/img/employee-04.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>运营</span></li>
+    <li style="--i:4"><img src="media/img/employee-05.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>内容</span></li>
+    <li style="--i:5"><img src="media/img/employee-06.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>物流</span></li>
+    <li style="--i:6"><img src="media/img/employee-07.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>财务</span></li>
+    <li style="--i:7"><img src="media/img/employee-08.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>客服</span></li>
+    <li style="--i:8"><img src="media/img/employee-09.jpg" alt=""><b class="orb" aria-hidden="true"></b><span>投放</span></li>
+  </ul>
+  <p class="corner-note">头像为示意</p>
+</section>
+
+<section class="slide s-principle" id="creativity" data-title="用 AI 放大创造力" hidden>
+  <p class="kicker rise">我们希望怎样一起工作</p>
+  <h2 class="statement rise d1">用 AI <em>放大创造力</em><br>让人聚焦更重要的<br><span>判断和决策</span></h2>
+  <div class="principle-row rise d2">
+    <div><span>策划 · 编导</span><b>选题与表达</b></div>
+    <div><span>专业审核</span><b>证据与边界</b></div>
+    <div><span>剪辑 · 运营</span><b>质量与反馈</b></div>
+  </div>
+</section>
+
+<section class="slide s-overview" id="workflow" data-title="3 小时搭建 · 科普创作流程" hidden>
+  <div class="overview-head">
+    <div><p class="kicker rise">昨天，我们搭建了一个科普创作 POC</p><h2 class="title rise d1">从选题到发布，<span>看看 AI 能帮上什么忙</span></h2></div>
+    <p class="hours rise d1"><b>3</b><span>小时<br>本次搭建</span></p>
+  </div>
+  <ol class="six-flow business-flow">
+    <li class="rise d1"><em>01</em><b>灵感选题</b><span>记灵感、找热点<br>筛出适合账号的方向</span></li>
+    <li class="rise d2"><em>02</em><b>内容创作</b><span>按作者风格写稿<br>生成分镜参考图</span></li>
+    <li class="rise d3"><em>03</em><b>事实核查</b><span>查事实、查来源<br>修改不可靠的表述</span></li>
+    <li class="rise d4"><em>04</em><b>视频剪辑</b><span>拍好口播后<br>交给 AI 做初剪</span></li>
+    <li class="rise d5"><em>05</em><b>发布复盘</b><span>看流失、看评论<br>找到下一次改进方向</span></li>
+  </ol>
+  <p class="flow-return rise d5">选题 → 写稿与分镜 → 核查 → 拍摄、剪辑 → 发布、复盘</p>
+</section>
+
+<section class="slide s-radar" id="inspiration" data-title="01 灵感选题 · 今天做什么题" hidden>
+  <h2 class="title rise"><em class="step">01</em>灵感选题：<span>每天不用从刷热榜开始</span></h2>
+  <div class="radar zoom-in" aria-hidden="true">
+    <div class="radar-sweep"></div>
+    <span class="blip" style="--x:22%;--y:30%;--i:0">微博热搜</span>
+    <span class="blip" style="--x:70%;--y:22%;--i:1">B站</span>
+    <span class="blip" style="--x:78%;--y:58%;--i:2">小红书</span>
+    <span class="blip" style="--x:30%;--y:72%;--i:3">观众提问</span>
+    <span class="blip is-pro" style="--x:12%;--y:52%;--i:4">论文</span>
+    <span class="blip is-pro" style="--x:44%;--y:14%;--i:5">官方发布</span>
+    <span class="radar-clock">每天定时</span>
+  </div>
+  <div class="brief">
+    <p class="brief-head rise d1"><b>选题从两条线进来</b><span>我的灵感 + 热点雷达</span></p>
+    <article class="brief-card" style="--i:0"><em class="new">随手记</em><h3>聊天、阅读时冒出的好问题</h3><p>记一句想法，存一个链接，留住日常灵感</p></article>
+    <article class="brief-card" style="--i:1"><em class="up">每天看</em><h3>定时采集热点，整理值得关注的变化</h3><p>省掉每天逐个平台翻找的时间</p></article>
+    <article class="brief-card" style="--i:2"><em class="rumor">帮忙筛</em><h3>这么多热点，哪些适合我们讲？</h3><p>结合账号领域、作者风格和观众兴趣找切口</p></article>
+  </div>
+  <p class="corner-note">热点采集与筛选流程示意</p>
+</section>
+
+<section class="slide s-method" id="content" data-title="02 内容创作 · 按作者风格写稿与分镜" hidden>
+  <h2 class="title rise"><em class="step">02</em>内容：<span>选好题，稿子和分镜一起准备</span></h2>
+  <p class="section-lead rise d1">稿子要像作者自己会说的话，画面也要提前想清楚。</p>
+  <div class="method-grid">
+    <article class="method-card rise d1"><em>先熟悉作者</em><h3>从过去的作品里学风格</h3><p>怎么开头、怎么举例<br>常用什么表达和类比</p></article>
+    <article class="method-card is-accent rise d2"><em>再按选题写</em><h3>生成文章或口播脚本</h3><p>带上账号的写作要求<br>编导和作者继续修改</p></article>
+    <article class="method-card rise d3"><em>把画面做出来</em><h3>图片大模型生成分镜</h3><p>把台词转成分镜参考图<br>提前讨论拍什么、配什么</p></article>
+  </div>
+  <div class="handoff rise d4"><span>应用里怎么用</span><p>选作者风格 → 按选题撰文 → 生成分镜参考图</p><b>稿件修改后，再做事实核查</b></div>
+</section>
+
+<section class="slide s-method" id="fact-check" data-title="03 事实核查 · 科普内容要经得起查" hidden>
+  <h2 class="title rise"><em class="step">03</em>事实核查：<span>稿子写顺了，还要查一遍</span></h2>
+  <p class="section-lead rise d1">科普稿里，一个数字、一处引用或一个类比，都可能让观众产生误解。</p>
+  <div class="method-grid">
+    <article class="method-card rise d1"><em>查事实</em><h3>这句话有依据吗？</h3><p>核对数字、时间和单位<br>检查结论适用的条件</p></article>
+    <article class="method-card rise d2"><em>查来源</em><h3>原文真是这个意思吗？</h3><p>查看引用和研究原文<br>留意争议与相反证据</p></article>
+    <article class="method-card is-accent rise d3"><em>改稿件</em><h3>有问题的地方先改掉</h3><p>补来源、加条件、删误导<br>关键内容交给专业成员确认</p></article>
+  </div>
+  <div class="handoff rise d4"><span>应用里怎么用</span><p>提交稿件 → 看核查结论与依据来源 → 修改后重查</p><b>把可靠性放在录制前</b></div>
+</section>
+
+
+<section class="slide s-method" id="editing-app" data-title="04 视频剪辑 · 拍完口播后交给 AI 初剪" hidden>
+  <h2 class="title rise"><em class="step">04</em>视频剪辑：<span>拍好了，先让 AI 剪一版</span></h2>
+  <p class="section-lead rise d1">字幕、配图、数字强调和画面切换，剪辑里有大量反复做的工作。</p>
+  <div class="method-grid">
+    <article class="method-card rise d1"><em>把素材交进去</em><h3>上传拍好的口播</h3><p>关联这条视频的稿件<br>选好账号常用的剪辑预设</p></article>
+    <article class="method-card is-accent rise d2"><em>先完成重复工作</em><h3>AI 按台词安排画面</h3><p>对齐字幕和关键词<br>配合内容使用素材与组件</p></article>
+    <article class="method-card rise d3"><em>团队继续打磨</em><h3>剪辑师检查和修改</h3><p>看节奏、遮挡与素材准确性<br>把初剪改到能够发布</p></article>
+  </div>
+  <div class="handoff rise d4"><span>接下来具体看</span><p>我们怎么拆参考片、做组件，再让画面跟着台词走</p><b>保留工程，方便继续修改</b></div>
+</section>
+
+<section class="slide s-decode" id="decode" data-title="04 剪辑 · 拆解学习" hidden>
+  <h2 class="title rise"><em class="step">04</em>拆解学习：<span>先把对标看懂</span></h2>
+  <div class="decode-top">
+    <div class="decode-count rise d1"><p class="mega"><span data-count="1178">0</span></p><p class="mega-label">个画面状态 · 14 条参考视频 · 59.6 分钟</p></div>
+    <div class="stat-tiles">
+      <div class="tile rise d2"><b><span data-count="19.8" data-decimals="1">0</span></b><span>次 / 分钟<br>画面变化</span></div>
+      <div class="tile rise d3"><b><span data-count="37">0</span>%</b><span>人物全屏<br>样本中的占比</span></div>
+      <div class="tile rise d4"><b>硬切</b><span>动感在画面里<br>不在转场</span></div>
+    </div>
+  </div>
+  <div class="strip-wrap rise d3"><div class="strip" data-strip aria-label="一分钟画面状态示意"></div><div class="strip-legend"><span class="lg-p">人物全屏</span><span class="lg-m">素材主画面</span><span class="lg-t">0 — 60s</span></div></div>
+  <div class="rule-row"><p class="rule rise d4"><b>转折 · 提问 · 评论</b><i>→</i><span>回到人物</span></p><p class="rule rise d5"><b>数字 · 事实 · 引用</b><i>→</i><span>素材主画面</span></p></div>
+  <p class="corner-note">已有参考研究 · 结论限于这批样本 · 时间条为示意</p>
+</section>
+
+<section class="slide s-comp" id="components" data-title="04 剪辑 · 组件化" hidden>
+  <div class="comp-head"><h2 class="title rise">组件化：<span>把手感变成零件</span></h2><p class="comp-count rise d1"><b><span data-count="63">0</span></b> 个组件 · 何时用 · 何时不用 · 落在哪个字</p></div>
+  <ul class="comp-grid">
+    <li style="--i:0"><video muted loop playsinline preload="none" poster="media/fx/hook-frame.jpg"><source src="media/fx/hook-frame.mp4" type="video/mp4"></video><span>开场钩子</span></li>
+    <li style="--i:1"><video muted loop playsinline preload="none" poster="media/fx/board-formula.jpg"><source src="media/fx/board-formula.mp4" type="video/mp4"></video><span>分步算式</span></li>
+    <li style="--i:2"><video muted loop playsinline preload="none" poster="media/fx/chain.jpg"><source src="media/fx/chain.mp4" type="video/mp4"></video><span>因果链</span></li>
+    <li style="--i:3"><video muted loop playsinline preload="none" poster="media/fx/number-tease.jpg"><source src="media/fx/number-tease.mp4" type="video/mp4"></video><span>悬念数字</span></li>
+    <li style="--i:4"><video muted loop playsinline preload="none" poster="media/fx/duo.jpg"><source src="media/fx/duo.mp4" type="video/mp4"></video><span>两侧人物卡</span></li>
+    <li style="--i:5"><video muted loop playsinline preload="none" poster="media/fx/collage.jpg"><source src="media/fx/collage.mp4" type="video/mp4"></video><span>拼贴墙</span></li>
+    <li style="--i:6"><video muted loop playsinline preload="none" poster="media/fx/compare.jpg"><source src="media/fx/compare.mp4" type="video/mp4"></video><span>对照表</span></li>
+    <li style="--i:7"><video muted loop playsinline preload="none" poster="media/fx/quote.jpg"><source src="media/fx/quote.mp4" type="video/mp4"></video><span>引语卡</span></li>
+    <li style="--i:8"><video muted loop playsinline preload="none" poster="media/fx/words-behind.jpg"><source src="media/fx/words-behind.mp4" type="video/mp4"></video><span>头后大字</span></li>
+    <li style="--i:9"><video muted loop playsinline preload="none" poster="media/fx/tip-items.jpg"><source src="media/fx/tip-items.mp4" type="video/mp4"></video><span>胸前清单</span></li>
+    <li style="--i:10"><video muted loop playsinline preload="none" poster="media/fx/breakdown.jpg"><source src="media/fx/breakdown.mp4" type="video/mp4"></video><span>数值拆分</span></li>
+    <li style="--i:11"><video muted loop playsinline preload="none" poster="media/fx/title-rays.jpg"><source src="media/fx/title-rays.mp4" type="video/mp4"></video><span>章节标题</span></li>
+  </ul>
+  <p class="corner-note">复用已有组件成果 · 组件按账号风格选择与配置</p>
+</section>
+
+<section class="slide s-pipe" id="pipeline" data-title="04 剪辑 · 自动剪辑" hidden>
+  <h2 class="title rise">自动剪辑：<span>口播进，成片出</span></h2>
+  <ol class="pipe"><li style="--i:0"><i class="ic ic-mic"></i><b>口播</b></li><li style="--i:1"><i class="ic ic-text"></i><b>逐字时间轴</b></li><li style="--i:2"><i class="ic ic-tag"></i><b>判断台词作用</b></li><li style="--i:3"><i class="ic ic-grid"></i><b>匹配组件</b></li><li style="--i:4"><i class="ic ic-film"></i><b>成片 + 剪映工程</b></li></ol>
+  <div class="anchor"><p class="anchor-label rise d3">组件落在“说到那个字”的瞬间</p><p class="words"><span class="w">在</span><span class="w hit" style="--i:0" data-fx="衬线关键词">首尔</span><span class="w">，有一套房子……</span><span class="w hit" style="--i:1" data-fx="两侧人物卡">租客</span><span class="w">省下月租，</span><span class="w hit" style="--i:2" data-fx="两侧人物卡 · 右">房东</span><span class="w">用别人的钱加杠杆……</span><span class="w">名义是押金，</span><span class="w hit" style="--i:3" data-fx="锁屏卡">实质</span><span class="w">是一笔没有监管的贷款。</span></p></div>
+</section>
+
+<section class="slide s-ba" id="before-after" data-title="剪辑 · 前后对比" hidden>
+  <div class="ba-phones">
+    <figure class="phone rise"><video data-ba="before" muted playsinline preload="metadata" poster="media/before.jpg"><source src="media/before.mp4" type="video/mp4"></video><figcaption>原始口播</figcaption></figure>
+    <span class="ba-arrow rise d1" aria-hidden="true">→</span>
+    <figure class="phone is-after rise d1"><video data-ba="after" playsinline preload="metadata" poster="media/after-20261118.jpg"><source src="media/after-20261118.mp4" type="video/mp4"></video><figcaption>自动成片</figcaption></figure>
+    <button class="ba-play" type="button" data-ba-toggle aria-label="播放对比">▶</button>
+  </div>
+  <div class="ba-side">
+    <p class="kicker rise">已有剪辑示例 · 数字人演示</p>
+    <h2 class="demo-result-title rise d1">从口播<br>到可继续修改的交付</h2>
+    <ol class="plan" data-plan>
+      <li data-from="0" data-to="1.9"><time>0:00</time><b>衬线关键词</b><span>「首尔」</span></li>
+      <li data-from="22.2" data-to="27.9"><time>0:22</time><b>两侧人物卡</b><span>「租客」「房东」</span></li>
+      <li data-from="33.9" data-to="36.5"><time>0:33</time><b>三段式</b><span>「加息」</span></li>
+      <li data-from="45" data-to="49.5"><time>0:45</time><b>拼贴墙聚焦</b><span>「才发现」</span></li>
+      <li data-from="55.6" data-to="60.8"><time>0:55</time><b>付费锁屏卡</b><span>「实质」</span></li>
+    </ol>
+    <p class="ba-foot rise d2">可导出剪映工程，继续手改</p>
+    <p class="play-hint rise d3">1.1× 播放 · P 暂停 / 继续 · 成片有声音</p>
+  </div>
+</section>
+
+<section class="slide s-data" id="review" data-title="05 复盘 · 哪段没留住人，观众还想知道什么" hidden>
+  <h2 class="title rise"><em class="step">05</em>复盘：<span>哪段没留住人？下条讲什么？</span></h2>
+  <div class="retention">
+    <svg viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="fillg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9a9ff" stop-opacity=".35"/><stop offset="1" stop-color="#b9a9ff" stop-opacity="0"/></linearGradient></defs>
+      <path class="ret-fill" d="M0,30 C80,60 140,80 220,92 C300,104 360,112 420,118 C470,124 500,128 540,190 C570,236 610,240 660,246 C760,256 860,266 1000,280 L1000,360 L0,360 Z"/>
+      <path class="ret-line" d="M0,30 C80,60 140,80 220,92 C300,104 360,112 420,118 C470,124 500,128 540,190 C570,236 610,240 660,246 C760,256 860,266 1000,280"/>
+    </svg>
+    <div class="dip"><span class="dip-dot"></span><p><b>这里流失 30%</b><span>回看这一段：连续 8 秒画面没变</span></p></div>
+    <div class="track-row" aria-hidden="true"><i style="--l:4%;--w:6%"></i><i style="--l:18%;--w:9%"></i><i style="--l:30%;--w:7%"></i><i class="gap" style="--l:42%;--w:12%"></i><i style="--l:62%;--w:8%"></i><i style="--l:76%;--w:10%"></i><i style="--l:90%;--w:6%"></i></div>
+    <p class="axis"><span>完播曲线</span><span>组件时间线</span></p>
+  </div>
+  <div class="comments"><p class="c-bubble" style="--i:0">AI 为什么会编造答案？</p><p class="c-bubble" style="--i:1">本地模型和云端有啥区别？</p><p class="c-bubble" style="--i:2">普通电脑也能跑吗？</p><p class="c-arrow" aria-hidden="true">↓</p><p class="c-next">下期选题</p></div>
+  <p class="corner-note">数据与评论为示意 · 流失原因需结合内容判断</p>
+</section>
+
+<section class="slide s-app" id="app-demo" data-title="应用演示 · 自媒体工作台" hidden>
+  <p class="kicker rise">接下来，打开应用</p>
+  <h2 class="app-title rise d1">从今天做什么题，<br><em>到拍完视频怎么剪</em></h2>
+  <div class="app-modules rise d2"><span>灵感</span><span>内容</span><span>剪辑</span><span>排期</span><span>复盘</span><span>风格</span></div>
+  <div class="app-demo-bottom rise d3"><a class="app-open" href="http://127.0.0.1:18744/apps/desk/" target="_blank" rel="noopener noreferrer">打开自媒体工作台 <span aria-hidden="true">↗</span></a><p>看选题、作者风格与分镜，<br>再看核查、剪辑和复盘。</p></div>
+  <p class="app-address rise d4">http://127.0.0.1:18744/apps/desk/ <span>· 本机演示地址</span></p>
+</section>
+
+<section class="slide s-poc" id="poc" data-title="一次 POC · 一份共创邀请" hidden>
+  <p class="kicker rise">短时间搭建的 POC，还有很多不足</p>
+  <h2 class="poc-title rise d1">把你们的专业经验带进来，<br><em>让这套工作流更实用。</em></h2>
+  <div class="method-grid">
+    <article class="method-card rise d2"><em>标准</em><h3>更懂团队要求</h3><p>账号风格<br>审核与交付标准</p></article>
+    <article class="method-card rise d3"><em>执行</em><h3>更可靠地配合</h3><p>服务连接与异常处理<br>岗位交接与人工接管</p></article>
+    <article class="method-card rise d4"><em>验证</em><h3>在真实内容中改进</h3><p>观察投入与修改成本<br>用交付和反馈检验效果</p></article>
+  </div>
+</section>
+
+<section class="slide s-agent" id="end" data-title="真正的 Agent" hidden>
+  <video class="bg-video" muted loop playsinline preload="none" poster="media/hero-terminal-poster.webp" aria-hidden="true"><source src="media/hero-terminal.mp4" type="video/mp4"></video>
+  <div class="bg-shade is-heavy" aria-hidden="true"></div>
+  <div class="agent-copy">
+    <p class="kicker rise">我们期待的长期协作</p>
+    <h2 class="agent-title rise d1">真正的 Agent，<br>不是一次对话，<br>而是长期存在、持续成长的<br><em>数字生命体。</em></h2>
+    <p class="agent-foot rise d3">记住要求 · 持续配合 · 接受反馈 · 积累经验</p>
+  </div>
+</section>
+</div>
+</main>
+<nav class="controls" aria-label="翻页">
+  <div class="progress"><i></i></div>
+  <button type="button" data-prev aria-label="上一页">←</button>
+  <span data-counter>01 / 17</span>
+  <button type="button" data-next aria-label="下一页">→</button>
+  <a class="script-link" href="workflow-notes.md" target="_blank" rel="noopener">完整讲稿 ↗</a>
+  <button type="button" data-notes aria-expanded="false">讲稿 N</button>
+  <button type="button" data-fullscreen>全屏 F</button>
+</nav>
+<aside class="notes" aria-label="当前页讲稿" hidden><p data-note></p></aside>
+<script id="notes" type="application/json">[
+  "【封面停留，Memo 放在口袋里】今天上台的不止我一个，我还带了一位同事。【掏出 Memo，翻到下一页】",
+  "介绍一下，这是我的同事 Memo。我 80% 的执行工作是它在做——整理资料、跟进进度、准备初稿。那我干什么？判断和确认。\n\n很多任务，我会先把要求讲清楚，再检查它交回来的结果。和它一起工作以后，我能把更多精力放在确定方向、做出选择和确认质量上。\n\n【讲者准备】80% 沿用个人实践口径；提前准备数字的统计或估计依据。",
+  "这不是我一个人的情况。作为一家 AI Native 的公司，我们公司员工和 AI 同事是 1:1，人事、研发、市场、运营，每个人都有自己的 AI 搭子。新同事入职，账号是 AI 开的；群里发一张 Bug 截图，工单是 AI 建的。\n\nAI 已经进入我们的日常工作。大家把任务交给它，提供需要的资料和权限，再检查结果。我们也开始关注岗位之间的衔接：前一个环节做完，后面的人能不能顺畅接手。",
+  "我们希望用 AI 来放大创造力，让人聚焦在更重要的判断和决策上面。\n\n内容团队里，策划判断什么值得讲，专业成员检查证据，编导组织表达，剪辑和运营关注质量与反馈。\n\n同时，大家还要花很多时间整理资料、重复交代要求、核对修改。我们希望 AI 逐步接住这些执行工作，让团队有更多精力把内容想深一点，把表达打磨得更好一点。",
+  "接下来，跟大家分享一下我们昨天花 3 小时搭建的一个科普创作 AI 工作流。大家做内容，每天都绕不开几件事：今天选什么题，稿子怎么写得像作者自己，画面怎么准备，事实有没有问题，拍完之后怎么剪，以及发出去以后下次改什么。\n\n我们就按这些工作来搭：灵感选题、内容创作、事实核查、视频剪辑、发布复盘。内容创作里包括按作者风格写稿和生成分镜参考图，核查修改好以后再进入拍摄。下面按这个顺序展开。\n\n【讲者准备】3 小时指本次 POC 搭建，说明已有工具、研究和组件基础；延期时调整“昨天”。",
+  "做内容，选题通常从两头来。一头是平时聊天、阅读、看评论时冒出来的想法，当时觉得有意思，过几天开选题会却找不到了。所以我们留了一个很轻的记录入口，一句话、一个链接都能先记下来，慢慢积累成选题池。\n\n另一头是每天在变的热点。团队每天逐个平台看热榜，花时间，信息又很多。我们希望把这件事交给 AI 定时做：每天采集热点，再结合账号领域、作者风格和观众关心的问题，从里面找适合做科普的方向。比如同一个新闻，能解释什么知识、澄清什么误解，有没有值得往下查的角度。\n\n应用里的“我的灵感”对应日常积累，“热点雷达”对应每天的发现与筛选。到选题讨论时，手里已经有一批可以讨论的候选，团队集中决定做哪一条、从什么角度讲。\n\n【演示准备，不朗读】定时采集和筛选按讲者提供的业务需求介绍。当前本地实例采集服务待授权，准备真实任务记录或运行录屏，不把示意页面当作采集结果。",
+  "选题定下来，接下来就是写内容。大家对 AI 写稿的要求很实际：写出来要像这个作者会说的话，观点和表达也要符合账号一贯的风格。\n\n所以我们在应用里加了作者风格这一步。把作者过去的作品和明确的写作要求带进来，按选题生成文章或者口播脚本。开头怎么抓住问题，知识点怎么解释，常用什么类比，都尽量沿用作者熟悉的方式。编导和作者再根据实际需要改稿。\n\n写稿时还要想画面。这句话靠人物讲就够了，还是需要一张示意图？一个复杂过程要分几个镜头？这里接入图片大模型，根据脚本生成分镜参考图，让编导、出镜和剪辑提前看到画面方向，讨论拍什么、后期配什么。\n\n这样选题往下走，就能准备稿件和分镜。下一步再做一轮事实核查。分镜中的示意图也要检查，避免画面把科学关系表达错了。\n\n【演示准备，不朗读】作者风格、写作与生图按实际连接演示。当前本地实例尚缺模型授权，使用真实作品、稿件和生图记录；没有结果时不填造分镜图片。",
+  "科普内容还有一道必须认真做的工作：事实核查。稿子写得很顺，里面的数字、引用、因果关系仍然可能有问题，类比和分镜也可能让人误解。\n\n我们在内容之后加一轮核查，把稿件里的关键说法拿出来检查：出处在哪里，原文是不是这个意思，研究结论有没有条件，有没有相反证据。应用里把核查结论和依据来源分开，方便编导和专业成员查看。\n\n查出问题以后，该补来源的补来源，该加条件的加条件，需要删除的表述先删掉。稿件改了，再针对修改后的版本重查。团队确认关键内容和科学示意，之后再去录制。\n\n这一步是为了让科普内容更真实可靠。AI 可以帮忙做一轮检查，专业成员对关键判断的确认仍然要保留。\n\n【演示准备，不朗读】当前本地稿件没有有效核查结论，展示真实核查记录或明确说明当前状态，不虚构通过结果。",
+  "稿件确认好，团队就可以去拍摄。拍完以后，剪辑还有很多重复工作：对字幕、找配图、强调数字、安排画面切换。\n\n所以这一步，我们希望先让 AI 剪出一版。把拍好的口播上传，关联稿件，选好账号常用的预设，让它根据台词安排字幕、素材和组件。剪辑师拿到初剪以后，再看节奏是否合适、素材是否准确、画面有没有遮挡，把质量打磨到能够发布。\n\n下面具体讲我们怎么做这件事：先拆参考视频里的剪辑方式，再做成组件，最后把组件对到说话的那个字上。\n\n【演示准备，不朗读】工作台当前剪辑服务待连接，已有剪辑研究、视频和工程与本次现场任务分开说明。",
+  "工作台把制作入口组织好以后，我们再看剪辑方法怎样建立。我们先从参考视频里学习表达方式。这批已有研究拆了 14 条视频、59.6 分钟、1178 个画面状态。\n\n重点是台词与画面的关系：转折、提问和评论常回到人物；数字、事实和引用常交给素材或图示。把这种经验写成规则，编导提出需求、剪辑选择画面时就有共同依据。\n\n这些是这批样本里的观察，需要结合账号调整。研究参考片时关注表达机制，实际交付素材仍需明确授权。\n\n【讲者准备】研究属于已有成果，交代与三小时 POC 的关系；不将画面变化次数等同于效果。",
+  "看懂规律以后，再把常用表达做成组件。这里展示已有组件库的一部分，共 63 个。\n\n每个组件写清楚什么时候用、什么时候不用，以及落在哪个字上。例如因果链需要明确的因果依据，对照表需要一致的比较口径。\n\n组件和规则为剪辑预设提供可配置的基础。团队可以从常用的几种表达开始确认，逐步增加。当前工作台预设仍需连接剪辑服务加载，实际可选范围以连接后的结果为准。",
+  "口播进入以后，先建立逐字时间轴，分析每句台词承担的作用，再匹配对应组件。\n\n组件的时机要对到具体词语。说到人物、数字或关键判断时，画面配合把注意力放在相应信息上。团队在工作台选择的预设和设置，需要最终落实为这些具体画面。\n\n生成以后，团队继续检查阅读时间、字幕遮挡、素材使用和信息密度，也可以在已有剪映工程里手动调整。工作台的真实产物和导出范围，现场以成功任务记录为准。",
+  "【点击播放，成片有声音；P 暂停或继续】我们看一段已有的剪辑示例，演示主播是数字人。大家可以留意：画面怎样接住台词，哪些位置还会希望剪辑继续调整。\n\n【播放时停止讲解，可在代表性画面暂停】这里的组件跟着关键词进入。右侧列出部分对应关系，供暂停后解释。交付也保留可编辑工程，让团队继续打磨。\n\n【讲者准备】此处使用原 HTML 的已有素材，不能描述成刚在工作台现场生成的结果。",
+  "视频发出去以后，团队最关心两个问题：哪里没留住人，观众还想知道什么。\n\n左边把完播曲线和画面时间线放在一起看。比如这个示意片段出现了明显流失，回看时发现连续 8 秒画面没变，就值得进一步讨论：是这段信息难懂、节奏拖了，还是画面没有把意思讲清楚。原因要结合内容判断，下一条再做调整验证。\n\n右边是评论区里反复出现的问题。观众追问 AI 为什么会编造答案、本地模型和云端有什么区别、普通电脑能不能运行，这些可以整理成下一条选题，也可以补进后续脚本。\n\n复盘希望帮助团队决定具体改什么：哪个知识点再讲一遍，哪个片段重新组织，哪些表达可以继续用。这样下一轮找选题和写内容时，就有上一轮的反馈可参考。\n\n【讲者准备】恢复原 HTML 的曲线、组件时间线和评论视觉；数据为示意。当前工作台统计是手动记录，尚未验证逐秒曲线关联，不将该视觉描述为本地实例已自动生成的结果。",
+  "刚才讲了我们搭这套应用时最想解决的几件事。现在打开工作台，看一下实际怎么用。\n\n【约 5—7 分钟】先看“我的灵感”和“热点雷达”，说明日常积累与每天找题；再选一条内容，看作者风格、稿件和分镜；接着看事实核查的结论与来源；拍好的视频到剪辑页上传，选择预设；最后看复盘数据和观众反馈怎样帮助下一轮创作。\n\n【当前环境准备，不朗读】模型、采集等能力显示 contract_unverified，当前没有完整生成和剪辑结果。现场运行前完成服务连接，或使用真实录屏与产物补充。讲述业务用途，不把按钮或示意图当作实际成功结果。",
+  "这是我们在比较短的时间里搭建的一个 POC，还有很多不足的地方。\n\n不同团队怎样审核、怎样修改，什么样的交付才算合格，服务连接和异常情况怎样处理，都要在真实工作里继续完善。\n\n在座大家在内容创作领域都有比较深的造诣。你们知道选题怎样才值得做，也知道稿件和剪辑的哪些细节影响最终质量。相信后续如果大家去搭建这套系统，把自己的标准、经验和流程放进去，一定会更加实用。\n\n也欢迎从团队最熟悉、最容易验收的一段开始，共同做一次小范围验证。",
+  "回到开头，为什么我会把 Memo 叫作同事。长期合作的同事，会逐渐熟悉团队要求，理解大家怎样判断，并从反馈里积累经验。\n\n我们期待 Agent 也朝这个方向发展：参与持续的工作，保留必要上下文，把经过确认的反馈整理成后续可以复用的规则。这里的“数字生命体”，表达的是对长期协作关系的期待。\n\n真正的 Agent，不是一次对话，而是长期存在、持续成长的数字生命体。\n\n谢谢大家。"
+]</script>
+</body>
+</html>
