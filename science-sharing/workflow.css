@@ -2,8 +2,14 @@
 .workflow-deck .canvas { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scale(var(--scale)); }
 .workflow-deck .title span { color: rgb(238 240 243 / .58); }
 .workflow-deck .corner-note { color: rgb(238 240 243 / .5); font-size: 16px; }
-.workflow-deck .cover-copy { padding-top: 110px; }
-.workflow-deck .s-cover h1 { font-size: 90px; }
+.workflow-deck .s-cover-light { background: #dce6f4; color: #172c4c; }
+.cover-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 44%; }
+.cover-wash { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, transparent 52%, rgb(229 237 248 / .38) 63%, rgb(237 243 251 / .95) 81%, #edf3fb 100%); }
+.workflow-deck .s-cover-light .cover-copy { position: absolute; left: 96px; right: 96px; bottom: 62px; padding: 0; display: grid; grid-template-columns: 1fr 440px; column-gap: 50px; align-items: end; }
+.workflow-deck .s-cover-light .eyebrow { grid-column: 1 / -1; font-size: 18px; font-weight: 500; letter-spacing: .1em; color: #415d7f; margin-bottom: 20px; }
+.workflow-deck .s-cover-light h1 { font-size: 72px; font-weight: 500; line-height: 1.23; letter-spacing: -.035em; margin: 0; }
+.workflow-deck .s-cover-light h1 em { color: #175bbb; }
+.workflow-deck .s-cover-light .cover-lead { margin: 0 0 6px; padding: 9px 0 9px 28px; border-left: 1px solid rgb(36 77 126 / .25); font-size: 25px; line-height: 1.8; color: #3d5573; }
 .workflow-deck .ratio-head .kicker { margin-bottom: 32px; }
 .workflow-deck em { font-style: normal; }
 .workflow-deck .s-colleague { grid-template-columns: 780px 1fr; gap: 64px; }
