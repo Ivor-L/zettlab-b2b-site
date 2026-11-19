@@ -168,3 +168,18 @@
 .knowledge-answer li > span { font-size: 19px; line-height: 1.4; }
 .knowledge-evidence { margin-top: 16px; padding-top: 14px; font-size: 17px; }
 .knowledge-label { margin-top: 10px; font-size: 14px; }
+
+/* Closing contacts: untouched QR originals, contained on white scan-safe cards. */
+.closing-layout { position: relative; height: 100%; display: grid; grid-template-columns: 680px 1fr; gap: 54px; align-items: center; }
+.closing-layout .agent-copy { padding: 0; }
+.closing-layout .agent-title { font-size: 55px; line-height: 1.55; margin-top: 35px; }
+.closing-layout .agent-foot { font-size: 22px; line-height: 1.7; margin-top: 36px; }
+.closing-contact { padding: 35px 0 35px 34px; border-left: 1px solid rgb(238 240 243 / .18); }
+.closing-contact h3 { font-size: 25px; font-weight: 500; line-height: 1.6; margin-bottom: 30px; }
+.contact-codes { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.contact-codes figure { min-width: 0; }
+.qr-paper { width: 100%; aspect-ratio: 1; padding: 12px; display: grid; place-items: center; background: #fff; border-radius: 14px; }
+.qr-paper img { width: 100%; height: 100%; object-fit: contain; min-width: 0; min-height: 0; }
+.contact-codes figcaption { text-align: center; margin-top: 22px; }
+.contact-codes figcaption b { display: block; font-size: 24px; font-weight: 500; color: var(--ink); }
+.contact-codes figcaption span { display: block; font-size: 18px; color: var(--muted); margin-top: 11px; }
