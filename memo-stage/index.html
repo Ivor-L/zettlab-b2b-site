@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <title>Zettlab Memo · 从懂你，到帮你做</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Crect width='36' height='36' fill='black'/%3E%3Cpath d='M5 6h28L17 19H3l7-6H5zm-2 25h28V16z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="stage.css">
+  <script src="stage.js" defer></script>
+</head>
+<body>
+  <svg class="svg-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#8196ff"/><stop offset=".5" stop-color="#ba8ef0"/><stop offset="1" stop-color="#f1afa1"/></linearGradient>
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="mark" viewBox="0 0 36 36"><path d="M5 6h28L17 19H3l7-6H5zm-2 25h28V16z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <main class="viewport" aria-label="Zettlab Memo 演示文稿">
+    <div class="screen-rig" id="screen-rig">
+      <aside class="side-screen side-left" aria-label="左侧品牌屏" hidden>
+        <div class="side-brand"><svg><use href="#mark"/></svg><span>Zettlab</span></div>
+        <div class="side-title">从懂你，<br><span class="gradient">到帮你做。</span></div>
+        <span class="side-memo">Memo</span>
+      </aside>
+
+      <div class="main-screen" id="main-screen" aria-roledescription="幻灯片演示" aria-label="共 15 页">
+        <section class="slide original is-active" data-id="cover" aria-label="Zettlab Memo">
+          <img class="original-art" src="assets/original/01-clean.jpg" alt="Zettlab Memo。让个人与组织的信息，不再是孤岛。">
+        </section>
+        <section class="slide original" data-id="scattered" aria-label="你的信息，散落在每一个角落" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/02.jpg" alt="你的信息，散落在每一个角落。每个 App、每台设备，都只记得你的一部分。">
+        </section>
+        <section class="slide original" data-id="unify" aria-label="把它们，融为一体" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/03.jpg" alt="把它们，融为一体。软件渠道、电脑录屏、智能硬件、个人资料，统一汇聚、理解、关联、长期记忆。">
+        </section>
+        <section class="slide original" data-id="understand" aria-label="一个真正懂你的 Agent" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/04.jpg" alt="一个真正懂你的 Agent。记得你说过的、看过的、经历过的。">
+        </section>
+
+        <section class="slide new-slide transition-slide" data-id="intro" aria-labelledby="intro-title" aria-hidden="true" inert>
+          <h1 id="intro-title" class="enter">从懂你，<span class="gradient">到帮你做。</span></h1>
+        </section>
+
+        <section class="slide new-slide" data-id="edit" aria-labelledby="edit-title" aria-hidden="true" inert>
+          <div class="copy">
+            <p class="scene-name enter">智能剪辑</p>
+            <h2 id="edit-title" class="enter">懂你的风格，<br><span class="gradient">替你剪好。</span></h2>
+            <p class="description enter">素材与文案，自动变成你的风格短片。</p>
+          </div>
+          <div class="editing-visual enter" role="group" aria-label="剪辑包装前后对比">
+            <div class="editing-comparison">
+              <figure class="comparison-before"><video data-demo="before" src="assets/editing/before.mp4" poster="assets/editing/before.jpg" muted playsinline loop preload="metadata" controls aria-label="包装前：原始口播视频"></video><figcaption>包装前</figcaption></figure>
+              <svg class="comparison-arrow" aria-hidden="true"><use href="#arrow"/></svg>
+              <figure class="comparison-after"><video data-demo="after" src="assets/editing/after.mp4" poster="assets/editing/after.jpg" muted playsinline loop preload="metadata" controls aria-label="包装后：自动成片视频"></video><figcaption>包装后</figcaption></figure>
+            </div>
+            <p class="film-result">目标体验：<span class="gradient">10 分钟成片</span></p>
+          </div>
+        </section>
+
+        <section class="slide new-slide methods-slide" data-id="edit-methods" data-category="edit" aria-labelledby="methods-title" aria-hidden="true" inert>
+          <div class="copy">
+            <p class="scene-name enter">剪辑手法</p>
+            <h2 id="methods-title" class="enter">不只懂风格，<br><span class="gradient">更懂你的每一招。</span></h2>
+            <p class="description enter">何时用、怎么用、落在哪个字。</p>
+          </div>
+          <div class="methods-grid" role="group" aria-label="十二种剪辑组件拆解">
+            <figure style="--order:0"><video src="assets/editing/fx/hook-frame.mp4" poster="assets/editing/fx/hook-frame.jpg" muted loop playsinline preload="none" aria-label="开场钩子动态演示"></video><figcaption>开场钩子</figcaption></figure>
+            <figure style="--order:1"><video src="assets/editing/fx/board-formula.mp4" poster="assets/editing/fx/board-formula.jpg" muted loop playsinline preload="none" aria-label="分步算式动态演示"></video><figcaption>分步算式</figcaption></figure>
+            <figure style="--order:2"><video src="assets/editing/fx/chain.mp4" poster="assets/editing/fx/chain.jpg" muted loop playsinline preload="none" aria-label="因果链动态演示"></video><figcaption>因果链</figcaption></figure>
+            <figure style="--order:3"><video src="assets/editing/fx/number-tease.mp4" poster="assets/editing/fx/number-tease.jpg" muted loop playsinline preload="none" aria-label="悬念数字动态演示"></video><figcaption>悬念数字</figcaption></figure>
+            <figure style="--order:4"><video src="assets/editing/fx/duo.mp4" poster="assets/editing/fx/duo.jpg" muted loop playsinline preload="none" aria-label="两侧人物动态演示"></video><figcaption>两侧人物</figcaption></figure>
+            <figure style="--order:5"><video src="assets/editing/fx/collage.mp4" poster="assets/editing/fx/collage.jpg" muted loop playsinline preload="none" aria-label="拼贴墙动态演示"></video><figcaption>拼贴墙</figcaption></figure>
+            <figure style="--order:6"><video src="assets/editing/fx/compare.mp4" poster="assets/editing/fx/compare.jpg" muted loop playsinline preload="none" aria-label="对照表动态演示"></video><figcaption>对照表</figcaption></figure>
+            <figure style="--order:7"><video src="assets/editing/fx/quote.mp4" poster="assets/editing/fx/quote.jpg" muted loop playsinline preload="none" aria-label="引语卡动态演示"></video><figcaption>引语卡</figcaption></figure>
+            <figure style="--order:8"><video src="assets/editing/fx/words-behind.mp4" poster="assets/editing/fx/words-behind.jpg" muted loop playsinline preload="none" aria-label="头后大字动态演示"></video><figcaption>头后大字</figcaption></figure>
+            <figure style="--order:9"><video src="assets/editing/fx/tip-items.mp4" poster="assets/editing/fx/tip-items.jpg" muted loop playsinline preload="none" aria-label="胸前清单动态演示"></video><figcaption>胸前清单</figcaption></figure>
+            <figure style="--order:10"><video src="assets/editing/fx/breakdown.mp4" poster="assets/editing/fx/breakdown.jpg" muted loop playsinline preload="none" aria-label="数值拆分动态演示"></video><figcaption>数值拆分</figcaption></figure>
+            <figure style="--order:11"><video src="assets/editing/fx/title-rays.mp4" poster="assets/editing/fx/title-rays.jpg" muted loop playsinline preload="none" aria-label="章节标题动态演示"></video><figcaption>章节标题</figcaption></figure>
+          </div>
+        </section>
+
+        <section class="slide new-slide coach-slide" data-id="coach" aria-labelledby="coach-title" aria-hidden="true" inert>
+          <div class="copy">
+            <p class="scene-name enter">人生教练</p>
+            <h2 id="coach-title" class="enter">一个<span class="gradient">真正懂你</span>的<br>人生教练。</h2>
+            <p class="description enter">结合工作、生活与健康，给你更适合的建议。</p>
+          </div>
+          <div class="coach-scenario enter" role="group" aria-label="人生教练场景：最近总觉得累，Memo 给出工作、活动和休息的具体建议">
+            <div class="coach-conversation">
+              <div class="coach-question"><p>最近总觉得累，帮我调整一下。</p></div>
+              <div class="coach-answer"><p>先把明天的节奏，放松一点。</p></div>
+            </div>
+            <div class="coach-day" role="group" aria-label="明日建议：上午专注工作，傍晚散步，晚上提前休息">
+              <div class="coach-day-heading">明日建议</div>
+              <div class="coach-action" style="--step:0"><time>09:00</time><span class="coach-action-icon"><svg viewBox="0 0 36 36" aria-hidden="true"><rect x="5" y="7" width="26" height="18" rx="3"/><path d="M12 30h12m-6-5v5M13 13h10m-10 5h6"/></svg></span><div><h3>专注 90 分钟，少一点打断。</h3></div></div>
+              <div class="coach-action" style="--step:1"><time>18:30</time><span class="coach-action-icon"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="21" cy="6" r="3"/><path d="m16 32 4-10-5-6 4-5 4 7 7 1M7 18l7-3m5-4-5 11-5 9m11-9 6 9"/></svg></span><div><h3>下班后，出去走 30 分钟。</h3></div></div>
+              <div class="coach-action" style="--step:2"><time>22:30</time><span class="coach-action-icon"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M28 25A13 13 0 0 1 13 5a13 13 0 1 0 15 20Z"/><path d="M26 5v6m-3-3h6"/></svg></span><div><h3>提前半小时，准备休息。</h3></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide new-slide assistant-slide" data-id="assistant" aria-labelledby="assistant-title" aria-hidden="true" inert>
+          <div class="assistant-environment" aria-hidden="true"><div class="day-window-light"></div><div class="studio-surface"></div></div>
+          <div class="copy">
+            <p class="scene-name enter">7×24 全能助理</p>
+            <h2 id="assistant-title" class="enter">随时交代，<br><span class="assistant-accent">持续执行。</span></h2>
+            <p class="description enter">通过 IM，随时随地让 Memo 帮你做事。</p>
+          </div>
+          <div class="assistant-studio enter" role="group" aria-label="Memo 从白天到夜晚，持续接收任务并交付结果">
+            <div class="task-chat" role="group" aria-label="与 Memo 持续收发任务消息">
+              <div class="chat-header"><span class="chat-presence"></span><span>Memo</span><span class="chat-header-state">在线</span></div>
+              <div class="chat-viewport" id="chat-viewport"><div class="chat-feed" id="chat-feed">
+                <div class="message-row message-user"><div class="chat-bubble">整理上午的客户会议。</div></div>
+                <div class="message-row message-agent"><div class="chat-bubble"><svg class="bubble-check" aria-hidden="true"><use href="#check"/></svg>客户方案.pdf 已完成</div></div>
+              </div></div>
+            </div>
+            <div class="studio-device">
+              <div class="studio-shadow" aria-hidden="true"></div>
+              <img class="studio-memo" src="assets/memo-device-clean.png" alt="Zettlab Memo，始终在工作的个人 Agent 计算机">
+              <span class="studio-status" aria-hidden="true"></span>
+            </div>
+          </div>
+        </section>
+
+        <section class="slide original" data-id="islands" aria-label="组织中的信息孤岛" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/05.jpg" alt="但到了组织里，每个人都有了自己的 Agent，信息又变成了孤岛。">
+        </section>
+        <section class="slide original" data-id="questions" aria-label="每天都在发生的追问" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/06.jpg" alt="进展怎么样了？代码提交了没？你为什么选这个方案？这件事现在谁在跟？人与人、Agent 与 Agent 之间，依然互不相通。">
+        </section>
+        <section class="slide original" data-id="cluster" aria-label="Zettlab Agent 集群" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/07.jpg" alt="Zettlab Agent 集群。每人一台 Memo，上下文存入 Zettlab AI NAS，统一存储、按权限交换。">
+        </section>
+
+        <section class="slide new-slide work-slide" data-id="work" aria-labelledby="work-title" aria-hidden="true" inert>
+          <div class="copy">
+            <p class="scene-name enter">工作搭子</p>
+            <h2 id="work-title" class="enter">项目进展，直接问。<br><span class="gradient">重复问题，替你答。</span></h2>
+            <p class="description enter">和同事的 Agent 对话，快速了解项目。<br>你的 Agent，替你回答重复问题。</p>
+          </div>
+          <div class="work-dialogues enter" role="group" aria-label="同事 Agent 查询项目与你的 Agent 自动代答两个场景">
+            <div class="peer-scene peer-query" role="group" aria-label="你向同事的 Agent 询问项目进展">
+              <h3>你 <span>→</span> 同事的 Agent</h3>
+              <div class="peer-message peer-question" style="--arrive:.45s"><p>新官网做到哪了，卡在哪里？</p></div>
+              <div class="peer-message peer-answer" style="--arrive:1.15s"><span class="peer-speaker">同事的 Agent</span><p>设计已定稿，开发完成 80%。<br>还差接口确认，预计周五联调。</p></div>
+            </div>
+            <div class="peer-scene peer-delegate" role="group" aria-label="同事重复询问进展，你的 Agent 自动回答">
+              <h3>同事 <span>→</span> 你的 Agent</h3>
+              <div class="peer-message peer-question" style="--arrive:2.05s"><p>你负责的接口，确认了吗？</p></div>
+              <div class="peer-message peer-answer" style="--arrive:2.75s"><span class="peer-speaker">你的 Agent <em>自动代答</em></span><p>已确认，最新接口文档已共享。<br>明天可以开始联调，不必等本人回复。</p></div>
+            </div>
+            <p class="peer-permission">仅共享已授权的项目上下文</p>
+          </div>
+        </section>
+
+        <section class="slide original" data-id="case" aria-label="100 台 Memo 与 1 台 AI NAS" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/08.jpg" alt="为紫川科技设计的 Agent 集群方案：100 台 Zettlab Memo，1 台 Zettlab AI NAS。">
+        </section>
+        <section class="slide original" data-id="join" aria-label="加入 Zettlab Memo 早鸟群" aria-hidden="true" inert>
+          <img class="original-art" src="assets/original/09.jpg" alt="加入 Zettlab Memo 早鸟群。扫码进群，抢先体验。">
+        </section>
+      </div>
+
+      <aside class="side-screen side-right" aria-label="右侧场景屏" hidden>
+        <div class="side-scenes"><span data-for="edit">智能剪辑</span><span data-for="coach">人生教练</span><span data-for="assistant">全天助理</span><span data-for="work">工作搭子</span></div>
+      </aside>
+    </div>
+  </main>
+
+  <nav class="controls" id="controls" aria-label="演示控制">
+    <button id="prev" aria-label="上一页" title="上一页 ←"><svg class="left-arrow"><use href="#arrow"/></svg></button>
+    <span class="page-number"><b id="page-current">1</b><span>/</span>15</span>
+    <button id="next" aria-label="下一页" title="下一页 →"><svg><use href="#arrow"/></svg></button>
+    <span class="control-divider"></span>
+    <button id="motion" aria-label="暂停动效" aria-pressed="false" title="暂停动效 M"><svg viewBox="0 0 24 24"><path id="motion-icon" d="M9 6v12M15 6v12" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <button id="autoplay" aria-label="自动轮播" aria-pressed="false" title="自动轮播 A"><svg viewBox="0 0 24 24"><path d="m9 6 10 6-10 6Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></button>
+    <button id="stage" aria-label="三屏预览" aria-pressed="false" title="三屏预览 S"><svg viewBox="0 0 24 24"><path d="M5 5h14v14H5ZM1 7v10M23 7v10" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+    <button id="fullscreen" aria-label="全屏" title="全屏 F"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button>
+  </nav>
+  <div class="sr-only" id="announcement" aria-live="polite"></div>
+</body>
+</html>
