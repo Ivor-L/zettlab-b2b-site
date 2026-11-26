@@ -176,3 +176,26 @@
 .daily-paper small { display: block; margin-top: 10px; color: var(--muted); font-size: 17px; line-height: 1.5; }
 .report-deck #control .method-card h3 { font-size: 28px; }
 .report-deck #control .method-card p { font-size: 22px; }
+
+/* Illustrated context hub: selectable sources, real device asset and varied uses. */
+.context-hub .title { font-size: 49px; }
+.context-hub .section-lead { font-size: 23px; margin-top: 23px; }
+.context-hub-layout { display: grid; grid-template-columns: 570px 290px 1fr; gap: 30px; margin-top: 36px; align-items: center; }
+.hub-label { font-size: 18px; color: var(--accent); line-height: 1.5; margin-bottom: 18px; }
+.context-input-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.context-input-grid article { position: relative; min-height: 147px; padding: 19px 15px 19px 90px; border: 1px solid rgb(185 169 255 / .17); border-radius: 17px; background: linear-gradient(145deg, #20202b, #14161a); box-shadow: 0 6px 0 -3px #08090c; }
+.context-input-grid img { position: absolute; width: 76px; height: 76px; left: 8px; top: 24px; object-fit: fill; }
+.context-input-grid h3 { font-size: 22px; line-height: 1.5; font-weight: 500; }
+.context-input-grid article > p { font-size: 16px; letter-spacing: -.02em; line-height: 1.7; color: var(--muted); margin-top: 9px; }
+.context-device { position: relative; text-align: center; }
+.context-device::before, .context-device::after { position: absolute; top: 45%; content: '→'; font-size: 27px; color: var(--accent); }
+.context-device::before { left: -24px; }
+.context-device::after { right: -24px; }
+.context-device .hub-label { font-size: 18px; }
+.device-halo { display: grid; place-items: center; height: 230px; background: radial-gradient(ellipse, rgb(124 92 255 / .3), transparent 68%); }
+.device-halo img { width: 310px; height: 215px; object-fit: contain; filter: drop-shadow(0 18px 16px rgb(0 0 0 / .3)); }
+.context-device > h3 { font-size: 43px; font-weight: 500; margin-top: 5px; }
+.context-device > p:last-child { font-size: 21px; color: var(--muted); line-height: 1.8; margin-top: 19px; }
+.context-uses article { display: grid; grid-template-columns: 80px 1fr; gap: 14px; padding: 20px 20px; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); margin-top: 12px; align-items: center; }
+.context-uses article > span { font-size: 18px; color: var(--accent); line-height: 1.6; white-space: nowrap; }
+.context-uses article > p { font-size: 21px; line-height: 1.65; }
