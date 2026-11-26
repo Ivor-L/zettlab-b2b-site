@@ -96,3 +96,29 @@
 .custom-report-flow > div:last-child { border-bottom: 0; }
 .custom-report-flow dt { color: var(--accent); font-size: 24px; }
 .custom-report-flow dd { font-size: 25px; color: var(--muted); line-height: 1.6; }
+
+/* Retained opening stories and nine-role navigation. */
+.report-nine-roles .title { margin-top: 18px; }
+.report-nine-roles .section-lead { margin-top: 20px; }
+.nine-role-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 20px; margin-top: 28px; }
+.nine-role-grid > a { display: block; min-width: 0; padding: 19px 23px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; color: var(--ink); text-decoration: none; transition: border-color .2s, background .2s; }
+.nine-role-grid > a:hover { border-color: var(--accent); background: var(--panel-2); }
+.nine-role-grid a > div { display: flex; align-items: center; gap: 12px; }
+.nine-role-grid img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex: none; }
+.nine-role-grid a > div span { font-size: 16px; color: var(--muted); }
+.nine-role-grid i { margin-left: auto; color: var(--accent); font-style: normal; font-size: 22px; }
+.nine-role-grid h3 { font-size: 27px; font-weight: 500; line-height: 1.4; margin-top: 12px; }
+.nine-role-grid a > p { font-size: 20px; line-height: 1.5; color: var(--muted); margin-top: 9px; }
+.nine-role-grid .role-highlight { background: rgb(124 92 255 / .1); border-color: rgb(185 169 255 / .3); }
+.nine-role-summary { margin-top: 23px; padding-top: 20px; border-top: 1px solid var(--line); }
+.nine-role-summary p { font-size: 22px; }
+.nine-role-summary small { display: block; margin-top: 10px; font-size: 17px; color: var(--muted); }
+.report-nine-roles .title { margin-top: 12px; }
+.report-nine-roles .section-lead { margin-top: 14px; }
+.nine-role-grid { margin-top: 22px; gap: 14px 20px; }
+.nine-role-grid > a { padding: 15px 22px; }
+.nine-role-grid h3 { font-size: 26px; margin-top: 9px; }
+.nine-role-grid a > p { font-size: 19px; margin-top: 7px; }
+.nine-role-summary { margin-top: 18px; padding-top: 16px; }
+.nine-role-summary p { font-size: 21px; }
+.nine-role-summary small { margin-top: 8px; font-size: 16px; }
