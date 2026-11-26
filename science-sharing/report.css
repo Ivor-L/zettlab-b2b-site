@@ -199,3 +199,76 @@
 .context-uses article { display: grid; grid-template-columns: 80px 1fr; gap: 14px; padding: 20px 20px; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); margin-top: 12px; align-items: center; }
 .context-uses article > span { font-size: 18px; color: var(--accent); line-height: 1.6; white-space: nowrap; }
 .context-uses article > p { font-size: 21px; line-height: 1.65; }
+
+/* Ten core business scenarios supplied by the presenter. */
+.core-scenes .title { margin-top: 16px; font-size: 49px; }
+.core-scenes .section-lead { margin-top: 18px; font-size: 23px; }
+.core-scenes-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+.core-scenes-grid article { min-width: 0; min-height: 246px; padding: 22px 20px; border: 1px solid rgb(185 169 255 / .2); border-radius: 17px; background: linear-gradient(145deg, #20202b, #14161a); }
+.core-scene-meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.core-scene-meta em { font: 18px var(--mono); color: var(--accent); }
+.core-scene-meta > span { font-size: 15px; color: var(--muted); }
+.core-scenes-grid h3 { margin-top: 19px; font-size: 23px; font-weight: 500; line-height: 1.5; letter-spacing: -.035em; }
+.core-scenes-grid article > b { display: block; margin-top: 12px; color: var(--accent); font-size: 17px; line-height: 1.6; font-weight: 500; }
+.core-scenes-grid article > p { margin-top: 12px; color: var(--muted); font-size: 18px; line-height: 1.75; }
+.core-scenes-grid article:nth-child(8) { border-color: rgb(185 169 255 / .5); background: linear-gradient(145deg, #302440, #1b1926); }
+
+/* Employee-briefing theme: cool gray canvas, near-white surfaces and purple accents. */
+.report-deck {
+  --bg: #eef0f3;
+  --panel: #f8f9fb;
+  --panel-2: #e2e5ea;
+  --ink: #0b0c0e;
+  --muted: #5e5f62;
+  --dim: #6b6d72;
+  --line: rgb(11 12 14 / .12);
+  --accent: #5b3fd3;
+  --accent-2: #7c5cff;
+  --ok: #22795b;
+  --font: "Outfit", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: #dce0e6;
+}
+html:has(.report-deck) { background: #dce0e6; }
+.report-deck .canvas { border-radius: 0; box-shadow: 0 14px 65px rgb(11 12 14 / .08); }
+.report-deck .slide { color: var(--ink); }
+.report-deck .title { font-weight: 500; }
+.report-deck .title span, .report-deck .corner-note { color: var(--muted); }
+.report-deck .kicker { color: var(--accent); font-weight: 500; }
+.report-deck .context-input-grid article,
+.report-deck .context-uses article,
+.report-deck .core-scenes-grid article,
+.report-deck .coverage-grid > div,
+.report-deck .role-grid li,
+.report-deck .day-timeline,
+.report-deck .daily-paper,
+.report-deck .method-card {
+  background: var(--panel);
+  border-color: var(--line);
+  border-radius: 14px;
+  box-shadow: none;
+}
+.report-deck .core-scenes-grid article:nth-child(8),
+.report-deck .method-card.is-accent,
+.report-deck .split-duty .is-ai,
+.report-deck .scenario-question { background: #e5dff8; border-color: rgb(91 63 211 / .22); }
+.report-deck .daily-paper { border-color: var(--line); }
+.report-deck .device-halo { background: radial-gradient(ellipse, rgb(91 63 211 / .13), transparent 68%); }
+.report-deck .device-halo img { filter: drop-shadow(0 18px 16px rgb(11 12 14 / .12)); }
+.report-deck .method-card > em { border-color: rgb(91 63 211 / .22); }
+.report-deck .comp-grid video { border-color: var(--line); box-shadow: 0 10px 25px -20px rgb(11 12 14 / .4); }
+.report-deck .controls { background: var(--bg); border-top: 1px solid var(--line); }
+.report-deck .controls button:hover,
+.report-deck .script-link:hover { background: var(--panel-2); color: var(--ink); }
+.report-deck .progress { background: var(--panel-2); }
+.report-deck .notes { background: var(--panel); color: var(--ink); box-shadow: 0 14px 45px rgb(11 12 14 / .14); }
+.report-deck .report-cover,
+.report-deck .report-finale { --ink: #eef0f3; --muted: rgb(238 240 243 / .7); --accent: #b9a9ff; color: var(--ink); background: #0b0c0e; }
+.report-deck .report-cover .eyebrow,
+.report-deck .report-finale .kicker { color: rgb(238 240 243 / .7); }
+.report-deck .report-finale-copy > p:last-child { color: var(--muted); }
+.report-deck .team-ac { background: #e5dff8; border-color: rgb(91 63 211 / .22); box-shadow: none; }
+.report-deck .team-member, .report-deck .team-nas { border-radius: 14px; }
+.report-deck .team-wire-pair, .report-deck .team-wire-asset, .report-deck .team-wire-peer { stroke: rgb(91 63 211 / .35); }
+.report-deck .phone.is-after video { border-color: var(--accent); box-shadow: 0 12px 40px rgb(91 63 211 / .16); }
+.report-deck .ba-play { background: var(--accent); box-shadow: 0 10px 30px rgb(91 63 211 / .25); }
+.report-deck .split-duty .is-ai span { color: #fff; }
