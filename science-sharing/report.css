@@ -368,3 +368,7 @@ html:has(.report-deck) { background: #dce0e6; }
 #scene-personal-day .scene-pain { margin-top: 20px; }
 #scene-personal-day .scene-actions { margin-top: 20px; }
 #scene-personal-day .scene-actions > li { padding-bottom: 13px; }
+
+/* Confirmed colleague names sit below roles on the 1:1 page. */
+.report-deck .role-grid li > span { font-size: 23px; line-height: 1.4; margin-left: 16px; }
+.report-deck .role-grid li > span > small { display: block; margin-top: 5px; font-size: 20px; color: var(--muted); font-weight: 400; white-space: nowrap; }
