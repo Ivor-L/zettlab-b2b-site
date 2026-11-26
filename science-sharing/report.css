@@ -122,3 +122,17 @@
 .nine-role-summary { margin-top: 18px; padding-top: 16px; }
 .nine-role-summary p { font-size: 21px; }
 .nine-role-summary small { margin-top: 8px; font-size: 16px; }
+
+/* Original employee scene images, with concise task descriptions. */
+.scene-layout { display: grid; grid-template-columns: 790px 1fr; gap: 54px; align-items: center; margin-top: 35px; }
+.scene-photo { position: relative; height: 535px; border-radius: 22px; overflow: hidden; }
+.scene-photo > img { width: 100%; height: 100%; object-fit: cover; }
+.scene-photo::after { content: ''; position: absolute; inset: 50% 0 0; background: linear-gradient(transparent, rgb(0 0 0 / .76)); pointer-events: none; }
+.scene-photo figcaption { position: absolute; left: 28px; right: 24px; bottom: 25px; z-index: 1; }
+.scene-photo figcaption b { display: block; font-size: 25px; font-weight: 500; line-height: 1.6; color: #fff; }
+.scene-photo figcaption small { display: block; font-size: 16px; color: rgb(255 255 255 / .75); margin-top: 10px; }
+.scene-tasks > div { position: relative; padding: 23px 0 23px 49px; border-bottom: 1px solid var(--line); }
+.scene-tasks > div:last-child { border-bottom: 0; }
+.scene-tasks em { position: absolute; left: 0; top: 29px; color: var(--accent); font: 18px var(--mono); }
+.scene-tasks h3 { font-size: 31px; font-weight: 500; }
+.scene-tasks p { margin-top: 14px; font-size: 24px; line-height: 1.75; color: var(--muted); }
