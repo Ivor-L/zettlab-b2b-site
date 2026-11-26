@@ -75,3 +75,24 @@
 .evidence-dialog-head button { padding: 9px 14px; background: var(--panel-2); border-radius: 8px; }
 .evidence-scroll { max-height: calc(90vh - 80px); overflow: auto; padding: 18px; }
 .evidence-scroll img { width: 100%; height: auto; }
+
+/* Employee-briefing chapter layouts. */
+.difference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 45px; }
+.difference-grid article { background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 30px 34px; }
+.difference-grid em { color: var(--accent); font: 20px var(--mono); }
+.difference-grid h3 { font-size: 34px; font-weight: 500; margin-top: 20px; }
+.difference-grid p { font-size: 24px; color: var(--muted); line-height: 1.7; margin-top: 15px; }
+.responsibility-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 48px; }
+.responsibility-grid article { padding: 35px 38px; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
+.responsibility-grid article:last-child { background: rgb(124 92 255 / .1); border-color: rgb(185 169 255 / .3); }
+.responsibility-grid h3 { font-size: 39px; font-weight: 500; line-height: 1.5; margin-top: 26px; }
+.responsibility-grid ul { margin-top: 26px; }
+.responsibility-grid li { color: var(--muted); font-size: 24px; line-height: 1.8; padding: 8px 0; }
+.custom-report-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 100px; margin-top: 45px; align-items: center; }
+.custom-big { font-size: 65px; line-height: 1.5; letter-spacing: -.025em; }
+.custom-big em { color: var(--accent); }
+.custom-report-flow { border: 1px solid var(--line); border-radius: 20px; padding: 14px 32px; background: var(--panel); }
+.custom-report-flow > div { display: grid; grid-template-columns: 65px 1fr; gap: 25px; padding: 28px 0; border-bottom: 1px solid var(--line); }
+.custom-report-flow > div:last-child { border-bottom: 0; }
+.custom-report-flow dt { color: var(--accent); font-size: 24px; }
+.custom-report-flow dd { font-size: 25px; color: var(--muted); line-height: 1.6; }
